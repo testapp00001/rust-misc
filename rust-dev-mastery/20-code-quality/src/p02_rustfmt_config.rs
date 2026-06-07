@@ -6,7 +6,7 @@
 //! ## Key Settings:
 //!
 //! ```toml
-//! edition = "2021"
+//! edition = "2024"
 //! max_width = 100
 //! tab_spaces = 4
 //! use_field_init_shorthand = true

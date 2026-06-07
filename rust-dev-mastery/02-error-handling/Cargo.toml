@@ -1,7 +1,7 @@
 [package]
 name = "error_handling"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Module 2: Error Handling — error hierarchy design, thiserror, anyhow, custom errors, recovery patterns"
 
 [dependencies]

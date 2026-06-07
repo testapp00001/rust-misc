@@ -1,7 +1,7 @@
 [package]
 name = "concurrency_patterns"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Module 17: Concurrency Patterns — channels, lock-free, actor model, work stealing, parallel iterators"
 
 [dependencies]

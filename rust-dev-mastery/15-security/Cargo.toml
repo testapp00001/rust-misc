@@ -1,7 +1,7 @@
 [package]
 name = "security_mastery"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Module 15: Security — cryptography, secrets management, input validation, TLS, supply chain security"
 
 [dependencies]

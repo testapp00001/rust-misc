@@ -1,7 +1,7 @@
 [package]
 name = "testing_mastery"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Module 4: Testing Mastery — unit tests, integration tests, property-based testing, mocking, benchmarks, snapshots"
 
 [dependencies]

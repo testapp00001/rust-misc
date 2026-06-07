@@ -1,7 +1,7 @@
 [package]
 name = "macros_mastery"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "macro_rules!, proc macros, derive, and build scripts"
 
 [dependencies]

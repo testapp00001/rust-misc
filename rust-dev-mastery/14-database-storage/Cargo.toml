@@ -1,7 +1,7 @@
 [package]
 name = "database_storage"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Module 14: Database & Storage — SQLx, connection pooling, migrations, caching, embedded databases"
 
 [dependencies]
