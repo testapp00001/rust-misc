@@ -1,0 +1,10 @@
+pub mod p01_profiling;
+pub mod p02_memory_optimization;
+pub mod p03_cpu_optimization;
+pub mod p04_simd;
+pub mod p05_zero_cost;
+pub mod p06_caching;
+pub mod p07_lazy_evaluation;
+pub mod p08_parallel_optimization;
+pub mod p09_io_optimization;
+pub mod p10_benchmarking;

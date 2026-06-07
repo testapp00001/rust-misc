@@ -1,0 +1,9 @@
+[package]
+name = "async_rust"
+version = "0.1.0"
+edition = "2021"
+description = "Module 5: Async Rust — Tokio ecosystem, Future trait, async/await internals, streams, cancellation"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"

@@ -1,0 +1,10 @@
+pub mod p01_builder_pattern;
+pub mod p02_typestate_pattern;
+pub mod p03_newtype_pattern;
+pub mod p04_raii_pattern;
+pub mod p05_visitor_pattern;
+pub mod p06_strategy_pattern;
+pub mod p07_command_pattern;
+pub mod p08_observer_pattern;
+pub mod p09_state_machine;
+pub mod p10_dependency_injection;

@@ -1,0 +1,10 @@
+pub mod p01_tokio_deep_dive;
+pub mod p02_future_internals;
+pub mod p03_async_patterns;
+pub mod p04_async_error_handling;
+pub mod p05_async_concurrency;
+pub mod p06_streams;
+pub mod p07_cancellation_safety;
+pub mod p08_async_testing;
+pub mod p09_async_performance;
+pub mod p10_async_architecture;

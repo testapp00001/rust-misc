@@ -1,0 +1,92 @@
+[package]
+name = "rust-dev-mastery"
+version = "0.1.0"
+edition = "2021"
+description = "The Ultimate Rust Developer Knowledge Course — from DSA to Staff Engineer"
+
+[dependencies]
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Logging & Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+log = "0.4"
+
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# HTTP
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+axum = "0.8"
+tower = "0.5"
+tower-http = { version = "0.6", features = ["full"] }
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio", "postgres", "sqlite"] }
+
+# Crypto & Security
+ring = "0.17"
+
+# Testing
+proptest = "1"
+criterion = { version = "0.5", features = ["html_reports"] }
+mockall = "0.13"
+tempfile = "3"
+
+# Utilities
+rand = "0.8"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+bytes = "1"
+once_cell = "1"
+dashmap = "6"
+parking_lot = "0.12"
+crossbeam = "0.8"
+rayon = "1"
+regex = "1"
+
+# Macros
+quote = "1"
+proc-macro2 = "1"
+syn = { version = "2", features = ["full"] }
+
+[workspace]
+members = [
+    "01-project-architecture",
+    "02-error-handling",
+    "03-logging-tracing",
+    "04-testing",
+    "05-async-rust",
+    "06-performance-profiling",
+    "07-design-patterns",
+    "08-api-design",
+    "09-unsafe-ffi",
+    "10-macros",
+    "11-serialization",
+    "12-networking-web",
+    "13-cli-tools",
+    "14-database-storage",
+    "15-security",
+    "16-devops-cicd",
+    "17-concurrency",
+    "18-memory-management",
+    "19-interop-wasm",
+    "20-code-quality",
+]
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+criterion = { version = "0.5", features = ["html_reports"] }

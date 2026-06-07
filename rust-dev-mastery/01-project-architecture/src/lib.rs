@@ -1,0 +1,10 @@
+pub mod p01_workspace_design;
+pub mod p02_crate_organization;
+pub mod p03_module_system_mastery;
+pub mod p04_feature_flags;
+pub mod p05_build_profiles;
+pub mod p06_cargo_toml_deep_dive;
+pub mod p07_dependency_management;
+pub mod p08_project_templates;
+pub mod p09_build_scripts;
+pub mod p10_release_engineering;

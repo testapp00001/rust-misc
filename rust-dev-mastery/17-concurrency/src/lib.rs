@@ -1,0 +1,10 @@
+pub mod p01_channel_patterns;
+pub mod p02_shared_state;
+pub mod p03_lock_free_structures;
+pub mod p04_actor_model;
+pub mod p05_work_stealing;
+pub mod p06_parallel_iterators;
+pub mod p07_synchronization;
+pub mod p08_concurrent_data_structures;
+pub mod p09_concurrent_testing;
+pub mod p10_concurrent_architecture;

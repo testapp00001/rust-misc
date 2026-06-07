@@ -1,0 +1,30 @@
+[package]
+name = "database_storage"
+version = "0.1.0"
+edition = "2021"
+description = "Module 14: Database & Storage — SQLx, connection pooling, migrations, caching, embedded databases"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio", "postgres", "sqlite", "chrono", "uuid"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Async trait
+async-trait = "0.1"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+dashmap = "6"
+base64 = "0.22"

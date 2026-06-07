@@ -1,0 +1,75 @@
+// ============================================================================
+// Problem: Balanced Binary Tree (LeetCode #110)
+// ============================================================================
+// Given a binary tree, determine if it is height-balanced.
+// A height-balanced binary tree is one where the depth of the two subtrees
+// of every node never differs by more than 1.
+//
+// ============================================================================
+// APPROACH: Recursive (O(n) time, O(h) space)
+// ============================================================================
+//
+// Return -1 if unbalanced, otherwise return the height.
+// At each node, check if left and right subtrees are balanced and
+// their heights differ by at most 1.
+// ============================================================================
+
+use std::cell::RefCell;
+use std::rc::Rc;
+use super::tree_node::TreeNode;
+
+type TreeLink = Option<Rc<RefCell<TreeNode>>>;
+
+pub fn is_balanced(root: TreeLink) -> bool {
+    check_height(&root) >= 0
+}
+
+fn check_height(node: &TreeLink) -> i32 {
+    match node {
+        None => 0,
+        Some(n) => {
+            let borrowed = n.borrow();
+            let left = check_height(&borrowed.left);
+            let right = check_height(&borrowed.right);
+            if left < 0 || right < 0 || (left - right).abs() > 1 {
+                -1
+            } else {
+                1 + left.max(right)
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use super::super::tree_node::TreeNode;
+
+    #[test]
+    fn test_balanced() {
+        let root = TreeNode::from_level_order(&[
+            Some(3), Some(9), Some(20), None, None, Some(15), Some(7),
+        ]);
+        assert!(is_balanced(root));
+    }
+
+    #[test]
+    fn test_unbalanced() {
+        let root = TreeNode::from_level_order(&[
+            Some(1), Some(2), Some(2), Some(3), Some(3), None, None, Some(4), Some(4),
+        ]);
+        assert!(!is_balanced(root));
+    }
+
+    #[test]
+    fn test_empty() {
+        let root: TreeLink = None;
+        assert!(is_balanced(root));
+    }
+
+    #[test]
+    fn test_single() {
+        let root = TreeNode::from_level_order(&[Some(1)]);
+        assert!(is_balanced(root));
+    }
+}

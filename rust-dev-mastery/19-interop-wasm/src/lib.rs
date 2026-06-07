@@ -1,0 +1,10 @@
+pub mod p01_py03_basics;
+pub mod p02_wasm_fundamentals;
+pub mod p03_wasm_optimization;
+pub mod p04_c_embedding;
+pub mod p05_plugin_systems;
+pub mod p06_cross_language_testing;
+pub mod p07_abi_stability;
+pub mod p08_node_native_modules;
+pub mod p09_uniffi_patterns;
+pub mod p10_embedding_patterns;

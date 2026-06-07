@@ -1,0 +1,10 @@
+pub mod p01_serde_deep_dive;
+pub mod p02_custom_serde;
+pub mod p03_json_mastery;
+pub mod p04_binary_formats;
+pub mod p05_schema_evolution;
+pub mod p06_serde_performance;
+pub mod p07_validation;
+pub mod p08_format_design;
+pub mod p09_database_serde;
+pub mod p10_serde_testing;

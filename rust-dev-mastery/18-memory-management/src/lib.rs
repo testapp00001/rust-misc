@@ -1,0 +1,10 @@
+pub mod p01_allocator_basics;
+pub mod p02_arena_allocation;
+pub mod p03_pool_allocation;
+pub mod p04_memory_mapping;
+pub mod p05_leak_detection;
+pub mod p06_stack_vs_heap;
+pub mod p07_memory_profiling;
+pub mod p08_small_vec_optimization;
+pub mod p09_zero_copy;
+pub mod p10_memory_safe_patterns;

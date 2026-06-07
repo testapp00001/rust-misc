@@ -1,0 +1,10 @@
+pub mod p01_cryptography_basics;
+pub mod p02_password_hashing;
+pub mod p03_secrets_management;
+pub mod p04_input_validation;
+pub mod p05_jwt_authentication;
+pub mod p06_tls_configuration;
+pub mod p07_authorization;
+pub mod p08_supply_chain_security;
+pub mod p09_secure_coding;
+pub mod p10_threat_modeling;

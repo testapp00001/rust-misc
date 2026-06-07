@@ -1,0 +1,12 @@
+pub mod p01_climbing_stairs;
+pub mod p02_house_robber;
+pub mod p03_house_robber_ii;
+pub mod p04_coin_change;
+pub mod p05_longest_increasing_subseq;
+pub mod p06_longest_common_subseq;
+pub mod p07_edit_distance;
+pub mod p08_partition_equal_subset;
+pub mod p09_unique_paths;
+pub mod p10_word_break;
+pub mod p11_longest_palindromic_sub;
+pub mod p12_decode_ways;

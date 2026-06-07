@@ -1,0 +1,10 @@
+pub mod p01_technology_strategy;
+pub mod p02_team_building;
+pub mod p03_ecosystem;
+pub mod p04_project_management;
+pub mod p05_technical_leadership;
+pub mod p06_decision_making;
+pub mod p07_risk_management;
+pub mod p08_innovation;
+pub mod p09_communication;
+pub mod p10_vision;

@@ -1,0 +1,8 @@
+[package]
+name = "memory_management"
+version = "0.1.0"
+edition = "2021"
+description = "Module 18: Memory Management — allocators, arenas, pools, memory mapping, leak detection"
+
+[dependencies]
+bytes = "1"

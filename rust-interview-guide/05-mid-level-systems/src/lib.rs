@@ -1,0 +1,10 @@
+pub mod p01_file_io;
+pub mod p02_serialization;
+pub mod p03_error_handling;
+pub mod p04_cli_tools;
+pub mod p05_networking;
+pub mod p06_logging;
+pub mod p07_configuration;
+pub mod p08_database;
+pub mod p09_testing;
+pub mod p10_performance;

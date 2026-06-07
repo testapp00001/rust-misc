@@ -1,0 +1,10 @@
+pub mod p01_builder;
+pub mod p02_observer;
+pub mod p03_strategy;
+pub mod p04_state_machine;
+pub mod p05_repository;
+pub mod p06_factory;
+pub mod p07_command;
+pub mod p08_iterator;
+pub mod p09_decorator;
+pub mod p10_adapter;

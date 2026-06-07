@@ -1,0 +1,24 @@
+[package]
+name = "cli_tools"
+version = "0.1.0"
+edition = "2021"
+description = "Module 13: CLI Tools — clap, interactive prompts, config management, cross-platform, signal handling"
+
+[dependencies]
+# CLI parsing
+clap = { version = "4", features = ["derive", "env", "string"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Utilities
+dirs = "6"
+regex = "1"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }

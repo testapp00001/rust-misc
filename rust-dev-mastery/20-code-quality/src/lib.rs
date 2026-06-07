@@ -1,0 +1,10 @@
+pub mod p01_clippy_mastery;
+pub mod p02_rustfmt_config;
+pub mod p03_documentation_standards;
+pub mod p04_code_review;
+pub mod p05_refactoring_patterns;
+pub mod p06_technical_debt;
+pub mod p07_naming_conventions;
+pub mod p08_comment_philosophy;
+pub mod p09_module_organization;
+pub mod p10_code_metrics;

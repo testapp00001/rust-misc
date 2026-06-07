@@ -1,0 +1,10 @@
+pub mod p01_clap_mastery;
+pub mod p02_interactive_prompts;
+pub mod p03_progress_indicators;
+pub mod p04_config_management;
+pub mod p05_cross_platform;
+pub mod p06_signal_handling;
+pub mod p07_daemon_services;
+pub mod p08_shell_completion;
+pub mod p09_cli_architecture;
+pub mod p10_cli_testing;

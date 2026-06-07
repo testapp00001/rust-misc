@@ -1,0 +1,10 @@
+pub mod p01_variables_and_types;
+pub mod p02_control_flow;
+pub mod p03_functions_closures;
+pub mod p04_structs_enums;
+pub mod p05_pattern_matching;
+pub mod p06_collections;
+pub mod p07_error_handling;
+pub mod p08_iterators;
+pub mod p09_traits_generics;
+pub mod p10_modules_visibility;

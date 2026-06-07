@@ -1,0 +1,10 @@
+[package]
+name = "macros_mastery"
+version = "0.1.0"
+edition = "2021"
+description = "macro_rules!, proc macros, derive, and build scripts"
+
+[dependencies]
+quote = "1"
+proc-macro2 = "1"
+syn = { version = "2", features = ["full", "extra-traits"] }

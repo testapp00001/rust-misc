@@ -1,0 +1,10 @@
+pub mod p01_http_clients;
+pub mod p02_axum_fundamentals;
+pub mod p03_middleware;
+pub mod p04_rest_api_design;
+pub mod p05_request_validation;
+pub mod p06_authentication;
+pub mod p07_websocket;
+pub mod p08_grpc_basics;
+pub mod p09_rate_limiting;
+pub mod p10_protocol_design;

@@ -1,0 +1,10 @@
+[package]
+name = "performance_profiling"
+version = "0.1.0"
+edition = "2021"
+description = "Module 6: Performance & Profiling — criterion benchmarks, memory profiling, SIMD, cache optimization"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }

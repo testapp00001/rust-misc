@@ -1,0 +1,10 @@
+pub mod p01_declarative_macros;
+pub mod p02_proc_macro_basics;
+pub mod p03_derive_macros;
+pub mod p04_attribute_macros;
+pub mod p05_function_like_macros;
+pub mod p06_syn_parsing;
+pub mod p07_quote_generation;
+pub mod p08_macro_hygiene;
+pub mod p09_macro_testing;
+pub mod p10_build_scripts;

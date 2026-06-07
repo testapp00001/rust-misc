@@ -1,0 +1,10 @@
+pub mod p01_tracing_fundamentals;
+pub mod p02_spans_events;
+pub mod p03_structured_logging;
+pub mod p04_subscriber_config;
+pub mod p05_error_tracing;
+pub mod p06_debug_techniques;
+pub mod p07_log_filtering;
+pub mod p08_metrics_integration;
+pub mod p09_distributed_tracing;
+pub mod p10_production_observability;

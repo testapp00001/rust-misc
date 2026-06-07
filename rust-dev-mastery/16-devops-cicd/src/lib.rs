@@ -1,0 +1,10 @@
+pub mod p01_github_actions;
+pub mod p02_release_workflows;
+pub mod p03_cross_compilation;
+pub mod p04_docker_patterns;
+pub mod p05_monitoring_setup;
+pub mod p06_deployment_strategies;
+pub mod p07_artifact_management;
+pub mod p08_environment_management;
+pub mod p09_infrastructure_as_code;
+pub mod p10_production_operations;

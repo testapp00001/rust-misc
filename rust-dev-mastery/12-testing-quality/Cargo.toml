@@ -1,0 +1,5 @@
+[package]
+name = "testing_quality"
+version = "0.1.0"
+edition = "2021"
+description = "Testing strategies, mocking, fuzzing, property-based testing, and benchmarks"

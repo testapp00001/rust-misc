@@ -1,0 +1,27 @@
+[package]
+name = "rust-interview-guide"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+thiserror = "1"
+rand = "0.8"
+
+[workspace]
+members = [
+    "01-fresher-basics",
+    "02-fresher-ownership",
+    "03-junior-concurrency",
+    "04-junior-async",
+    "05-mid-level-systems",
+    "06-mid-level-unsafe",
+    "07-senior-design-patterns",
+    "08-senior-performance",
+    "09-lead-architecture",
+    "10-cto-strategy",
+    "99-troubleshooting"
+]

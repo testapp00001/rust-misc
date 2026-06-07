@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = [
+    "01-arrays-and-hashing",
+    "02-two-pointers",
+    "03-sliding-window",
+    "04-stack",
+    "05-binary-search",
+    "06-linked-list",
+    "07-trees",
+    "08-trie",
+    "09-heap-priority-queue",
+    "10-backtracking",
+    "11-graphs",
+    "12-dynamic-programming",
+    "13-greedy",
+    "14-intervals",
+    "15-math-and-geometry",
+    "16-bit-manipulation",
+    "17-union-find",
+    "18-monotonic-stack",
+    "rust-dev-mastery/09-unsafe-ffi",
+    "rust-dev-mastery/10-macros",
+    "rust-dev-mastery/11-serialization",
+    "rust-dev-mastery/12-testing-quality",
+]

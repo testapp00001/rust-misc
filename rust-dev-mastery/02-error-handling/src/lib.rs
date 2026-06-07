@@ -1,0 +1,10 @@
+pub mod p01_error_hierarchy;
+pub mod p02_thiserror_patterns;
+pub mod p03_anyhow_patterns;
+pub mod p04_custom_error_types;
+pub mod p05_error_context_chaining;
+pub mod p06_client_facing_errors;
+pub mod p07_error_recovery;
+pub mod p08_panic_handling;
+pub mod p09_error_testing;
+pub mod p10_error_documentation;

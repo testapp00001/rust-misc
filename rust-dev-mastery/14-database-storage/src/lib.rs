@@ -1,0 +1,10 @@
+pub mod p01_sqlx_fundamentals;
+pub mod p02_connection_pooling;
+pub mod p03_migrations;
+pub mod p04_transaction_patterns;
+pub mod p05_repository_pattern;
+pub mod p06_embedded_databases;
+pub mod p07_caching_strategies;
+pub mod p08_database_testing;
+pub mod p09_query_optimization;
+pub mod p10_storage_engines;

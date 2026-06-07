@@ -1,0 +1,10 @@
+pub mod p01_profiling_tools;
+pub mod p02_criterion_benchmarks;
+pub mod p03_memory_profiling;
+pub mod p04_cpu_optimization;
+pub mod p05_simd_intrinsics;
+pub mod p06_cache_optimization;
+pub mod p07_allocation_strategies;
+pub mod p08_zero_cost_abstractions;
+pub mod p09_lazy_evaluation;
+pub mod p10_production_perf;

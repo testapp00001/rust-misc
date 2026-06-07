@@ -1,0 +1,10 @@
+pub mod p01_ownership_basics;
+pub mod p02_borrowing;
+pub mod p03_lifetimes;
+pub mod p04_move_semantics;
+pub mod p05_clone_copy;
+pub mod p06_smart_pointers;
+pub mod p07_string_ownership;
+pub mod p08_struct_ownership;
+pub mod p09_closure_ownership;
+pub mod p10_ownership_patterns;

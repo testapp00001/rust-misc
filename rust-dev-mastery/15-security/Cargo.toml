@@ -1,0 +1,23 @@
+[package]
+name = "security_mastery"
+version = "0.1.0"
+edition = "2021"
+description = "Module 15: Security — cryptography, secrets management, input validation, TLS, supply chain security"
+
+[dependencies]
+# Cryptography
+ring = "0.17"
+base64 = "0.22"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+regex = "1"

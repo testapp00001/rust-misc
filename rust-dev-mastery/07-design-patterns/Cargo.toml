@@ -1,0 +1,8 @@
+[package]
+name = "design_patterns"
+version = "0.1.0"
+edition = "2021"
+description = "Module 7: Design Patterns — Rust-idiomatic patterns: builder, typestate, RAII, state machines"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }

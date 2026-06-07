@@ -1,0 +1,10 @@
+pub mod p01_public_api_design;
+pub mod p02_trait_based_apis;
+pub mod p03_generics_vs_dyn;
+pub mod p04_api_versioning;
+pub mod p05_backward_compatibility;
+pub mod p06_builder_for_apis;
+pub mod p07_error_in_apis;
+pub mod p08_documentation;
+pub mod p09_crate_publishing;
+pub mod p10_api_review;

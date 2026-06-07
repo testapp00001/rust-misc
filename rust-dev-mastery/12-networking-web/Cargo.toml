@@ -1,0 +1,37 @@
+[package]
+name = "networking_web"
+version = "0.1.0"
+edition = "2021"
+description = "Module 12: Networking & Web — HTTP clients, servers, middleware, REST design, WebSockets, and authentication"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+
+# HTTP client
+reqwest = { version = "0.12", features = ["json", "cookies", "gzip", "rustls-tls"], default-features = false }
+
+# Web framework
+axum = "0.8"
+hyper = { version = "1", features = ["full"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["full"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Crypto / JWT
+ring = "0.17"
+base64 = "0.22"
+
+# Utilities
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+bytes = "1"
+tokio-tungstenite = "0.26"

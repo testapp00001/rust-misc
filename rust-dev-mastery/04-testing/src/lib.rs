@@ -1,0 +1,10 @@
+pub mod p01_unit_test_patterns;
+pub mod p02_integration_tests;
+pub mod p03_property_based_testing;
+pub mod p04_fuzzing;
+pub mod p05_mocking_patterns;
+pub mod p06_test_fixtures;
+pub mod p07_benchmarking;
+pub mod p08_snapshot_testing;
+pub mod p09_test_coverage;
+pub mod p10_test_organization;

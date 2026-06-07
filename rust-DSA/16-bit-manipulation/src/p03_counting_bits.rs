@@ -1,0 +1,56 @@
+// ============================================================================
+// Problem: Counting Bits (LeetCode #338)
+// ============================================================================
+// Given an integer n, return an array where ans[i] is the number of 1s in
+// the binary representation of i.
+//
+// Example:
+//   Input:  n = 5
+//   Output: [0,1,1,2,1,2]
+//
+// ============================================================================
+// APPROACH: Dynamic Programming (O(n) time, O(n) space)
+// ============================================================================
+//
+// Key insight: count[i] = count[i >> 1] + (i & 1)
+//   - i >> 1 is i divided by 2 (right shift)
+//   - i & 1 is the least significant bit
+//
+// This builds on previously computed values.
+// ============================================================================
+
+pub fn count_bits(n: i32) -> Vec<i32> {
+    let n = n as usize;
+    let mut dp = vec![0; n + 1];
+
+    for i in 1..=n {
+        dp[i] = dp[i >> 1] + (i & 1) as i32;
+    }
+
+    dp
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_basic() {
+        assert_eq!(count_bits(5), vec![0, 1, 1, 2, 1, 2]);
+    }
+
+    #[test]
+    fn test_zero() {
+        assert_eq!(count_bits(0), vec![0]);
+    }
+
+    #[test]
+    fn test_one() {
+        assert_eq!(count_bits(1), vec![0, 1]);
+    }
+
+    #[test]
+    fn test_power_of_two() {
+        assert_eq!(count_bits(8), vec![0, 1, 1, 2, 1, 2, 2, 3, 1]);
+    }
+}

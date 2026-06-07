@@ -1,0 +1,8 @@
+[package]
+name = "unsafe_ffi"
+version = "0.1.0"
+edition = "2021"
+description = "Unsafe Rust, FFI, raw pointers, safety documentation, and bindgen"
+
+[dependencies]
+libc = "0.2"
