@@ -27,19 +27,11 @@
 //   way to group into a HashMap.
 // ============================================================================
 
+
 use std::collections::HashMap;
 
 pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
-    let mut groups: HashMap<String, Vec<String>> = HashMap::new();
-
-    for s in strs {
-        let mut key: Vec<char> = s.chars().collect();
-        key.sort();
-        let key: String = key.into_iter().collect();
-        groups.entry(key).or_default().push(s);
-    }
-
-    groups.into_values().collect()
+    todo!("Implement group_anagrams")
 }
 
 #[cfg(test)]
@@ -83,5 +75,26 @@ mod tests {
         let input: Vec<String> = vec!["a".to_string()];
         let result = group_anagrams(input);
         assert_eq!(result, vec![vec!["a"]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = group_anagrams(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

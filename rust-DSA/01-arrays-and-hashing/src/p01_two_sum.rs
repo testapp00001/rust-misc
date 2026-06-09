@@ -52,6 +52,8 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 // ============================================================================
 // Tests
 // ============================================================================
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -79,5 +81,26 @@ mod tests {
     #[test]
     fn test_mixed_numbers() {
         assert_eq!(two_sum(vec![0, 4, 3, 0], 0), vec![0, 3]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = two_sum(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

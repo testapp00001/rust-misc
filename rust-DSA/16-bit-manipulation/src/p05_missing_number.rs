@@ -15,21 +15,14 @@
 // Math approach: expected_sum - actual_sum = missing number.
 // ============================================================================
 
-// XOR approach
+
+
 pub fn missing_number(nums: &[i32]) -> i32 {
-    let mut result = nums.len() as i32;
-    for (i, &num) in nums.iter().enumerate() {
-        result ^= i as i32 ^ num;
-    }
-    result
+    todo!("Implement missing_number")
 }
 
-// Math approach
 pub fn missing_number_math(nums: &[i32]) -> i32 {
-    let n = nums.len() as i32;
-    let expected_sum = n * (n + 1) / 2;
-    let actual_sum: i32 = nums.iter().sum();
-    expected_sum - actual_sum
+    todo!("Implement missing_number_math")
 }
 
 #[cfg(test)]
@@ -54,5 +47,26 @@ mod tests {
     #[test]
     fn test_math_approach() {
         assert_eq!(missing_number_math(&[3, 0, 1]), 2);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = missing_number(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

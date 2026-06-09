@@ -22,20 +22,10 @@
 // This is more space-efficient than the HashMap approach (O(1) vs O(n)).
 // ============================================================================
 
+
+
 pub fn two_sum_sorted(numbers: &[i32], target: i32) -> Vec<i32> {
-    let mut left = 0;
-    let mut right = numbers.len() - 1;
-
-    while left < right {
-        let sum = numbers[left] + numbers[right];
-        match sum.cmp(&target) {
-            std::cmp::Ordering::Less => left += 1,
-            std::cmp::Ordering::Greater => right -= 1,
-            std::cmp::Ordering::Equal => return vec![(left + 1) as i32, (right + 1) as i32],
-        }
-    }
-
-    vec![] // No solution found
+    todo!("Implement two_sum_sorted")
 }
 
 #[cfg(test)]
@@ -60,5 +50,26 @@ mod tests {
     #[test]
     fn test_negative_numbers() {
         assert_eq!(two_sum_sorted(&[-3, -2, -1, 0, 1, 2], -1), vec![1, 6]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = two_sum_sorted(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

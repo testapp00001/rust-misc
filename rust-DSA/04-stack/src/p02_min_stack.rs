@@ -26,40 +26,31 @@
 // This keeps the min stack in sync with the main stack.
 // ============================================================================
 
+
+
 pub struct MinStack {
-    stack: Vec<i32>,
-    min_stack: Vec<i32>,
+    // TODO: Define fields
 }
 
 impl MinStack {
     pub fn new() -> Self {
-        MinStack {
-            stack: Vec::new(),
-            min_stack: Vec::new(),
-        }
+        todo!("Implement new")
     }
 
     pub fn push(&mut self, val: i32) {
-        self.stack.push(val);
-        let min_val = if self.min_stack.is_empty() {
-            val
-        } else {
-            val.min(*self.min_stack.last().unwrap())
-        };
-        self.min_stack.push(min_val);
+        todo!("Implement push")
     }
 
     pub fn pop(&mut self) {
-        self.stack.pop();
-        self.min_stack.pop();
+        todo!("Implement pop")
     }
 
     pub fn top(&self) -> i32 {
-        *self.stack.last().unwrap()
+        todo!("Implement top")
     }
 
     pub fn get_min(&self) -> i32 {
-        *self.min_stack.last().unwrap()
+        todo!("Implement get_min")
     }
 }
 
@@ -107,5 +98,26 @@ mod tests {
         assert_eq!(stack.get_min(), 1);
         stack.pop();
         assert_eq!(stack.get_min(), 2);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = new(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -25,20 +25,11 @@
 // 3. Return the remaining stone (or 0).
 // ============================================================================
 
+
 use std::collections::BinaryHeap;
 
 pub fn last_stone_weight(stones: Vec<i32>) -> i32 {
-    let mut heap: BinaryHeap<i32> = stones.into_iter().collect();
-
-    while heap.len() >= 2 {
-        let y = heap.pop().unwrap();
-        let x = heap.pop().unwrap();
-        if y != x {
-            heap.push(y - x);
-        }
-    }
-
-    heap.pop().unwrap_or(0)
+    todo!("Implement last_stone_weight")
 }
 
 #[cfg(test)]
@@ -63,5 +54,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert_eq!(last_stone_weight(vec![]), 0);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = last_stone_weight(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

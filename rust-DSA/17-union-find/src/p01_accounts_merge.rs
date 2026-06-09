@@ -20,54 +20,11 @@
 // 3. Group emails by their root account.
 // ============================================================================
 
+
 use std::collections::{BTreeMap, BTreeSet};
 
 pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
-    let n = accounts.len();
-    let mut parent: Vec<usize> = (0..n).collect();
-
-    // Find with path compression
-    fn find(parent: &mut [usize], mut x: usize) -> usize {
-        while parent[x] != x {
-            parent[x] = parent[parent[x]];
-            x = parent[x];
-        }
-        x
-    }
-
-    // Map email to account index
-    let mut email_to_account: BTreeMap<String, usize> = BTreeMap::new();
-
-    for (i, account) in accounts.iter().enumerate() {
-        for email in &account[1..] {
-            if let Some(&prev_account) = email_to_account.get(email) {
-                let root1 = find(&mut parent, i);
-                let root2 = find(&mut parent, prev_account);
-                if root1 != root2 {
-                    parent[root1] = root2;
-                }
-            } else {
-                email_to_account.insert(email.clone(), i);
-            }
-        }
-    }
-
-    // Group emails by root account
-    let mut groups: BTreeMap<usize, BTreeSet<String>> = BTreeMap::new();
-    for (email, &account_idx) in &email_to_account {
-        let root = find(&mut parent, account_idx);
-        groups.entry(root).or_default().insert(email.clone());
-    }
-
-    // Build result
-    let mut result = Vec::new();
-    for (root, emails) in groups {
-        let mut merged = vec![accounts[root][0].clone()];
-        merged.extend(emails);
-        result.push(merged);
-    }
-
-    result
+    todo!("Implement accounts_merge")
 }
 
 #[cfg(test)]
@@ -105,5 +62,26 @@ mod tests {
         ]);
         let result = accounts_merge(accounts);
         assert_eq!(result.len(), 2);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = accounts_merge(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

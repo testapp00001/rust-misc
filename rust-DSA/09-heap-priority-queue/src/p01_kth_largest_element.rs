@@ -24,26 +24,16 @@
 // - For a min heap, negate values or use `std::cmp::Reverse`.
 // ============================================================================
 
+
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
 
 pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
-    let mut heap: BinaryHeap<Reverse<i32>> = BinaryHeap::new();
-
-    for num in nums {
-        heap.push(Reverse(num));
-        if heap.len() > k as usize {
-            heap.pop();
-        }
-    }
-
-    heap.peek().unwrap().0
+    todo!("Implement find_kth_largest")
 }
 
-// Alternative: Sort approach (O(n log n))
 pub fn find_kth_largest_sort(mut nums: Vec<i32>, k: i32) -> i32 {
-    nums.sort_unstable();
-    nums[nums.len() - k as usize]
+    todo!("Implement find_kth_largest_sort")
 }
 
 #[cfg(test)]
@@ -68,5 +58,26 @@ mod tests {
     #[test]
     fn test_sort_approach() {
         assert_eq!(find_kth_largest_sort(vec![3, 2, 1, 5, 6, 4], 2), 5);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = find_kth_largest(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

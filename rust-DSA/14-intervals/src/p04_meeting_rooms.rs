@@ -15,16 +15,10 @@
 // Sort by start time. Check if any two adjacent meetings overlap.
 // ============================================================================
 
+
+
 pub fn can_attend_meetings(mut intervals: Vec<Vec<i32>>) -> bool {
-    intervals.sort_by_key(|v| v[0]);
-
-    for i in 1..intervals.len() {
-        if intervals[i][0] < intervals[i - 1][1] {
-            return false;
-        }
-    }
-
-    true
+    todo!("Implement can_attend_meetings")
 }
 
 #[cfg(test)]
@@ -49,5 +43,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert!(can_attend_meetings(vec![]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = can_attend_meetings(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

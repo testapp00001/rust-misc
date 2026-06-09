@@ -17,24 +17,10 @@
 //    - Otherwise, add it as a new interval.
 // ============================================================================
 
+
+
 pub fn merge(mut intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    if intervals.is_empty() {
-        return vec![];
-    }
-
-    intervals.sort_by_key(|v| v[0]);
-    let mut result = vec![intervals[0].clone()];
-
-    for interval in &intervals[1..] {
-        let last = result.last_mut().unwrap();
-        if interval[0] <= last[1] {
-            last[1] = last[1].max(interval[1]);
-        } else {
-            result.push(interval.clone());
-        }
-    }
-
-    result
+    todo!("Implement merge")
 }
 
 #[cfg(test)]
@@ -68,5 +54,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert_eq!(merge(vec![vec![1, 3]]), vec![vec![1, 3]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = merge(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

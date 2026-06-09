@@ -32,25 +32,10 @@
 // - `iter_mut()` lets you modify elements in place.
 // ============================================================================
 
+
+
 pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
-    let n = nums.len();
-    let mut answer = vec![1; n];
-
-    // Pass 1: prefix products (left to right)
-    let mut prefix = 1;
-    for i in 0..n {
-        answer[i] = prefix;
-        prefix *= nums[i];
-    }
-
-    // Pass 2: multiply by suffix products (right to left)
-    let mut suffix = 1;
-    for i in (0..n).rev() {
-        answer[i] *= suffix;
-        suffix *= nums[i];
-    }
-
-    answer
+    todo!("Implement product_except_self")
 }
 
 #[cfg(test)]
@@ -75,5 +60,26 @@ mod tests {
     #[test]
     fn test_with_negatives() {
         assert_eq!(product_except_self(vec![-1, 2, -3, 4]), vec![-24, 12, -8, 6]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = product_except_self(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -16,6 +16,7 @@
 // Deserialize: Read values one by one, building the tree pre-order.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
@@ -26,44 +27,15 @@ pub struct Codec;
 
 impl Codec {
     pub fn new() -> Self {
-        Codec
+        todo!("Implement new")
     }
 
     pub fn serialize(&self, root: &TreeLink) -> String {
-        let mut result = String::new();
-        self.serialize_helper(root, &mut result);
-        result
-    }
-
-    fn serialize_helper(&self, node: &TreeLink, result: &mut String) {
-        if let Some(n) = node {
-            let borrowed = n.borrow();
-            result.push_str(&borrowed.val.to_string());
-            result.push(',');
-            self.serialize_helper(&borrowed.left, result);
-            self.serialize_helper(&borrowed.right, result);
-        } else {
-            result.push_str("#,");
-        }
+        todo!("Implement serialize")
     }
 
     pub fn deserialize(&self, data: &str) -> TreeLink {
-        let mut vals: Vec<&str> = data.trim_end_matches(',').split(',').collect();
-        vals.reverse(); // So we can pop from the front efficiently
-        self.deserialize_helper(&mut vals)
-    }
-
-    fn deserialize_helper(&self, vals: &mut Vec<&str>) -> TreeLink {
-        let val = vals.pop()?;
-        if val == "#" {
-            return None;
-        }
-
-        let node = Rc::new(RefCell::new(TreeNode::new(val.parse().unwrap())));
-        node.borrow_mut().left = self.deserialize_helper(vals);
-        node.borrow_mut().right = self.deserialize_helper(vals);
-
-        Some(node)
+        todo!("Implement deserialize")
     }
 }
 
@@ -108,5 +80,26 @@ mod tests {
             TreeNode::to_level_order(&root),
             TreeNode::to_level_order(&deserialized)
         );
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = new(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

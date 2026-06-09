@@ -18,26 +18,10 @@
 // dp[j] = true if we can form sum j using some subset
 // ============================================================================
 
+
+
 pub fn can_partition(nums: &[i32]) -> bool {
-    let total: i32 = nums.iter().sum();
-
-    // If total is odd, we can't partition equally
-    if total % 2 != 0 {
-        return false;
-    }
-
-    let target = (total / 2) as usize;
-    let mut dp = vec![false; target + 1];
-    dp[0] = true;
-
-    for &num in nums {
-        let num = num as usize;
-        for j in (num..=target).rev() {
-            dp[j] = dp[j] || dp[j - num];
-        }
-    }
-
-    dp[target]
+    todo!("Implement can_partition")
 }
 
 #[cfg(test)]
@@ -67,5 +51,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert!(!can_partition(&[1]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = can_partition(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

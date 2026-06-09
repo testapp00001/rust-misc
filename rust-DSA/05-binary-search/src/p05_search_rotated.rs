@@ -21,36 +21,10 @@
 //    - Else → search left.
 // ============================================================================
 
+
+
 pub fn search_rotated(nums: &[i32], target: i32) -> i32 {
-    let mut left = 0;
-    let mut right = nums.len();
-
-    while left < right {
-        let mid = left + (right - left) / 2;
-
-        if nums[mid] == target {
-            return mid as i32;
-        }
-
-        // Check if left half is sorted
-        if nums[left] <= nums[mid] {
-            // Target is in the sorted left half
-            if nums[left] <= target && target < nums[mid] {
-                right = mid;
-            } else {
-                left = mid + 1;
-            }
-        } else {
-            // Right half is sorted
-            if nums[mid] < target && target <= nums[right - 1] {
-                left = mid + 1;
-            } else {
-                right = mid;
-            }
-        }
-    }
-
-    -1
+    todo!("Implement search_rotated")
 }
 
 #[cfg(test)]
@@ -76,5 +50,26 @@ mod tests {
     fn test_single() {
         assert_eq!(search_rotated(&[1], 1), 0);
         assert_eq!(search_rotated(&[1], 0), -1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = search_rotated(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

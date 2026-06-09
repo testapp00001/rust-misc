@@ -22,28 +22,12 @@
 // Alternative: Chronological ordering (two sorted arrays).
 // ============================================================================
 
+
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
 
 pub fn min_meeting_rooms(mut intervals: Vec<Vec<i32>>) -> i32 {
-    if intervals.is_empty() {
-        return 0;
-    }
-
-    intervals.sort_by_key(|v| v[0]);
-    let mut heap: BinaryHeap<Reverse<i32>> = BinaryHeap::new();
-
-    for interval in &intervals {
-        // If the earliest ending meeting has ended, reuse that room
-        if let Some(&Reverse(end)) = heap.peek() {
-            if end <= interval[0] {
-                heap.pop();
-            }
-        }
-        heap.push(Reverse(interval[1]));
-    }
-
-    heap.len() as i32
+    todo!("Implement min_meeting_rooms")
 }
 
 #[cfg(test)]
@@ -77,5 +61,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert_eq!(min_meeting_rooms(vec![]), 0);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = min_meeting_rooms(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

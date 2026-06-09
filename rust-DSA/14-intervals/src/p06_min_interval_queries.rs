@@ -15,48 +15,12 @@
 // 5. The smallest active interval is the answer.
 // ============================================================================
 
+
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
 
 pub fn min_interval(intervals: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
-    let mut intervals = intervals;
-    intervals.sort_by_key(|v| v[0]);
-
-    let mut queries: Vec<(i32, usize)> = queries
-        .into_iter()
-        .enumerate()
-        .map(|(i, q)| (q, i))
-        .collect();
-    queries.sort_by_key(|&(q, _)| q);
-
-    let mut result = vec![-1; queries.len()];
-    let mut heap: BinaryHeap<Reverse<(i32, i32)>> = BinaryHeap::new(); // (size, end)
-    let mut i = 0;
-
-    for (query, idx) in queries {
-        // Add intervals that start <= query
-        while i < intervals.len() && intervals[i][0] <= query {
-            let size = intervals[i][1] - intervals[i][0] + 1;
-            heap.push(Reverse((size, intervals[i][1])));
-            i += 1;
-        }
-
-        // Remove intervals that end < query
-        while let Some(&Reverse((_, end))) = heap.peek() {
-            if end < query {
-                heap.pop();
-            } else {
-                break;
-            }
-        }
-
-        // The smallest active interval
-        if let Some(&Reverse((size, _))) = heap.peek() {
-            result[idx] = size;
-        }
-    }
-
-    result
+    todo!("Implement min_interval")
 }
 
 #[cfg(test)]
@@ -75,5 +39,26 @@ mod tests {
         let intervals = vec![vec![2, 3]];
         let queries = vec![1, 4];
         assert_eq!(min_interval(intervals, queries), vec![-1, -1]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = min_interval(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

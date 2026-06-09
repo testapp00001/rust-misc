@@ -12,46 +12,18 @@
 // Collect elements until we reach the kth one.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
-
 type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
 pub fn kth_smallest(root: TreeLink, k: i32) -> i32 {
-    let mut result = -1;
-    let mut count = 0;
-    inorder(&root, k, &mut count, &mut result);
-    result
+    todo!("Implement kth_smallest")
 }
 
-fn inorder(node: &TreeLink, k: i32, count: &mut i32, result: &mut i32) {
-    if let Some(n) = node {
-        let borrowed = n.borrow();
-        inorder(&borrowed.left, k, count, result);
-        *count += 1;
-        if *count == k {
-            *result = borrowed.val;
-            return;
-        }
-        inorder(&borrowed.right, k, count, result);
-    }
-}
-
-// Alternative: Collect all values
 pub fn kth_smallest_collect(root: TreeLink, k: i32) -> i32 {
-    let mut vals = Vec::new();
-    collect(&root, &mut vals);
-    vals[(k - 1) as usize]
-}
-
-fn collect(node: &TreeLink, vals: &mut Vec<i32>) {
-    if let Some(n) = node {
-        let borrowed = n.borrow();
-        collect(&borrowed.left, vals);
-        vals.push(borrowed.val);
-        collect(&borrowed.right, vals);
-    }
+    todo!("Implement kth_smallest_collect")
 }
 
 #[cfg(test)]
@@ -81,5 +53,26 @@ mod tests {
             Some(5), Some(3), Some(6), Some(2), Some(4), None, None, Some(1),
         ]);
         assert_eq!(kth_smallest_collect(root, 3), 3);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = kth_smallest(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

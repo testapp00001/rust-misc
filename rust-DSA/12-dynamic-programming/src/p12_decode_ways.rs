@@ -21,34 +21,10 @@
 // We only need the last two values, so use two variables.
 // ============================================================================
 
+
+
 pub fn num_decodings(s: &str) -> i32 {
-    let bytes = s.as_bytes();
-    if bytes.is_empty() || bytes[0] == b'0' {
-        return 0;
-    }
-
-    let mut prev2 = 1; // dp[i-2]
-    let mut prev1 = 1; // dp[i-1]
-
-    for i in 1..bytes.len() {
-        let mut current = 0;
-
-        // Single digit decode
-        if bytes[i] != b'0' {
-            current += prev1;
-        }
-
-        // Two digit decode
-        let two_digit = (bytes[i - 1] - b'0') * 10 + (bytes[i] - b'0');
-        if two_digit >= 10 && two_digit <= 26 {
-            current += prev2;
-        }
-
-        prev2 = prev1;
-        prev1 = current;
-    }
-
-    prev1
+    todo!("Implement num_decodings")
 }
 
 #[cfg(test)]
@@ -83,5 +59,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert_eq!(num_decodings(""), 0);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = num_decodings(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

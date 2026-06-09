@@ -20,37 +20,10 @@
 // Alternative: Manacher's algorithm (O(n) time).
 // ============================================================================
 
+
+
 pub fn longest_palindrome(s: &str) -> String {
-    let chars: Vec<char> = s.chars().collect();
-    if chars.is_empty() {
-        return String::new();
-    }
-
-    let mut start = 0;
-    let mut max_len = 1;
-
-    for i in 0..chars.len() {
-        // Odd-length palindrome
-        let len1 = expand(&chars, i as i32, i as i32);
-        // Even-length palindrome
-        let len2 = expand(&chars, i as i32, i as i32 + 1);
-
-        let len = len1.max(len2);
-        if len > max_len {
-            max_len = len;
-            start = i - (len - 1) / 2;
-        }
-    }
-
-    chars[start..start + max_len].iter().collect()
-}
-
-fn expand(chars: &[char], mut left: i32, mut right: i32) -> usize {
-    while left >= 0 && (right as usize) < chars.len() && chars[left as usize] == chars[right as usize] {
-        left -= 1;
-        right += 1;
-    }
-    (right - left - 1) as usize
+    todo!("Implement longest_palindrome")
 }
 
 #[cfg(test)]
@@ -81,5 +54,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert_eq!(longest_palindrome(""), "");
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = longest_palindrome(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

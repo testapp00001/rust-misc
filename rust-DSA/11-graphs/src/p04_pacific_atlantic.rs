@@ -16,79 +16,11 @@
 // 3. Intersection = cells reachable from both oceans.
 // ============================================================================
 
+
 use std::collections::VecDeque;
 
 pub fn pacific_atlantic(heights: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    if heights.is_empty() {
-        return vec![];
-    }
-
-    let rows = heights.len();
-    let cols = heights[0].len();
-
-    let mut pacific = vec![vec![false; cols]; rows];
-    let mut atlantic = vec![vec![false; cols]; rows];
-
-    // BFS from Pacific border (top row, left column)
-    let mut queue = VecDeque::new();
-    for r in 0..rows {
-        queue.push_back((r, 0));
-        pacific[r][0] = true;
-    }
-    for c in 1..cols {
-        queue.push_back((0, c));
-        pacific[0][c] = true;
-    }
-    bfs(&heights, &mut queue, &mut pacific);
-
-    // BFS from Atlantic border (bottom row, right column)
-    queue.clear();
-    for r in 0..rows {
-        queue.push_back((r, cols - 1));
-        atlantic[r][cols - 1] = true;
-    }
-    for c in 0..cols - 1 {
-        queue.push_back((rows - 1, c));
-        atlantic[rows - 1][c] = true;
-    }
-    bfs(&heights, &mut queue, &mut atlantic);
-
-    // Find intersection
-    let mut result = Vec::new();
-    for r in 0..rows {
-        for c in 0..cols {
-            if pacific[r][c] && atlantic[r][c] {
-                result.push(vec![r as i32, c as i32]);
-            }
-        }
-    }
-
-    result
-}
-
-fn bfs(
-    heights: &[Vec<i32>],
-    queue: &mut VecDeque<(usize, usize)>,
-    visited: &mut [Vec<bool>],
-) {
-    let directions = [(0, 1), (1, 0), (0, -1), (-1, 0)];
-
-    while let Some((r, c)) = queue.pop_front() {
-        for (dr, dc) in directions {
-            let nr = r as i32 + dr;
-            let nc = c as i32 + dc;
-            if nr >= 0
-                && nc >= 0
-                && (nr as usize) < heights.len()
-                && (nc as usize) < heights[0].len()
-                && !visited[nr as usize][nc as usize]
-                && heights[nr as usize][nc as usize] >= heights[r][c]
-            {
-                visited[nr as usize][nc as usize] = true;
-                queue.push_back((nr as usize, nc as usize));
-            }
-        }
-    }
+    todo!("Implement pacific_atlantic")
 }
 
 #[cfg(test)]
@@ -118,5 +50,26 @@ mod tests {
     fn test_single() {
         let heights = vec![vec![1]];
         assert_eq!(pacific_atlantic(heights), vec![vec![0, 0]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = pacific_atlantic(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

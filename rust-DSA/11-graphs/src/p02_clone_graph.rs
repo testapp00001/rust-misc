@@ -13,6 +13,7 @@
 // 2. Otherwise, create a clone and recursively clone neighbors.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
@@ -25,35 +26,12 @@ pub struct Node {
 
 impl Node {
     pub fn new(val: i32) -> Self {
-        Node {
-            val,
-            neighbors: Vec::new(),
-        }
+        todo!("Implement new")
     }
 }
 
 pub fn clone_graph(node: Option<Rc<RefCell<Node>>>) -> Option<Rc<RefCell<Node>>> {
-    let node = node?;
-    let mut visited: HashMap<i32, Rc<RefCell<Node>>> = HashMap::new();
-    Some(dfs(&node, &mut visited))
-}
-
-fn dfs(node: &Rc<RefCell<Node>>, visited: &mut HashMap<i32, Rc<RefCell<Node>>>) -> Rc<RefCell<Node>> {
-    let val = node.borrow().val;
-
-    if let Some(cloned) = visited.get(&val) {
-        return Rc::clone(cloned);
-    }
-
-    let clone = Rc::new(RefCell::new(Node::new(val)));
-    visited.insert(val, Rc::clone(&clone));
-
-    for neighbor in &node.borrow().neighbors {
-        let cloned_neighbor = dfs(neighbor, visited);
-        clone.borrow_mut().neighbors.push(cloned_neighbor);
-    }
-
-    clone
+    todo!("Implement clone_graph")
 }
 
 #[cfg(test)]
@@ -100,5 +78,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert!(clone_graph(None).is_none());
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = new(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

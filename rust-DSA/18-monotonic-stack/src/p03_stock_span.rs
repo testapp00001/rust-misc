@@ -26,24 +26,18 @@
 // 3. Push (price, total_span).
 // ============================================================================
 
+
 pub struct StockSpanner {
-    stack: Vec<(i32, i32)>, // (price, span)
+    // TODO: Define fields
 }
 
 impl StockSpanner {
     pub fn new() -> Self {
-        StockSpanner { stack: Vec::new() }
+        todo!("Implement new")
     }
 
     pub fn next(&mut self, price: i32) -> i32 {
-        let mut span = 1;
-
-        while !self.stack.is_empty() && self.stack.last().unwrap().0 <= price {
-            span += self.stack.pop().unwrap().1;
-        }
-
-        self.stack.push((price, span));
-        span
+        todo!("Implement next")
     }
 }
 
@@ -77,5 +71,26 @@ mod tests {
         assert_eq!(ss.next(30), 1);
         assert_eq!(ss.next(20), 1);
         assert_eq!(ss.next(10), 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = new(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

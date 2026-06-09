@@ -18,25 +18,10 @@
 // Handle negative exponents: x^(-n) = (1/x)^n
 // ============================================================================
 
+
+
 pub fn my_pow(x: f64, n: i32) -> f64 {
-    let mut x = x;
-    let mut n = n as i64;
-
-    if n < 0 {
-        x = 1.0 / x;
-        n = -n;
-    }
-
-    let mut result = 1.0;
-    while n > 0 {
-        if n % 2 == 1 {
-            result *= x;
-        }
-        x *= x;
-        n /= 2;
-    }
-
-    result
+    todo!("Implement my_pow")
 }
 
 #[cfg(test)]
@@ -70,5 +55,26 @@ mod tests {
     #[test]
     fn test_fractional() {
         assert!(approx_eq(my_pow(0.5, 2), 0.25));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = my_pow(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

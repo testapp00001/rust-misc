@@ -17,22 +17,10 @@
 // Reverse: reverse each row
 // ============================================================================
 
+
+
 pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
-    let n = matrix.len();
-
-    // Transpose
-    for i in 0..n {
-        for j in i + 1..n {
-            let temp = matrix[i][j];
-            matrix[i][j] = matrix[j][i];
-            matrix[j][i] = temp;
-        }
-    }
-
-    // Reverse each row
-    for row in matrix.iter_mut() {
-        row.reverse();
-    }
+    todo!("Implement rotate")
 }
 
 #[cfg(test)]
@@ -71,5 +59,26 @@ mod tests {
         let mut matrix = vec![vec![1]];
         rotate(&mut matrix);
         assert_eq!(matrix, vec![vec![1]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = rotate(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

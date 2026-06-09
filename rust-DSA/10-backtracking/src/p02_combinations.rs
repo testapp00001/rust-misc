@@ -16,24 +16,10 @@
 // Use `start` to ensure combinations are in increasing order.
 // ============================================================================
 
+
+
 pub fn combine(n: i32, k: i32) -> Vec<Vec<i32>> {
-    let mut result = Vec::new();
-    let mut current = Vec::new();
-    backtrack(1, n, k, &mut current, &mut result);
-    result
-}
-
-fn backtrack(start: i32, n: i32, k: i32, current: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
-    if current.len() == k as usize {
-        result.push(current.clone());
-        return;
-    }
-
-    for i in start..=n {
-        current.push(i);
-        backtrack(i + 1, n, k, current, result);
-        current.pop();
-    }
+    todo!("Implement combine")
 }
 
 #[cfg(test)]
@@ -64,5 +50,26 @@ mod tests {
     fn test_k_equals_one() {
         let result = sorted(combine(3, 1));
         assert_eq!(result, sorted(vec![vec![1], vec![2], vec![3]]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = combine(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -27,30 +27,10 @@
 // - `.unwrap()` is fine here since the problem guarantees valid input.
 // ============================================================================
 
+
+
 pub fn eval_rpn(tokens: Vec<&str>) -> i32 {
-    let mut stack: Vec<i32> = Vec::new();
-
-    for token in tokens {
-        match token {
-            "+" | "-" | "*" | "/" => {
-                let b = stack.pop().unwrap();
-                let a = stack.pop().unwrap();
-                let result = match token {
-                    "+" => a + b,
-                    "-" => a - b,
-                    "*" => a * b,
-                    "/" => a / b,
-                    _ => unreachable!(),
-                };
-                stack.push(result);
-            }
-            _ => {
-                stack.push(token.parse().unwrap());
-            }
-        }
-    }
-
-    stack.pop().unwrap()
+    todo!("Implement eval_rpn")
 }
 
 #[cfg(test)]
@@ -78,5 +58,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert_eq!(eval_rpn(vec!["42"]), 42);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = eval_rpn(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

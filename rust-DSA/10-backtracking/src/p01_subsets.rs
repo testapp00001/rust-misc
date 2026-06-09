@@ -23,21 +23,10 @@
 // - Use `start` index to avoid generating duplicates.
 // ============================================================================
 
+
+
 pub fn subsets(nums: &[i32]) -> Vec<Vec<i32>> {
-    let mut result = Vec::new();
-    let mut current = Vec::new();
-    backtrack(nums, 0, &mut current, &mut result);
-    result
-}
-
-fn backtrack(nums: &[i32], start: usize, current: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
-    result.push(current.clone());
-
-    for i in start..nums.len() {
-        current.push(nums[i]);
-        backtrack(nums, i + 1, current, result);
-        current.pop();
-    }
+    todo!("Implement subsets")
 }
 
 #[cfg(test)]
@@ -68,5 +57,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert_eq!(subsets(&[]), vec![vec![]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = subsets(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

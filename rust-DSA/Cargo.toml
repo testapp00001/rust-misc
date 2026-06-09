@@ -19,8 +19,4 @@ members = [
     "16-bit-manipulation",
     "17-union-find",
     "18-monotonic-stack",
-    "rust-dev-mastery/09-unsafe-ffi",
-    "rust-dev-mastery/10-macros",
-    "rust-dev-mastery/11-serialization",
-    "rust-dev-mastery/12-testing-quality",
 ]

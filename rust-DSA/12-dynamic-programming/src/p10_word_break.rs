@@ -19,24 +19,11 @@
 //   - s[j..i] is in word_dict
 // ============================================================================
 
+
 use std::collections::HashSet;
 
 pub fn word_break(s: &str, word_dict: &[&str]) -> bool {
-    let word_set: HashSet<&str> = word_dict.iter().copied().collect();
-    let n = s.len();
-    let mut dp = vec![false; n + 1];
-    dp[0] = true;
-
-    for i in 1..=n {
-        for j in 0..i {
-            if dp[j] && word_set.contains(&s[j..i]) {
-                dp[i] = true;
-                break;
-            }
-        }
-    }
-
-    dp[n]
+    todo!("Implement word_break")
 }
 
 #[cfg(test)]
@@ -66,5 +53,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert!(word_break("", &["a"]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = word_break(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

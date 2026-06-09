@@ -18,20 +18,10 @@
 // 3. Update the end to the new farthest position.
 // ============================================================================
 
+
+
 pub fn jump(nums: &[i32]) -> i32 {
-    let mut jumps = 0;
-    let mut current_end = 0;
-    let mut farthest = 0;
-
-    for i in 0..nums.len() - 1 {
-        farthest = farthest.max(i + nums[i] as usize);
-        if i == current_end {
-            jumps += 1;
-            current_end = farthest;
-        }
-    }
-
-    jumps
+    todo!("Implement jump")
 }
 
 #[cfg(test)]
@@ -56,5 +46,26 @@ mod tests {
     #[test]
     fn test_two() {
         assert_eq!(jump(&[1, 2]), 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = jump(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -17,34 +17,10 @@
 // 3. When current.len() == nums.len(), we have a complete permutation.
 // ============================================================================
 
+
+
 pub fn permute(nums: &[i32]) -> Vec<Vec<i32>> {
-    let mut result = Vec::new();
-    let mut current = Vec::new();
-    let mut visited = vec![false; nums.len()];
-    backtrack(nums, &mut visited, &mut current, &mut result);
-    result
-}
-
-fn backtrack(
-    nums: &[i32],
-    visited: &mut [bool],
-    current: &mut Vec<i32>,
-    result: &mut Vec<Vec<i32>>,
-) {
-    if current.len() == nums.len() {
-        result.push(current.clone());
-        return;
-    }
-
-    for i in 0..nums.len() {
-        if !visited[i] {
-            visited[i] = true;
-            current.push(nums[i]);
-            backtrack(nums, visited, current, result);
-            current.pop();
-            visited[i] = false;
-        }
-    }
+    todo!("Implement permute")
 }
 
 #[cfg(test)]
@@ -75,5 +51,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert_eq!(permute(&[1]), vec![vec![1]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = permute(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

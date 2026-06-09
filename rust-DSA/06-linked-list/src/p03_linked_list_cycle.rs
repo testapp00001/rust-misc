@@ -20,44 +20,16 @@
 // pointer inside the cycle.
 // ============================================================================
 
+
 use super::list_node::ListNode;
+    use std::collections::HashSet;
 
 pub fn has_cycle(head: &Option<Box<ListNode>>) -> bool {
-    let mut slow = head.as_ref();
-    let mut fast = head.as_ref();
-
-    while let (Some(s), Some(f)) = (slow, fast) {
-        // Move slow one step
-        slow = s.next.as_ref();
-        // Move fast two steps
-        fast = f.next.as_ref().and_then(|n| n.next.as_ref());
-
-        // Check if they meet
-        if let (Some(s), Some(f)) = (slow, fast) {
-            if std::ptr::eq(s, f) {
-                return true;
-            }
-        }
-    }
-
-    false
+    todo!("Implement has_cycle")
 }
 
-// Alternative: HashSet approach (O(n) space)
 pub fn has_cycle_hashset(head: &Option<Box<ListNode>>) -> bool {
-    use std::collections::HashSet;
-    let mut seen = HashSet::new();
-    let mut current = head.as_ref();
-
-    while let Some(node) = current {
-        let ptr = node.as_ref() as *const ListNode;
-        if !seen.insert(ptr) {
-            return true;
-        }
-        current = node.next.as_ref();
-    }
-
-    false
+    todo!("Implement has_cycle_hashset")
 }
 
 #[cfg(test)]
@@ -86,5 +58,26 @@ mod tests {
     fn test_hashset_approach() {
         let head = ListNode::from_vec(vec![1, 2, 3]);
         assert!(!has_cycle_hashset(&head));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = has_cycle(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

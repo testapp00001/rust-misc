@@ -12,21 +12,10 @@
 // Merge all useful triplets and check if we get the target.
 // ============================================================================
 
+
+
 pub fn merge_triplets(triplets: &[Vec<i32>], target: Vec<i32>) -> bool {
-    let mut result = [0, 0, 0];
-
-    for triplet in triplets {
-        // Skip triplets that exceed target in any position
-        if triplet[0] > target[0] || triplet[1] > target[1] || triplet[2] > target[2] {
-            continue;
-        }
-        // Merge (take max)
-        result[0] = result[0].max(triplet[0]);
-        result[1] = result[1].max(triplet[1]);
-        result[2] = result[2].max(triplet[2]);
-    }
-
-    result[0] == target[0] && result[1] == target[1] && result[2] == target[2]
+    todo!("Implement merge_triplets")
 }
 
 #[cfg(test)]
@@ -52,5 +41,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert!(merge_triplets(&[vec![1, 2, 3]], vec![1, 2, 3]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = merge_triplets(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

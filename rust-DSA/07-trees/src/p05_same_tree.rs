@@ -14,24 +14,14 @@
 // - Both Some → values equal AND left subtrees same AND right subtrees same.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
-
 type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
 pub fn is_same_tree(p: &TreeLink, q: &TreeLink) -> bool {
-    match (p, q) {
-        (None, None) => true,
-        (Some(p_node), Some(q_node)) => {
-            let p = p_node.borrow();
-            let q = q_node.borrow();
-            p.val == q.val
-                && is_same_tree(&p.left, &q.left)
-                && is_same_tree(&p.right, &q.right)
-        }
-        _ => false,
-    }
+    todo!("Implement is_same_tree")
 }
 
 #[cfg(test)]
@@ -65,5 +55,26 @@ mod tests {
         let p = TreeNode::from_level_order(&[Some(1)]);
         let q: TreeLink = None;
         assert!(!is_same_tree(&p, &q));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = is_same_tree(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -1,3 +1,11 @@
 pub mod trie;
+#[cfg(not(feature = "solution"))]
 pub mod p01_implement_trie;
+#[cfg(feature = "solution")]
+#[path = "solution/p01_implement_trie.rs"]
+pub mod p01_implement_trie;
+#[cfg(not(feature = "solution"))]
+pub mod p02_word_search_ii;
+#[cfg(feature = "solution")]
+#[path = "solution/p02_word_search_ii.rs"]
 pub mod p02_word_search_ii;

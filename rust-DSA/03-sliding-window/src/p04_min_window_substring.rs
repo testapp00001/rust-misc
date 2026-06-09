@@ -22,55 +22,11 @@
 //    required frequency in the window.
 // ============================================================================
 
+
 use std::collections::HashMap;
 
 pub fn min_window(s: &str, t: &str) -> String {
-    if s.len() < t.len() {
-        return String::new();
-    }
-
-    let s_chars: Vec<char> = s.chars().collect();
-    let mut t_count: HashMap<char, i32> = HashMap::new();
-    for c in t.chars() {
-        *t_count.entry(c).or_insert(0) += 1;
-    }
-
-    let required = t_count.len();
-    let mut formed = 0;
-    let mut window_count: HashMap<char, i32> = HashMap::new();
-    let mut left = 0;
-    let mut best = (usize::MAX, 0, 0); // (length, left, right)
-
-    for right in 0..s_chars.len() {
-        // Add character from right
-        let c = s_chars[right];
-        *window_count.entry(c).or_insert(0) += 1;
-
-        if t_count.get(&c).map_or(false, |&req| window_count[&c] == req) {
-            formed += 1;
-        }
-
-        // Shrink window from left
-        while formed == required {
-            // Update best
-            if right - left + 1 < best.0 {
-                best = (right - left + 1, left, right);
-            }
-
-            let left_char = s_chars[left];
-            *window_count.entry(left_char).or_insert(0) -= 1;
-            if t_count.get(&left_char).map_or(false, |&req| window_count[&left_char] < req) {
-                formed -= 1;
-            }
-            left += 1;
-        }
-    }
-
-    if best.0 == usize::MAX {
-        String::new()
-    } else {
-        s_chars[best.1..=best.2].iter().collect()
-    }
+    todo!("Implement min_window")
 }
 
 #[cfg(test)]
@@ -95,5 +51,26 @@ mod tests {
     #[test]
     fn test_duplicate_chars() {
         assert_eq!(min_window("aa", "aa"), "aa");
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = min_window(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

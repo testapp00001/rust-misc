@@ -19,28 +19,10 @@
 // Return the maximum of the two.
 // ============================================================================
 
+
+
 pub fn rob(nums: &[i32]) -> i32 {
-    if nums.len() == 1 {
-        return nums[0];
-    }
-    if nums.is_empty() {
-        return 0;
-    }
-
-    rob_linear(&nums[..nums.len() - 1]).max(rob_linear(&nums[1..]))
-}
-
-fn rob_linear(nums: &[i32]) -> i32 {
-    let mut prev2 = 0;
-    let mut prev1 = 0;
-
-    for &num in nums {
-        let current = prev1.max(num + prev2);
-        prev2 = prev1;
-        prev1 = current;
-    }
-
-    prev1
+    todo!("Implement rob")
 }
 
 #[cfg(test)]
@@ -65,5 +47,26 @@ mod tests {
     #[test]
     fn test_two() {
         assert_eq!(rob(&[1, 2]), 2);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = rob(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

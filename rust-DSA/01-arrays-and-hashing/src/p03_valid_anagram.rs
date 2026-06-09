@@ -27,34 +27,15 @@
 // - `as_bytes()` converts a string slice to a byte slice.
 // ============================================================================
 
+
+    use std::collections::HashMap;
+
 pub fn is_anagram(s: &str, t: &str) -> bool {
-    if s.len() != t.len() {
-        return false;
-    }
-
-    let mut counts = [0i32; 26];
-
-    for (sc, tc) in s.bytes().zip(t.bytes()) {
-        counts[(sc - b'a') as usize] += 1;
-        counts[(tc - b'a') as usize] -= 1;
-    }
-
-    counts.iter().all(|&c| c == 0)
+    todo!("Implement is_anagram")
 }
 
-// Alternative: HashMap approach (works with Unicode)
 pub fn is_anagram_unicode(s: &str, t: &str) -> bool {
-    use std::collections::HashMap;
-    let mut map: HashMap<char, i32> = HashMap::new();
-
-    for c in s.chars() {
-        *map.entry(c).or_insert(0) += 1;
-    }
-    for c in t.chars() {
-        *map.entry(c).or_insert(0) -= 1;
-    }
-
-    map.values().all(|&v| v == 0)
+    todo!("Implement is_anagram_unicode")
 }
 
 #[cfg(test)]
@@ -91,5 +72,26 @@ mod tests {
     fn test_unicode_approach() {
         assert!(is_anagram_unicode("anagram", "nagaram"));
         assert!(!is_anagram_unicode("rat", "car"));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = is_anagram(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

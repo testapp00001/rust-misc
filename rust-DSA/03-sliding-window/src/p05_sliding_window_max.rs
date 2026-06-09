@@ -24,32 +24,11 @@
 // never be the maximum in any future window that includes j.
 // ============================================================================
 
+
 use std::collections::VecDeque;
 
 pub fn max_sliding_window(nums: Vec<i32>, k: usize) -> Vec<i32> {
-    let mut deque: VecDeque<usize> = VecDeque::new();
-    let mut result = Vec::new();
-
-    for i in 0..nums.len() {
-        // Remove indices outside the window
-        while !deque.is_empty() && deque.front().unwrap() + k <= i {
-            deque.pop_front();
-        }
-
-        // Remove indices with smaller values
-        while !deque.is_empty() && nums[*deque.back().unwrap()] <= nums[i] {
-            deque.pop_back();
-        }
-
-        deque.push_back(i);
-
-        // Record the maximum once we have a full window
-        if i >= k - 1 {
-            result.push(nums[*deque.front().unwrap()]);
-        }
-    }
-
-    result
+    todo!("Implement max_sliding_window")
 }
 
 #[cfg(test)]
@@ -77,5 +56,26 @@ mod tests {
     #[test]
     fn test_decreasing() {
         assert_eq!(max_sliding_window(vec![5, 4, 3, 2, 1], 2), vec![5, 4, 3, 2]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = max_sliding_window(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

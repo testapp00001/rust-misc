@@ -18,17 +18,10 @@
 // 3. If farthest >= last index → return true.
 // ============================================================================
 
+
+
 pub fn can_jump(nums: &[i32]) -> bool {
-    let mut farthest = 0;
-
-    for (i, &num) in nums.iter().enumerate() {
-        if i > farthest {
-            return false;
-        }
-        farthest = farthest.max(i + num as usize);
-    }
-
-    true
+    todo!("Implement can_jump")
 }
 
 #[cfg(test)]
@@ -53,5 +46,26 @@ mod tests {
     #[test]
     fn test_zero() {
         assert!(!can_jump(&[1, 0, 1]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = can_jump(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

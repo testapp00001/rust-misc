@@ -15,63 +15,11 @@
 // 3. After BFS, check if any fresh orange remains.
 // ============================================================================
 
+
 use std::collections::VecDeque;
 
 pub fn oranges_rotting(grid: &[Vec<i32>]) -> i32 {
-    let rows = grid.len();
-    let cols = grid[0].len();
-    let mut grid = grid.to_vec();
-    let mut queue = VecDeque::new();
-    let mut fresh = 0;
-
-    // Find all rotten oranges and count fresh ones
-    for r in 0..rows {
-        for c in 0..cols {
-            if grid[r][c] == 2 {
-                queue.push_back((r, c));
-            } else if grid[r][c] == 1 {
-                fresh += 1;
-            }
-        }
-    }
-
-    if fresh == 0 {
-        return 0;
-    }
-
-    let mut minutes = 0;
-    let directions = [(0, 1), (1, 0), (0, -1), (-1, 0)];
-
-    while !queue.is_empty() {
-        let level_size = queue.len();
-        let mut rotted = false;
-
-        for _ in 0..level_size {
-            let (r, c) = queue.pop_front().unwrap();
-
-            for (dr, dc) in directions {
-                let nr = r as i32 + dr;
-                let nc = c as i32 + dc;
-                if nr >= 0
-                    && nc >= 0
-                    && (nr as usize) < rows
-                    && (nc as usize) < cols
-                    && grid[nr as usize][nc as usize] == 1
-                {
-                    grid[nr as usize][nc as usize] = 2;
-                    fresh -= 1;
-                    rotted = true;
-                    queue.push_back((nr as usize, nc as usize));
-                }
-            }
-        }
-
-        if rotted {
-            minutes += 1;
-        }
-    }
-
-    if fresh == 0 { minutes } else { -1 }
+    todo!("Implement oranges_rotting")
 }
 
 #[cfg(test)]
@@ -100,5 +48,26 @@ mod tests {
     fn test_no_rotten() {
         let grid = vec![vec![1, 1], vec![1, 1]];
         assert_eq!(oranges_rotting(&grid), -1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = oranges_rotting(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

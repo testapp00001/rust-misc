@@ -26,30 +26,11 @@
 // - `flat_map` to flatten nested iterators.
 // ============================================================================
 
+
 use std::collections::HashMap;
 
 pub fn top_k_frequent(nums: Vec<i32>, k: usize) -> Vec<i32> {
-    let n = nums.len();
-    let mut freq: HashMap<i32, usize> = HashMap::new();
-
-    // Count frequencies
-    for num in &nums {
-        *freq.entry(*num).or_insert(0) += 1;
-    }
-
-    // Bucket sort: bucket[i] = numbers appearing exactly i times
-    let mut buckets: Vec<Vec<i32>> = vec![vec![]; n + 1];
-    for (num, count) in freq {
-        buckets[count].push(num);
-    }
-
-    // Collect from highest frequency bucket down
-    buckets
-        .into_iter()
-        .rev()
-        .flat_map(|bucket| bucket.into_iter())
-        .take(k)
-        .collect()
+    todo!("Implement top_k_frequent")
 }
 
 #[cfg(test)]
@@ -82,5 +63,26 @@ mod tests {
     fn test_all_same_frequency() {
         let result = sorted(top_k_frequent(vec![1, 2, 3, 4], 2));
         assert_eq!(result.len(), 2);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = top_k_frequent(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

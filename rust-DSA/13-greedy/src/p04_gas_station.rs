@@ -22,23 +22,10 @@
 // 3. If total surplus >= 0, return start.
 // ============================================================================
 
+
+
 pub fn can_complete_circuit(gas: &[i32], cost: &[i32]) -> i32 {
-    let mut total_surplus = 0;
-    let mut current_surplus = 0;
-    let mut start = 0;
-
-    for i in 0..gas.len() {
-        let surplus = gas[i] - cost[i];
-        total_surplus += surplus;
-        current_surplus += surplus;
-
-        if current_surplus < 0 {
-            start = i + 1;
-            current_surplus = 0;
-        }
-    }
-
-    if total_surplus >= 0 { start as i32 } else { -1 }
+    todo!("Implement can_complete_circuit")
 }
 
 #[cfg(test)]
@@ -64,5 +51,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert_eq!(can_complete_circuit(&[5], &[4]), 0);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = can_complete_circuit(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

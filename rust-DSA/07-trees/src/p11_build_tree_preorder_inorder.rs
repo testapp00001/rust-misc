@@ -19,64 +19,15 @@
 // Use a HashMap to quickly find the index of each value in inorder.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
-
 type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
 pub fn build_tree(preorder: &[i32], inorder: &[i32]) -> TreeLink {
-    if preorder.is_empty() {
-        return None;
-    }
-
-    let mut inorder_map: HashMap<i32, usize> = HashMap::new();
-    for (i, &val) in inorder.iter().enumerate() {
-        inorder_map.insert(val, i);
-    }
-
-    build(preorder, 0, preorder.len(), inorder, 0, inorder.len(), &inorder_map)
-}
-
-fn build(
-    preorder: &[i32],
-    pre_start: usize,
-    pre_end: usize,
-    inorder: &[i32],
-    in_start: usize,
-    in_end: usize,
-    inorder_map: &HashMap<i32, usize>,
-) -> TreeLink {
-    if pre_start >= pre_end || in_start >= in_end {
-        return None;
-    }
-
-    let root_val = preorder[pre_start];
-    let root_idx = inorder_map[&root_val];
-    let left_size = root_idx - in_start;
-
-    let root = Rc::new(RefCell::new(TreeNode::new(root_val)));
-    root.borrow_mut().left = build(
-        preorder,
-        pre_start + 1,
-        pre_start + 1 + left_size,
-        inorder,
-        in_start,
-        root_idx,
-        inorder_map,
-    );
-    root.borrow_mut().right = build(
-        preorder,
-        pre_start + 1 + left_size,
-        pre_end,
-        inorder,
-        root_idx + 1,
-        in_end,
-        inorder_map,
-    );
-
-    Some(root)
+    todo!("Implement build_tree")
 }
 
 #[cfg(test)]
@@ -108,5 +59,26 @@ mod tests {
         let root = build_tree(&[1, 2, 3], &[3, 2, 1]);
         let result = TreeNode::to_level_order(&root);
         assert_eq!(result, vec![Some(1), Some(2), Some(3)]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = build_tree(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

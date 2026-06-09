@@ -26,21 +26,10 @@
 // Use a stack to track fleet arrival times.
 // ============================================================================
 
+
+
 pub fn car_fleet(target: i32, position: Vec<i32>, speed: Vec<i32>) -> i32 {
-    let mut cars: Vec<(i32, i32)> = position.into_iter().zip(speed).collect();
-    cars.sort_by(|a, b| b.0.cmp(&a.0)); // Sort by position descending
-
-    let mut stack: Vec<f64> = Vec::new();
-
-    for (pos, spd) in cars {
-        let time = (target - pos) as f64 / spd as f64;
-        // If this car takes longer than the fleet ahead, it's a new fleet
-        if stack.is_empty() || time > *stack.last().unwrap() {
-            stack.push(time);
-        }
-    }
-
-    stack.len() as i32
+    todo!("Implement car_fleet")
 }
 
 #[cfg(test)]
@@ -66,5 +55,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert_eq!(car_fleet(10, vec![0], vec![1]), 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = car_fleet(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

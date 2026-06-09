@@ -28,26 +28,11 @@
 // once while extending the sequence).
 // ============================================================================
 
+
 use std::collections::HashSet;
 
 pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
-    let set: HashSet<i32> = nums.into_iter().collect();
-    let mut max_len = 0;
-
-    for &num in &set {
-        // Only start counting if this is the beginning of a sequence
-        if !set.contains(&(num - 1)) {
-            let mut current = num;
-            let mut len = 1;
-            while set.contains(&(current + 1)) {
-                current += 1;
-                len += 1;
-            }
-            max_len = max_len.max(len);
-        }
-    }
-
-    max_len
+    todo!("Implement longest_consecutive")
 }
 
 #[cfg(test)]
@@ -82,5 +67,26 @@ mod tests {
     #[test]
     fn test_no_consecutive() {
         assert_eq!(longest_consecutive(vec![10, 20, 30]), 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = longest_consecutive(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

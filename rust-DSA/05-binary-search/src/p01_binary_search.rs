@@ -25,20 +25,10 @@
 // - `.wrapping_add()` and `.wrapping_sub()` for overflow-safe arithmetic.
 // ============================================================================
 
+
+
 pub fn binary_search(nums: &[i32], target: i32) -> i32 {
-    let mut left = 0;
-    let mut right = nums.len();
-
-    while left < right {
-        let mid = left + (right - left) / 2;
-        match nums[mid].cmp(&target) {
-            std::cmp::Ordering::Equal => return mid as i32,
-            std::cmp::Ordering::Less => left = mid + 1,
-            std::cmp::Ordering::Greater => right = mid,
-        }
-    }
-
-    -1
+    todo!("Implement binary_search")
 }
 
 #[cfg(test)]
@@ -68,5 +58,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert_eq!(binary_search(&[], 5), -1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = binary_search(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

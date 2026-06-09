@@ -18,62 +18,19 @@
 // 3. Add their children to the queue for the next level.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::collections::VecDeque;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
-
 type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
 pub fn level_order(root: TreeLink) -> Vec<Vec<i32>> {
-    let mut result = Vec::new();
-    if root.is_none() {
-        return result;
-    }
-
-    let mut queue = VecDeque::new();
-    queue.push_back(root.unwrap());
-
-    while !queue.is_empty() {
-        let level_size = queue.len();
-        let mut level = Vec::new();
-
-        for _ in 0..level_size {
-            let node = queue.pop_front().unwrap();
-            let borrowed = node.borrow();
-            level.push(borrowed.val);
-
-            if let Some(ref left) = borrowed.left {
-                queue.push_back(Rc::clone(left));
-            }
-            if let Some(ref right) = borrowed.right {
-                queue.push_back(Rc::clone(right));
-            }
-        }
-
-        result.push(level);
-    }
-
-    result
+    todo!("Implement level_order")
 }
 
-// Alternative: Recursive DFS approach
 pub fn level_order_dfs(root: TreeLink) -> Vec<Vec<i32>> {
-    let mut result = Vec::new();
-    dfs(&root, 0, &mut result);
-    result
-}
-
-fn dfs(node: &TreeLink, depth: usize, result: &mut Vec<Vec<i32>>) {
-    if let Some(n) = node {
-        let borrowed = n.borrow();
-        if depth == result.len() {
-            result.push(Vec::new());
-        }
-        result[depth].push(borrowed.val);
-        dfs(&borrowed.left, depth + 1, result);
-        dfs(&borrowed.right, depth + 1, result);
-    }
+    todo!("Implement level_order_dfs")
 }
 
 #[cfg(test)]
@@ -107,5 +64,26 @@ mod tests {
             Some(3), Some(9), Some(20), None, None, Some(15), Some(7),
         ]);
         assert_eq!(level_order_dfs(root), vec![vec![3], vec![9, 20], vec![15, 7]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = level_order(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

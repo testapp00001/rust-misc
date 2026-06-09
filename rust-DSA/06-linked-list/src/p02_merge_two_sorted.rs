@@ -23,44 +23,11 @@
 // - `.as_mut()` to get a mutable reference to the inner value.
 // ============================================================================
 
+
 use super::list_node::ListNode;
 
-pub fn merge_two_lists(
-    list1: Option<Box<ListNode>>,
-    list2: Option<Box<ListNode>>,
-) -> Option<Box<ListNode>> {
-    let mut dummy = ListNode::new(0);
-    let mut tail = &mut dummy;
-    let mut l1 = list1;
-    let mut l2 = list2;
-
-    loop {
-        match (l1, l2) {
-            (Some(mut n1), Some(mut n2)) => {
-                if n1.val <= n2.val {
-                    l1 = n1.next.take();
-                    l2 = Some(n2);
-                    tail.next = Some(n1);
-                } else {
-                    l2 = n2.next.take();
-                    l1 = Some(n1);
-                    tail.next = Some(n2);
-                }
-                tail = tail.next.as_mut().unwrap();
-            }
-            (Some(n1), None) => {
-                tail.next = Some(n1);
-                break;
-            }
-            (None, Some(n2)) => {
-                tail.next = Some(n2);
-                break;
-            }
-            (None, None) => break,
-        }
-    }
-
-    dummy.next
+pub fn merge_two_lists( list1: Option<Box<ListNode>>, list2: Option<Box<ListNode>>, ) -> Option<Box<ListNode>> {
+    todo!("Implement merge_two_lists")
 }
 
 #[cfg(test)]
@@ -89,5 +56,26 @@ mod tests {
         let l2 = ListNode::from_vec(vec![]);
         let merged = merge_two_lists(l1, l2);
         assert_eq!(ListNode::to_vec(&merged), vec![1, 2, 3]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = merge_two_lists(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

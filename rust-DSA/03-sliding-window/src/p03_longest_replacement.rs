@@ -29,29 +29,10 @@
 // find a truly better max_freq.
 // ============================================================================
 
+
+
 pub fn character_replacement(s: &str, k: i32) -> i32 {
-    let chars: Vec<char> = s.chars().collect();
-    let mut freq = [0usize; 26];
-    let mut left = 0;
-    let mut max_freq = 0;
-    let mut max_len = 0;
-
-    for right in 0..chars.len() {
-        let idx = (chars[right] as u8 - b'A') as usize;
-        freq[idx] += 1;
-        max_freq = max_freq.max(freq[idx]);
-
-        // Shrink window if too many replacements needed
-        while (right - left + 1) - max_freq > k as usize {
-            let left_idx = (chars[left] as u8 - b'A') as usize;
-            freq[left_idx] -= 1;
-            left += 1;
-        }
-
-        max_len = max_len.max(right - left + 1);
-    }
-
-    max_len as i32
+    todo!("Implement character_replacement")
 }
 
 #[cfg(test)]
@@ -81,5 +62,26 @@ mod tests {
     #[test]
     fn test_empty() {
         assert_eq!(character_replacement("", 2), 0);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = character_replacement(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

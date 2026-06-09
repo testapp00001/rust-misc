@@ -20,8 +20,10 @@
 // XOR all elements: pairs cancel out, leaving the single element.
 // ============================================================================
 
+
+
 pub fn single_number(nums: &[i32]) -> i32 {
-    nums.iter().fold(0, |acc, &x| acc ^ x)
+    todo!("Implement single_number")
 }
 
 #[cfg(test)]
@@ -41,5 +43,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert_eq!(single_number(&[1]), 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = single_number(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

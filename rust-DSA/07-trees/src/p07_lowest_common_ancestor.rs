@@ -19,36 +19,14 @@
 // - If only one returns non-None, that's the LCA.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
-
 type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
 pub fn lowest_common_ancestor(root: TreeLink, p: i32, q: i32) -> TreeLink {
-    fn helper(node: &TreeLink, p: i32, q: i32) -> TreeLink {
-        match node {
-            None => None,
-            Some(n) => {
-                let borrowed = n.borrow();
-                if borrowed.val == p || borrowed.val == q {
-                    return Some(Rc::clone(n));
-                }
-
-                let left = helper(&borrowed.left, p, q);
-                let right = helper(&borrowed.right, p, q);
-
-                match (left, right) {
-                    (Some(_), Some(_)) => Some(Rc::clone(n)),
-                    (Some(l), None) => Some(l),
-                    (None, Some(r)) => Some(r),
-                    (None, None) => None,
-                }
-            }
-        }
-    }
-
-    helper(&root, p, q)
+    todo!("Implement lowest_common_ancestor")
 }
 
 #[cfg(test)]
@@ -81,5 +59,26 @@ mod tests {
         let root = TreeNode::from_level_order(&[Some(1), Some(2), Some(3)]);
         let lca = lowest_common_ancestor(root, 2, 3);
         assert_eq!(lca.unwrap().borrow().val, 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = lowest_common_ancestor(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

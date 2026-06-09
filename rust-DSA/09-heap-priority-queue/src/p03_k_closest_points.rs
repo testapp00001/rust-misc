@@ -20,28 +20,16 @@
 // Rust: BinaryHeap with custom comparator (Reverse for min-heap behavior).
 // ============================================================================
 
+
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
 
 pub fn k_closest(points: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
-    // Use max-heap to keep k closest points (smallest distances)
-    let mut heap: BinaryHeap<(i32, usize)> = BinaryHeap::new();
-
-    for (i, point) in points.iter().enumerate() {
-        let dist = point[0] * point[0] + point[1] * point[1];
-        heap.push((dist, i));
-        if heap.len() > k as usize {
-            heap.pop(); // Remove the farthest point
-        }
-    }
-
-    heap.into_iter().map(|(_, i)| points[i].clone()).collect()
+    todo!("Implement k_closest")
 }
 
-// Alternative: Sort approach
 pub fn k_closest_sort(mut points: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
-    points.sort_by_key(|p| p[0] * p[0] + p[1] * p[1]);
-    points.into_iter().take(k as usize).collect()
+    todo!("Implement k_closest_sort")
 }
 
 #[cfg(test)]
@@ -71,5 +59,26 @@ mod tests {
     fn test_sort_approach() {
         let result = sorted(k_closest_sort(vec![vec![1, 3], vec![-2, 2]], 1));
         assert_eq!(result, vec![vec![-2, 2]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = k_closest(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

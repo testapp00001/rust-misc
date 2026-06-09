@@ -21,28 +21,10 @@
 //   - dp[i-1][j-1] → replace in word1
 // ============================================================================
 
+
+
 pub fn min_distance(word1: &str, word2: &str) -> i32 {
-    let s1: Vec<char> = word1.chars().collect();
-    let s2: Vec<char> = word2.chars().collect();
-    let m = s1.len();
-    let n = s2.len();
-
-    let mut prev = (0..=n).collect::<Vec<_>>();
-    let mut curr = vec![0; n + 1];
-
-    for i in 1..=m {
-        curr[0] = i;
-        for j in 1..=n {
-            if s1[i - 1] == s2[j - 1] {
-                curr[j] = prev[j - 1];
-            } else {
-                curr[j] = 1 + prev[j].min(curr[j - 1]).min(prev[j - 1]);
-            }
-        }
-        std::mem::swap(&mut prev, &mut curr);
-    }
-
-    prev[n] as i32
+    todo!("Implement min_distance")
 }
 
 #[cfg(test)]
@@ -68,5 +50,26 @@ mod tests {
     #[test]
     fn test_single() {
         assert_eq!(min_distance("a", "b"), 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = min_distance(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

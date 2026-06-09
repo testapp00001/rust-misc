@@ -14,30 +14,14 @@
 // their heights differ by at most 1.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
-
 type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
 pub fn is_balanced(root: TreeLink) -> bool {
-    check_height(&root) >= 0
-}
-
-fn check_height(node: &TreeLink) -> i32 {
-    match node {
-        None => 0,
-        Some(n) => {
-            let borrowed = n.borrow();
-            let left = check_height(&borrowed.left);
-            let right = check_height(&borrowed.right);
-            if left < 0 || right < 0 || (left - right).abs() > 1 {
-                -1
-            } else {
-                1 + left.max(right)
-            }
-        }
-    }
+    todo!("Implement is_balanced")
 }
 
 #[cfg(test)]
@@ -71,5 +55,26 @@ mod tests {
     fn test_single() {
         let root = TreeNode::from_level_order(&[Some(1)]);
         assert!(is_balanced(root));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = is_balanced(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

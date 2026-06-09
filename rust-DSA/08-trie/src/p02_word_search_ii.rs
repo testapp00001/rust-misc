@@ -18,81 +18,11 @@
 // This is much more efficient than searching for each word separately.
 // ============================================================================
 
+
 use std::collections::HashSet;
 
-#[derive(Default)]
-struct TrieNode {
-    children: [Option<Box<TrieNode>>; 26],
-    word: Option<String>,
-}
-
-impl TrieNode {
-    fn insert(&mut self, word: &str) {
-        let mut node = self;
-        for c in word.bytes() {
-            let idx = (c - b'a') as usize;
-            node = node.children[idx].get_or_insert_with(|| Box::new(TrieNode::default()));
-        }
-        node.word = Some(word.to_string());
-    }
-}
-
 pub fn find_words(board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> {
-    // Build Trie
-    let mut root = TrieNode::default();
-    for word in &words {
-        root.insert(word);
-    }
-
-    let rows = board.len();
-    let cols = board[0].len();
-    let mut result = HashSet::new();
-    let mut visited = vec![vec![false; cols]; rows];
-
-    for r in 0..rows {
-        for c in 0..cols {
-            dfs(&board, r, c, &root, &mut visited, &mut result);
-        }
-    }
-
-    result.into_iter().collect()
-}
-
-fn dfs(
-    board: &[Vec<char>],
-    r: usize,
-    c: usize,
-    node: &TrieNode,
-    visited: &mut Vec<Vec<bool>>,
-    result: &mut HashSet<String>,
-) {
-    if r >= board.len() || c >= board[0].len() || visited[r][c] {
-        return;
-    }
-
-    let ch = board[r][c];
-    let idx = (ch as u8 - b'a') as usize;
-    let child = match &node.children[idx] {
-        Some(child) => child,
-        None => return,
-    };
-
-    if let Some(ref word) = child.word {
-        result.insert(word.clone());
-    }
-
-    visited[r][c] = true;
-
-    let directions = [(0, 1), (1, 0), (0, -1), (-1, 0)];
-    for (dr, dc) in directions {
-        let nr = r as i32 + dr;
-        let nc = c as i32 + dc;
-        if nr >= 0 && nc >= 0 {
-            dfs(board, nr as usize, nc as usize, child, visited, result);
-        }
-    }
-
-    visited[r][c] = false;
+    todo!("Implement find_words")
 }
 
 #[cfg(test)]
@@ -123,5 +53,26 @@ mod tests {
         let board = to_char_vec(&["ab", "cd"]);
         let words: Vec<String> = ["xyz"].iter().map(|s| s.to_string()).collect();
         assert_eq!(find_words(board, words), Vec::<String>::new());
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = find_words(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -22,47 +22,24 @@
 // For get(), binary search on the timestamp vector.
 // ============================================================================
 
+
 use std::collections::HashMap;
 
 pub struct TimeMap {
-    store: HashMap<String, Vec<(i32, String)>>,
+    // TODO: Define fields
 }
 
 impl TimeMap {
     pub fn new() -> Self {
-        TimeMap {
-            store: HashMap::new(),
-        }
+        todo!("Implement new")
     }
 
     pub fn set(&mut self, key: String, value: String, timestamp: i32) {
-        self.store
-            .entry(key)
-            .or_default()
-            .push((timestamp, value));
+        todo!("Implement set")
     }
 
     pub fn get(&self, key: String, timestamp: i32) -> String {
-        if let Some(entries) = self.store.get(&key) {
-            // Binary search for the largest timestamp <= given timestamp
-            let mut left = 0;
-            let mut right = entries.len();
-            let mut result = String::new();
-
-            while left < right {
-                let mid = left + (right - left) / 2;
-                if entries[mid].0 <= timestamp {
-                    result = entries[mid].1.clone();
-                    left = mid + 1;
-                } else {
-                    right = mid;
-                }
-            }
-
-            result
-        } else {
-            String::new()
-        }
+        todo!("Implement get")
     }
 }
 
@@ -92,5 +69,26 @@ mod tests {
         let mut tm = TimeMap::new();
         tm.set("key".to_string(), "val".to_string(), 5);
         assert_eq!(tm.get("key".to_string(), 1), "");
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = new(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

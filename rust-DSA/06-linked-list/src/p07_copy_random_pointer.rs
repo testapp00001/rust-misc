@@ -16,6 +16,7 @@
 // after the original, then separate.
 // ============================================================================
 
+
 use std::collections::HashMap;
 
 #[derive(Clone, Debug)]
@@ -27,18 +28,14 @@ pub struct Node {
 
 impl Node {
     pub fn new(val: i32) -> Self {
-        Node {
-            val,
-            next: None,
-            random: None,
-        }
+        todo!("Implement new")
     }
 }
 
 /// Copy a linked list where each node has a random pointer (by index).
 /// Returns the copied list as a vector of (val, random_index) tuples.
 pub fn copy_list(nodes: &[(i32, Option<usize>)]) -> Vec<(i32, Option<usize>)> {
-    nodes.to_vec()
+    todo!("Implement copy_list")
 }
 
 #[cfg(test)]
@@ -62,5 +59,26 @@ mod tests {
         let nodes = vec![(1, None), (2, None), (3, None)];
         let copied = copy_list(&nodes);
         assert_eq!(copied, nodes);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = new(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

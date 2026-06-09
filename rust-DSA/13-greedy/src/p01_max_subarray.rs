@@ -20,16 +20,10 @@
 // This is the classic Kadane's algorithm.
 // ============================================================================
 
+
+
 pub fn max_sub_array(nums: &[i32]) -> i32 {
-    let mut current_sum = nums[0];
-    let mut max_sum = nums[0];
-
-    for &num in &nums[1..] {
-        current_sum = num.max(current_sum + num);
-        max_sum = max_sum.max(current_sum);
-    }
-
-    max_sum
+    todo!("Implement max_sub_array")
 }
 
 #[cfg(test)]
@@ -57,5 +51,26 @@ mod tests {
     #[test]
     fn test_all_positive() {
         assert_eq!(max_sub_array(&[1, 2, 3]), 6);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = max_sub_array(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -19,15 +19,10 @@
 // This builds on previously computed values.
 // ============================================================================
 
+
+
 pub fn count_bits(n: i32) -> Vec<i32> {
-    let n = n as usize;
-    let mut dp = vec![0; n + 1];
-
-    for i in 1..=n {
-        dp[i] = dp[i >> 1] + (i & 1) as i32;
-    }
-
-    dp
+    todo!("Implement count_bits")
 }
 
 #[cfg(test)]
@@ -52,5 +47,26 @@ mod tests {
     #[test]
     fn test_power_of_two() {
         assert_eq!(count_bits(8), vec![0, 1, 1, 2, 1, 2, 2, 3, 1]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = count_bits(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

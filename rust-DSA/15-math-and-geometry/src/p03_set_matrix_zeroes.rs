@@ -14,51 +14,10 @@
 // 4. Iterate again and set cells to 0 based on markers.
 // ============================================================================
 
+
+
 pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
-    let rows = matrix.len();
-    let cols = matrix[0].len();
-    let mut first_row_zero = false;
-
-    // Check if first row has a zero
-    for c in 0..cols {
-        if matrix[0][c] == 0 {
-            first_row_zero = true;
-            break;
-        }
-    }
-
-    // Use first row/column as markers
-    for r in 1..rows {
-        for c in 0..cols {
-            if matrix[r][c] == 0 {
-                matrix[r][0] = 0;
-                matrix[0][c] = 0;
-            }
-        }
-    }
-
-    // Set cells to 0 based on markers (skip first row/column)
-    for r in 1..rows {
-        for c in 1..cols {
-            if matrix[r][0] == 0 || matrix[0][c] == 0 {
-                matrix[r][c] = 0;
-            }
-        }
-    }
-
-    // Handle first column
-    if matrix[0][0] == 0 {
-        for r in 0..rows {
-            matrix[r][0] = 0;
-        }
-    }
-
-    // Handle first row
-    if first_row_zero {
-        for c in 0..cols {
-            matrix[0][c] = 0;
-        }
-    }
+    todo!("Implement set_zeroes")
 }
 
 #[cfg(test)]
@@ -87,5 +46,26 @@ mod tests {
         let mut matrix = vec![vec![1]];
         set_zeroes(&mut matrix);
         assert_eq!(matrix, vec![vec![1]]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = set_zeroes(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

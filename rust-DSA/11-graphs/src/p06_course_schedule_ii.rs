@@ -19,41 +19,11 @@
 // 4. If we process all nodes → valid order. Otherwise → cycle exists.
 // ============================================================================
 
+
 use std::collections::VecDeque;
 
 pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
-    let n = num_courses as usize;
-    let mut graph: Vec<Vec<usize>> = vec![vec![]; n];
-    let mut in_degree = vec![0; n];
-
-    for prereq in &prerequisites {
-        graph[prereq[1] as usize].push(prereq[0] as usize);
-        in_degree[prereq[0] as usize] += 1;
-    }
-
-    let mut queue: VecDeque<usize> = VecDeque::new();
-    for i in 0..n {
-        if in_degree[i] == 0 {
-            queue.push_back(i);
-        }
-    }
-
-    let mut order = Vec::new();
-    while let Some(node) = queue.pop_front() {
-        order.push(node as i32);
-        for &neighbor in &graph[node] {
-            in_degree[neighbor] -= 1;
-            if in_degree[neighbor] == 0 {
-                queue.push_back(neighbor);
-            }
-        }
-    }
-
-    if order.len() == n {
-        order
-    } else {
-        vec![] // Cycle exists
-    }
+    todo!("Implement find_order")
 }
 
 #[cfg(test)]
@@ -81,5 +51,26 @@ mod tests {
     fn test_no_prereqs() {
         let result = find_order(3, vec![]);
         assert_eq!(result.len(), 3);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = find_order(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -20,32 +20,21 @@
 // Rust: Use BinaryHeap with Reverse for min-heap behavior.
 // ============================================================================
 
+
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
 
 pub struct KthLargest {
-    heap: BinaryHeap<Reverse<i32>>,
-    k: usize,
+    // TODO: Define fields
 }
 
 impl KthLargest {
     pub fn new(k: i32, nums: Vec<i32>) -> Self {
-        let mut kth = KthLargest {
-            heap: BinaryHeap::new(),
-            k: k as usize,
-        };
-        for num in nums {
-            kth.add(num);
-        }
-        kth
+        todo!("Implement new")
     }
 
     pub fn add(&mut self, val: i32) -> i32 {
-        self.heap.push(Reverse(val));
-        if self.heap.len() > self.k {
-            self.heap.pop();
-        }
-        self.heap.peek().unwrap().0
+        todo!("Implement add")
     }
 }
 
@@ -67,5 +56,26 @@ mod tests {
         let mut kth = KthLargest::new(1, vec![]);
         assert_eq!(kth.add(1), 1);
         assert_eq!(kth.add(2), 2);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = new(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

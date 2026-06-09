@@ -16,19 +16,14 @@
 // Count how many times we can do this until n becomes 0.
 // ============================================================================
 
+
+
 pub fn hammut_weight(n: u32) -> i32 {
-    let mut n = n;
-    let mut count = 0;
-    while n != 0 {
-        n &= n - 1;
-        count += 1;
-    }
-    count
+    todo!("Implement hammut_weight")
 }
 
-// Alternative: Simple bit counting
 pub fn hammut_weight_simple(n: u32) -> i32 {
-    n.count_ones() as i32
+    todo!("Implement hammut_weight_simple")
 }
 
 #[cfg(test)]
@@ -58,5 +53,26 @@ mod tests {
     #[test]
     fn test_simple_approach() {
         assert_eq!(hammut_weight_simple(0b00000000000000000000000000001011), 3);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = hammut_weight(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

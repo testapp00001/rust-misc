@@ -24,16 +24,10 @@
 // best (lowest) day to buy before it.
 // ============================================================================
 
+
+
 pub fn max_profit(prices: Vec<i32>) -> i32 {
-    let mut min_price = i32::MAX;
-    let mut max_profit = 0;
-
-    for price in prices {
-        min_price = min_price.min(price);
-        max_profit = max_profit.max(price - min_price);
-    }
-
-    max_profit
+    todo!("Implement max_profit")
 }
 
 #[cfg(test)]
@@ -63,5 +57,26 @@ mod tests {
     #[test]
     fn test_increasing() {
         assert_eq!(max_profit(vec![1, 2, 3, 4, 5]), 4);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = max_profit(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -22,44 +22,16 @@
 // This allows jumping the left pointer directly.
 // ============================================================================
 
+
 use std::collections::HashSet;
+    use std::collections::HashMap;
 
 pub fn length_of_longest_substring(s: &str) -> i32 {
-    let chars: Vec<char> = s.chars().collect();
-    let mut seen = HashSet::new();
-    let mut left = 0;
-    let mut max_len = 0;
-
-    for right in 0..chars.len() {
-        while seen.contains(&chars[right]) {
-            seen.remove(&chars[left]);
-            left += 1;
-        }
-        seen.insert(chars[right]);
-        max_len = max_len.max(right - left + 1);
-    }
-
-    max_len as i32
+    todo!("Implement length_of_longest_substring")
 }
 
-// Alternative: HashMap approach (can jump left pointer)
 pub fn length_of_longest_substring_map(s: &str) -> i32 {
-    use std::collections::HashMap;
-    let mut last_seen: HashMap<char, usize> = HashMap::new();
-    let mut left = 0;
-    let mut max_len = 0;
-
-    for (right, c) in s.chars().enumerate() {
-        if let Some(&idx) = last_seen.get(&c) {
-            if idx >= left {
-                left = idx + 1;
-            }
-        }
-        last_seen.insert(c, right);
-        max_len = max_len.max(right - left + 1);
-    }
-
-    max_len as i32
+    todo!("Implement length_of_longest_substring_map")
 }
 
 #[cfg(test)]
@@ -96,5 +68,26 @@ mod tests {
         assert_eq!(length_of_longest_substring_map("abcabcbb"), 3);
         assert_eq!(length_of_longest_substring_map("bbbbb"), 1);
         assert_eq!(length_of_longest_substring_map("pwwkew"), 3);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = length_of_longest_substring(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -19,21 +19,10 @@
 // We only need the last two values, so use two variables instead of an array.
 // ============================================================================
 
+
+
 pub fn climb_stairs(n: i32) -> i32 {
-    if n <= 2 {
-        return n;
-    }
-
-    let mut prev2 = 1; // ways(1)
-    let mut prev1 = 2; // ways(2)
-
-    for _ in 3..=n {
-        let current = prev1 + prev2;
-        prev2 = prev1;
-        prev1 = current;
-    }
-
-    prev1
+    todo!("Implement climb_stairs")
 }
 
 #[cfg(test)]
@@ -56,5 +45,26 @@ mod tests {
     fn test_base_cases() {
         assert_eq!(climb_stairs(1), 1);
         assert_eq!(climb_stairs(2), 2);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = climb_stairs(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

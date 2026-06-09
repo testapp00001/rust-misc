@@ -1,4 +1,16 @@
 pub mod union_find;
+#[cfg(not(feature = "solution"))]
 pub mod p01_accounts_merge;
+#[cfg(feature = "solution")]
+#[path = "solution/p01_accounts_merge.rs"]
+pub mod p01_accounts_merge;
+#[cfg(not(feature = "solution"))]
 pub mod p02_redundant_connection;
+#[cfg(feature = "solution")]
+#[path = "solution/p02_redundant_connection.rs"]
+pub mod p02_redundant_connection;
+#[cfg(not(feature = "solution"))]
+pub mod p03_number_of_provinces;
+#[cfg(feature = "solution")]
+#[path = "solution/p03_number_of_provinces.rs"]
 pub mod p03_number_of_provinces;

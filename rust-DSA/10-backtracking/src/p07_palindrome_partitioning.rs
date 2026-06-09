@@ -18,44 +18,10 @@
 // 3. When start reaches the end, we have a valid partition.
 // ============================================================================
 
+
+
 pub fn partition(s: &str) -> Vec<Vec<String>> {
-    let chars: Vec<char> = s.chars().collect();
-    let mut result = Vec::new();
-    let mut current = Vec::new();
-    backtrack(&chars, 0, &mut current, &mut result);
-    result
-}
-
-fn backtrack(
-    chars: &[char],
-    start: usize,
-    current: &mut Vec<String>,
-    result: &mut Vec<Vec<String>>,
-) {
-    if start == chars.len() {
-        result.push(current.clone());
-        return;
-    }
-
-    for end in start..chars.len() {
-        if is_palindrome(chars, start, end) {
-            let s: String = chars[start..=end].iter().collect();
-            current.push(s);
-            backtrack(chars, end + 1, current, result);
-            current.pop();
-        }
-    }
-}
-
-fn is_palindrome(chars: &[char], mut left: usize, mut right: usize) -> bool {
-    while left < right {
-        if chars[left] != chars[right] {
-            return false;
-        }
-        left += 1;
-        right -= 1;
-    }
-    true
+    todo!("Implement partition")
 }
 
 #[cfg(test)]
@@ -80,5 +46,26 @@ mod tests {
         let result = partition("aba");
         assert!(result.contains(&vec!["a".to_string(), "b".to_string(), "a".to_string()]));
         assert!(result.contains(&vec!["aba".to_string()]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = partition(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

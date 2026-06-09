@@ -20,42 +20,15 @@
 // 4. Push current element onto the stack.
 // ============================================================================
 
+
 use std::collections::HashMap;
 
-// Next Greater Element I (find next greater in a second array)
 pub fn next_greater_element(nums1: &[i32], nums2: &[i32]) -> Vec<i32> {
-    let mut next_greater: HashMap<i32, i32> = HashMap::new();
-    let mut stack: Vec<i32> = Vec::new();
-
-    // Process nums2 from right to left
-    for &num in nums2.iter().rev() {
-        while !stack.is_empty() && *stack.last().unwrap() <= num {
-            stack.pop();
-        }
-        next_greater.insert(num, stack.last().copied().unwrap_or(-1));
-        stack.push(num);
-    }
-
-    nums1.iter().map(|&num| next_greater[&num]).collect()
+    todo!("Implement next_greater_element")
 }
 
-// Next Greater Element II (circular array)
 pub fn next_greater_element_circular(nums: &[i32]) -> Vec<i32> {
-    let n = nums.len();
-    let mut result = vec![-1; n];
-    let mut stack: Vec<usize> = Vec::new();
-
-    // Process twice for circular behavior
-    for i in 0..2 * n {
-        while !stack.is_empty() && nums[i % n] > nums[*stack.last().unwrap()] {
-            result[stack.pop().unwrap()] = nums[i % n];
-        }
-        if i < n {
-            stack.push(i);
-        }
-    }
-
-    result
+    todo!("Implement next_greater_element_circular")
 }
 
 #[cfg(test)]
@@ -86,5 +59,26 @@ mod tests {
             next_greater_element_circular(&[1, 2, 3, 4, 3]),
             vec![2, 3, 4, -1, 4]
         );
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = next_greater_element(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

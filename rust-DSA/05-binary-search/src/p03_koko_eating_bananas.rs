@@ -24,22 +24,10 @@
 // This is "binary search on the answer" — a common pattern!
 // ============================================================================
 
+
+
 pub fn min_eating_speed(piles: &[i32], h: i32) -> i32 {
-    let mut left = 1;
-    let mut right = *piles.iter().max().unwrap();
-
-    while left < right {
-        let mid = left + (right - left) / 2;
-        let hours: i32 = piles.iter().map(|&p| (p + mid - 1) / mid).sum();
-
-        if hours <= h {
-            right = mid;
-        } else {
-            left = mid + 1;
-        }
-    }
-
-    left
+    todo!("Implement min_eating_speed")
 }
 
 #[cfg(test)]
@@ -64,5 +52,26 @@ mod tests {
     #[test]
     fn test_single_pile() {
         assert_eq!(min_eating_speed(&[100], 10), 10);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = min_eating_speed(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

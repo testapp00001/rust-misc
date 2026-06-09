@@ -17,16 +17,10 @@
 // 3. Shift n right.
 // ============================================================================
 
+
+
 pub fn reverse_bits(n: u32) -> u32 {
-    let mut n = n;
-    let mut result = 0;
-
-    for _ in 0..32 {
-        result = (result << 1) | (n & 1);
-        n >>= 1;
-    }
-
-    result
+    todo!("Implement reverse_bits")
 }
 
 #[cfg(test)]
@@ -57,5 +51,26 @@ mod tests {
     #[test]
     fn test_one() {
         assert_eq!(reverse_bits(1), 0b10000000000000000000000000000000);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = reverse_bits(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

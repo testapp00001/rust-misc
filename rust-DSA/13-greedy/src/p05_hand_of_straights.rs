@@ -18,36 +18,11 @@
 // 4. If we can't form a complete group → return false.
 // ============================================================================
 
+
 use std::collections::HashMap;
 
 pub fn is_n_straight_hand(hand: &[i32], group_size: i32) -> bool {
-    if hand.len() % group_size as usize != 0 {
-        return false;
-    }
-
-    let mut count: HashMap<i32, i32> = HashMap::new();
-    for &card in hand {
-        *count.entry(card).or_insert(0) += 1;
-    }
-
-    let mut cards: Vec<i32> = count.keys().copied().collect();
-    cards.sort();
-
-    for &card in &cards {
-        if let Some(&cnt) = count.get(&card) {
-            if cnt > 0 {
-                for i in 0..group_size {
-                    let next = card + i;
-                    match count.get_mut(&next) {
-                        Some(c) if *c >= cnt => *c -= cnt,
-                        _ => return false,
-                    }
-                }
-            }
-        }
-    }
-
-    true
+    todo!("Implement is_n_straight_hand")
 }
 
 #[cfg(test)]
@@ -67,5 +42,26 @@ mod tests {
     #[test]
     fn test_single_group() {
         assert!(is_n_straight_hand(&[1, 2, 3], 3));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = is_n_straight_hand(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

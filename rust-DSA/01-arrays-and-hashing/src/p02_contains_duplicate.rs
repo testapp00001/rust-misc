@@ -28,22 +28,15 @@
 //   This is more idiomatic than checking `.contains()` first.
 // ============================================================================
 
+
 use std::collections::HashSet;
 
 pub fn contains_duplicate(nums: Vec<i32>) -> bool {
-    let mut seen = HashSet::new();
-    for num in nums {
-        if !seen.insert(num) {
-            return true;
-        }
-    }
-    false
+    todo!("Implement contains_duplicate")
 }
 
-// Alternative: sort-based approach
 pub fn contains_duplicate_sort(mut nums: Vec<i32>) -> bool {
-    nums.sort();
-    nums.windows(2).any(|w| w[0] == w[1])
+    todo!("Implement contains_duplicate_sort")
 }
 
 #[cfg(test)]
@@ -79,5 +72,26 @@ mod tests {
     fn test_sort_approach() {
         assert!(contains_duplicate_sort(vec![1, 2, 3, 1]));
         assert!(!contains_duplicate_sort(vec![1, 2, 3, 4]));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = contains_duplicate(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

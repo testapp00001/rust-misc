@@ -21,41 +21,14 @@
 // for an increasing subsequence of length i+1.
 // ============================================================================
 
-// O(n²) DP approach
+
+
 pub fn length_of_lis(nums: &[i32]) -> i32 {
-    let n = nums.len();
-    let mut dp = vec![1; n];
-
-    for i in 1..n {
-        for j in 0..i {
-            if nums[j] < nums[i] {
-                dp[i] = dp[i].max(dp[j] + 1);
-            }
-        }
-    }
-
-    *dp.iter().max().unwrap_or(&0)
+    todo!("Implement length_of_lis")
 }
 
-// O(n log n) Binary Search approach
 pub fn length_of_lis_binary_search(nums: &[i32]) -> i32 {
-    let mut tails: Vec<i32> = Vec::new();
-
-    for &num in nums {
-        // Find the position to replace or extend
-        match tails.binary_search(&num) {
-            Ok(pos) => tails[pos] = num,
-            Err(pos) => {
-                if pos == tails.len() {
-                    tails.push(num);
-                } else {
-                    tails[pos] = num;
-                }
-            }
-        }
-    }
-
-    tails.len() as i32
+    todo!("Implement length_of_lis_binary_search")
 }
 
 #[cfg(test)]
@@ -85,5 +58,26 @@ mod tests {
     #[test]
     fn test_binary_search() {
         assert_eq!(length_of_lis_binary_search(&[10, 9, 2, 5, 3, 7, 101, 18]), 4);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = length_of_lis(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

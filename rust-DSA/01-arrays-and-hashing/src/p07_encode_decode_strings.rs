@@ -26,35 +26,14 @@
 // Edge cases: Empty strings, strings containing '#', special characters.
 // ============================================================================
 
+
+
 pub fn encode(strs: Vec<&str>) -> String {
-    let mut result = String::new();
-    for s in strs {
-        result.push_str(&format!("{}#{}", s.len(), s));
-    }
-    result
+    todo!("Implement encode")
 }
 
 pub fn decode(s: &str) -> Vec<String> {
-    let mut result = Vec::new();
-    let bytes = s.as_bytes();
-    let mut i = 0;
-
-    while i < bytes.len() {
-        // Find the '#' delimiter
-        let mut j = i;
-        while bytes[j] != b'#' {
-            j += 1;
-        }
-        // Parse the length
-        let len: usize = s[i..j].parse().unwrap();
-        // Extract the string
-        let start = j + 1;
-        let end = start + len;
-        result.push(s[start..end].to_string());
-        i = end;
-    }
-
-    result
+    todo!("Implement decode")
 }
 
 #[cfg(test)]
@@ -95,5 +74,26 @@ mod tests {
         let strs = vec![long.as_str()];
         let encoded = encode(strs);
         assert_eq!(decode(&encoded), vec![long]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = encode(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

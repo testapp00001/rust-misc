@@ -17,33 +17,10 @@
 // 3. Add remaining intervals.
 // ============================================================================
 
+
+
 pub fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut result = Vec::new();
-    let mut new_interval = new_interval;
-    let mut i = 0;
-    let n = intervals.len();
-
-    // Add intervals before new_interval
-    while i < n && intervals[i][1] < new_interval[0] {
-        result.push(intervals[i].clone());
-        i += 1;
-    }
-
-    // Merge overlapping intervals
-    while i < n && intervals[i][0] <= new_interval[1] {
-        new_interval[0] = new_interval[0].min(intervals[i][0]);
-        new_interval[1] = new_interval[1].max(intervals[i][1]);
-        i += 1;
-    }
-    result.push(new_interval);
-
-    // Add remaining intervals
-    while i < n {
-        result.push(intervals[i].clone());
-        i += 1;
-    }
-
-    result
+    todo!("Implement insert")
 }
 
 #[cfg(test)]
@@ -80,5 +57,26 @@ mod tests {
             insert(vec![vec![1, 3], vec![6, 9]], vec![4, 5]),
             vec![vec![1, 3], vec![4, 5], vec![6, 9]]
         );
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = insert(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

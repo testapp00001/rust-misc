@@ -26,24 +26,10 @@
 // potentially increasing the height.
 // ============================================================================
 
+
+
 pub fn max_area(height: Vec<i32>) -> i32 {
-    let mut left = 0;
-    let mut right = height.len() - 1;
-    let mut max_area = 0;
-
-    while left < right {
-        let h = height[left].min(height[right]);
-        let w = (right - left) as i32;
-        max_area = max_area.max(h * w);
-
-        if height[left] < height[right] {
-            left += 1;
-        } else {
-            right -= 1;
-        }
-    }
-
-    max_area
+    todo!("Implement max_area")
 }
 
 #[cfg(test)]
@@ -68,5 +54,26 @@ mod tests {
     #[test]
     fn test_all_same() {
         assert_eq!(max_area(vec![5, 5, 5, 5]), 15);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = max_area(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

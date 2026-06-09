@@ -24,43 +24,10 @@
 // Why O(n²): The outer loop is O(n), and each two-pointer scan is O(n).
 // ============================================================================
 
+
+
 pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
-    nums.sort();
-    let mut result = Vec::new();
-    let n = nums.len();
-
-    for i in 0..n {
-        // Skip duplicate first elements
-        if i > 0 && nums[i] == nums[i - 1] {
-            continue;
-        }
-
-        // Two pointers for the remaining elements
-        let mut left = i + 1;
-        let mut right = n - 1;
-
-        while left < right {
-            let sum = nums[i] + nums[left] + nums[right];
-            match sum.cmp(&0) {
-                std::cmp::Ordering::Less => left += 1,
-                std::cmp::Ordering::Greater => right -= 1,
-                std::cmp::Ordering::Equal => {
-                    result.push(vec![nums[i], nums[left], nums[right]]);
-                    // Skip duplicates
-                    while left < right && nums[left] == nums[left + 1] {
-                        left += 1;
-                    }
-                    while left < right && nums[right] == nums[right - 1] {
-                        right -= 1;
-                    }
-                    left += 1;
-                    right -= 1;
-                }
-            }
-        }
-    }
-
-    result
+    todo!("Implement three_sum")
 }
 
 #[cfg(test)]
@@ -92,5 +59,26 @@ mod tests {
     #[test]
     fn test_two_elements() {
         assert_eq!(three_sum(vec![0, 0]), Vec::<Vec<i32>>::new());
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = three_sum(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

@@ -30,32 +30,10 @@
 // - `.last()` gives `Option<&char>` — use `.unwrap_or(&'\0')` for safety.
 // ============================================================================
 
+
+
 pub fn is_valid(s: &str) -> bool {
-    let mut stack: Vec<char> = Vec::new();
-
-    for c in s.chars() {
-        match c {
-            '(' | '{' | '[' => stack.push(c),
-            ')' => {
-                if stack.pop() != Some('(') {
-                    return false;
-                }
-            }
-            '}' => {
-                if stack.pop() != Some('{') {
-                    return false;
-                }
-            }
-            ']' => {
-                if stack.pop() != Some('[') {
-                    return false;
-                }
-            }
-            _ => return false, // Invalid character
-        }
-    }
-
-    stack.is_empty()
+    todo!("Implement is_valid")
 }
 
 #[cfg(test)]
@@ -95,5 +73,26 @@ mod tests {
     #[test]
     fn test_opening_only() {
         assert!(!is_valid("("));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = is_valid(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

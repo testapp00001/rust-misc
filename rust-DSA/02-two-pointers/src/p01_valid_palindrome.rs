@@ -26,31 +26,10 @@
 // - `.chars()` gives an iterator over characters.
 // ============================================================================
 
+
+
 pub fn is_palindrome(s: &str) -> bool {
-    let chars: Vec<char> = s.chars().collect();
-    let mut left = 0;
-    let mut right = chars.len();
-
-    while left < right {
-        // Move left pointer to next alphanumeric char
-        while left < right && !chars[left].is_alphanumeric() {
-            left += 1;
-        }
-        // Move right pointer to previous alphanumeric char
-        while left < right && !chars[right - 1].is_alphanumeric() {
-            right -= 1;
-        }
-
-        if left < right {
-            if chars[left].to_ascii_lowercase() != chars[right - 1].to_ascii_lowercase() {
-                return false;
-            }
-            left += 1;
-            right -= 1;
-        }
-    }
-
-    true
+    todo!("Implement is_palindrome")
 }
 
 #[cfg(test)]
@@ -85,5 +64,26 @@ mod tests {
     #[test]
     fn test_numeric_palindrome() {
         assert!(is_palindrome("12321"));
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = is_palindrome(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

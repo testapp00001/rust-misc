@@ -22,21 +22,14 @@
 // 3. Swap left and right children.
 // ============================================================================
 
+
 use std::cell::RefCell;
 use std::rc::Rc;
 use super::tree_node::TreeNode;
-
 type TreeLink = Option<Rc<RefCell<TreeNode>>>;
 
 pub fn invert_tree(root: TreeLink) -> TreeLink {
-    root.map(|node| {
-        let mut borrowed = node.borrow_mut();
-        let left = borrowed.left.take();
-        let right = borrowed.right.take();
-        borrowed.left = invert_tree(right);
-        borrowed.right = invert_tree(left);
-        Rc::clone(&node)
-    })
+    todo!("Implement invert_tree")
 }
 
 #[cfg(test)]
@@ -76,5 +69,26 @@ mod tests {
         let root = TreeNode::from_level_order(&[Some(1)]);
         let inverted = invert_tree(root);
         assert_eq!(to_level(&inverted), vec![Some(1)]);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = invert_tree(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

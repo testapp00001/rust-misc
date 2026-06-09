@@ -22,24 +22,10 @@
 // This maximizes the number of non-overlapping intervals.
 // ============================================================================
 
+
+
 pub fn erase_overlap_intervals(mut intervals: Vec<Vec<i32>>) -> i32 {
-    if intervals.is_empty() {
-        return 0;
-    }
-
-    intervals.sort_by_key(|v| v[1]);
-    let mut count = 0;
-    let mut last_end = intervals[0][1];
-
-    for interval in &intervals[1..] {
-        if interval[0] < last_end {
-            count += 1;
-        } else {
-            last_end = interval[1];
-        }
-    }
-
-    count
+    todo!("Implement erase_overlap_intervals")
 }
 
 #[cfg(test)]
@@ -68,5 +54,26 @@ mod tests {
             erase_overlap_intervals(vec![vec![1, 2], vec![2, 3]]),
             0
         );
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = erase_overlap_intervals(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

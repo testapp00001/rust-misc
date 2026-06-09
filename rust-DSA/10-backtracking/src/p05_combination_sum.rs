@@ -20,33 +20,10 @@
 // 4. Allow reusing the same candidate (pass `i` not `i+1`).
 // ============================================================================
 
+
+
 pub fn combination_sum(candidates: &[i32], target: i32) -> Vec<Vec<i32>> {
-    let mut result = Vec::new();
-    let mut current = Vec::new();
-    backtrack(candidates, target, 0, &mut current, &mut result);
-    result
-}
-
-fn backtrack(
-    candidates: &[i32],
-    remaining: i32,
-    start: usize,
-    current: &mut Vec<i32>,
-    result: &mut Vec<Vec<i32>>,
-) {
-    if remaining == 0 {
-        result.push(current.clone());
-        return;
-    }
-    if remaining < 0 {
-        return;
-    }
-
-    for i in start..candidates.len() {
-        current.push(candidates[i]);
-        backtrack(candidates, remaining - candidates[i], i, current, result);
-        current.pop();
-    }
+    todo!("Implement combination_sum")
 }
 
 #[cfg(test)]
@@ -79,5 +56,26 @@ mod tests {
     #[test]
     fn test_no_solution() {
         assert_eq!(combination_sum(&[2], 3), Vec::<Vec<i32>>::new());
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = combination_sum(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }

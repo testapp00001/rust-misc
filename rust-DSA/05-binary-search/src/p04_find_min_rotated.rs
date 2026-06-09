@@ -24,20 +24,10 @@
 // If nums[mid] > nums[right], the right half is unsorted.
 // ============================================================================
 
+
+
 pub fn find_min(nums: &[i32]) -> i32 {
-    let mut left = 0;
-    let mut right = nums.len() - 1;
-
-    while left < right {
-        let mid = left + (right - left) / 2;
-        if nums[mid] > nums[right] {
-            left = mid + 1;
-        } else {
-            right = mid;
-        }
-    }
-
-    nums[left]
+    todo!("Implement find_min")
 }
 
 #[cfg(test)]
@@ -67,5 +57,26 @@ mod tests {
     #[test]
     fn test_two() {
         assert_eq!(find_min(&[2, 1]), 1);
+    }
+
+
+    #[test]
+    #[ignore]
+    fn bench_performance() {
+        // ⏱️  Benchmark test
+        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
+        //
+        // To use: uncomment and customize the code below with your function
+        // and realistic test data.
+        //
+        // let iterations = 10_000;
+        // let input = /* generate your test input here */;
+        // let start = std::time::Instant::now();
+        // for _ in 0..iterations {
+        //     let _ = find_min(/* input */);
+        // }
+        // let elapsed = start.elapsed();
+        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
+        // println!("     Average: {:?}/call", elapsed / iterations);
     }
 }
