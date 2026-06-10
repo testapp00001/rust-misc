@@ -1,0 +1,19 @@
+[package]
+name = "advanced_crypto_protocols"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Advanced Crypto Protocols"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+ring = { workspace = true }
+sha2 = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

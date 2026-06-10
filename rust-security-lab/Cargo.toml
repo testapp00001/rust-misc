@@ -1,0 +1,104 @@
+[workspace]
+resolver = "2"
+members = [
+    # Section 1: Cryptographic Foundations
+    "01-crypto-primitives",
+    "02-symmetric-encryption",
+    "03-asymmetric-encryption",
+    "04-digital-signatures",
+    "05-zero-knowledge-proofs",
+    # Section 2: Data Protection
+    "06-key-management",
+    "07-password-security",
+    "08-secure-local-storage",
+    "09-database-security",
+    "10-data-in-transit",
+    # Section 3: Identity & Secrets
+    "11-authentication",
+    "12-authorization",
+    "13-secret-management",
+    "14-api-security",
+    # Section 4: Application Hardening
+    "15-memory-security",
+    "16-serialization-security",
+    "17-input-validation",
+    "18-logging-and-audit",
+    "19-error-security",
+    "20-supply-chain-security",
+    # Section 5: Security Engineering
+    "21-fuzzing-and-testing",
+    "22-static-analysis",
+    "23-threat-modeling",
+    "24-secure-deployment",
+    # Section 6: Advanced & Quantum
+    "25-post-quantum-crypto",
+    "26-privacy-engineering",
+    "27-advanced-crypto-protocols",
+    "28-hardware-security",
+    # Section 7: Capstone Projects
+    "29-capstone-secure-messenger",
+    "30-capstone-encrypted-vault",
+    "31-capstone-secure-web-api",
+]
+
+[workspace.dependencies]
+# Cryptography
+ring = "0.17"
+aes-gcm = "0.10"
+chacha20poly1305 = "0.10"
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+x25519-dalek = { version = "2", features = ["static_secrets"] }
+rsa = "0.9"
+p256 = { version = "0.13", features = ["ecdh"] }
+sha2 = "0.10"
+sha3 = "0.10"
+blake3 = "1"
+hkdf = "0.12"
+hmac = "0.12"
+digest = "0.10"
+
+# Password hashing
+argon2 = "0.5"
+bcrypt = "0.15"
+scrypt = "0.11"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+hex = "0.4"
+
+# Error handling
+thiserror = "1"
+anyhow = "1"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+
+# Networking / TLS
+rustls = "0.23"
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+hyper = { version = "1", features = ["full"] }
+axum = "0.7"
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio", "tls-rustls"] }
+
+# Testing / Fuzzing
+proptest = "1"
+criterion = "0.5"
+
+# Zeroize / Secure memory
+zeroize = { version = "1", features = ["derive"] }
+secrecy = "0.10"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Utils
+rand = "0.8"
+uuid = { version = "1", features = ["v4"] }
+chrono = "0.4"
+url = "2"
+regex = "1"

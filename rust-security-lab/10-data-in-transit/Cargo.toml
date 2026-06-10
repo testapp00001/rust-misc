@@ -1,0 +1,23 @@
+[package]
+name = "data_in_transit"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Data in Transit"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+ring = { workspace = true }
+sha2 = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+base64 = { workspace = true }
+hex = { workspace = true }
+hmac = { workspace = true }
+digest = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

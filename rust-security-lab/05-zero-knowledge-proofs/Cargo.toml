@@ -1,0 +1,19 @@
+[package]
+name = "zero_knowledge_proofs"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Zero-Knowledge Proofs"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+sha2 = { workspace = true }
+rand = { workspace = true }
+hex = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

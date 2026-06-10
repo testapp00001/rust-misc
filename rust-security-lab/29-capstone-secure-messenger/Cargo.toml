@@ -1,0 +1,27 @@
+[package]
+name = "capstone_secure_messenger"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Capstone: Secure Messenger"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+ring = { workspace = true }
+aes-gcm = { workspace = true }
+x25519-dalek = { workspace = true }
+ed25519-dalek = { workspace = true }
+sha2 = { workspace = true }
+hkdf = { workspace = true }
+hmac = { workspace = true }
+rand = { workspace = true }
+zeroize = { workspace = true }
+secrecy = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+base64 = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

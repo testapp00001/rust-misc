@@ -1,0 +1,16 @@
+[package]
+name = "error_security"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Error Security"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

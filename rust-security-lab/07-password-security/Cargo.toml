@@ -1,0 +1,25 @@
+[package]
+name = "password_security"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Password Security"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+argon2 = { workspace = true }
+bcrypt = { workspace = true }
+scrypt = { workspace = true }
+rand = { workspace = true }
+zeroize = { workspace = true }
+secrecy = { workspace = true }
+ring = { workspace = true }
+sha2 = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+hex = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

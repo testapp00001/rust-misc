@@ -1,0 +1,25 @@
+[package]
+name = "database_security"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Database Security — parameterized queries, encryption, audit logging, and more"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+ring = { workspace = true }
+aes-gcm = { workspace = true }
+sha2 = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+rand = { workspace = true }
+hex = { workspace = true }
+base64 = { workspace = true }
+zeroize = { workspace = true }
+secrecy = { workspace = true }
+hmac = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

@@ -1,0 +1,17 @@
+[package]
+name = "static_analysis"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Static Analysis"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+ring = { workspace = true }
+sha2 = { workspace = true }
+zeroize = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

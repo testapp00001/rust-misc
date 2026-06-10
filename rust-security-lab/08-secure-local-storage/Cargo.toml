@@ -1,0 +1,24 @@
+[package]
+name = "secure_local_storage"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Secure Local Storage"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+ring = { workspace = true }
+aes-gcm = { workspace = true }
+rand = { workspace = true }
+zeroize = { workspace = true }
+secrecy = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+base64 = { workspace = true }
+hex = { workspace = true }
+argon2 = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }

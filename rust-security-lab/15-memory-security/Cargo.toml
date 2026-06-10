@@ -1,0 +1,19 @@
+[package]
+name = "memory_security"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Memory Security"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+zeroize = { workspace = true }
+secrecy = { workspace = true }
+ring = { workspace = true }
+rand = { workspace = true }
+libc = "0.2"
+
+[dev-dependencies]
+criterion = { workspace = true }

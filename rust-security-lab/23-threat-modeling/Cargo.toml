@@ -1,0 +1,16 @@
+[package]
+name = "threat_modeling"
+version = "0.1.0"
+edition = "2021"
+description = "rust-security-lab: Threat Modeling"
+
+[features]
+default = []
+solution = []
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
