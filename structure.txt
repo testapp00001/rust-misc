@@ -1,0 +1,1555 @@
+.
+├── devops-grandmaster
+│   ├── 01-why-containers
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 02-your-first-container
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 03-writing-dockerfiles
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       ├── Dockerfile
+│   │       ├── app.py
+│   │       └── requirements.txt
+│   ├── 04-multi-stage-builds
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       ├── Dockerfile.go
+│   │       ├── Dockerfile.node
+│   │       ├── Dockerfile.python
+│   │       └── Dockerfile.rust
+│   ├── 05-image-caching
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 06-image-registries
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 07-docker-compose
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── docker-compose.yml
+│   ├── 08-container-networking
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 09-volumes-and-data
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 10-container-security
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 11-logging-strategy
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       ├── Dockerfile
+│   │       ├── app.py
+│   │       └── requirements.txt
+│   ├── 12-health-checks
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 13-environment-variables
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 14-secrets-management
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 15-container-monitoring
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 16-cicd-pipelines
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 17-image-versioning
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 18-horizontal-vs-vertical-scaling
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 19-load-balancing
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── nginx-loadbalancer.conf
+│   ├── 20-reverse-proxy
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── nginx-reverse-proxy.conf
+│   ├── 21-session-management
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 22-uptime-commitment
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 23-graceful-shutdown
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 24-when-to-use-kubernetes
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 25-kubernetes-architecture
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 26-pods-and-containers
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── pod.yaml
+│   ├── 27-deployments-and-replicasets
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── deployment.yaml
+│   ├── 28-services-and-networking
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       ├── deployment.yaml
+│   │       └── service.yaml
+│   ├── 29-ingress-controllers
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── ingress.yaml
+│   ├── 30-configmaps-and-secrets
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       ├── configmap.yaml
+│   │       ├── pod-with-config.yaml
+│   │       └── secret.yaml
+│   ├── 31-namespaces-and-rbac
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 32-persistent-volumes
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 33-statefulsets
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── postgresql-statefulset.yaml
+│   ├── 34-daemonsets-and-jobs
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 35-helm-charts
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── my-app-chart
+│   │           ├── Chart.yaml
+│   │           ├── templates
+│   │           │   └── deployment.yaml
+│   │           └── values.yaml
+│   ├── 36-kustomize
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 37-kubernetes-networking-deep-dive
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 38-kubernetes-security
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 39-metrics-collection
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       ├── alerts.yml
+│   │       └── prometheus.yml
+│   ├── 40-distributed-tracing
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 41-centralized-logging
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 42-alerting-systems
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── alertmanager.yml
+│   ├── 43-slo-monitoring
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 44-dashboard-design
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 45-database-scaling
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 46-replication
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 47-backup-and-restore
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 48-disaster-recovery
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 49-high-availability
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 50-database-migration
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 51-network-security
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 52-ddos-protection
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── nginx-rate-limiting.conf
+│   ├── 53-waf-rules
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 54-secrets-rotation
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 55-vulnerability-scanning
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 56-zero-trust-architecture
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 57-pipeline-design
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 58-blue-green-deployment
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 59-canary-deployment
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 60-gitops
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 61-feature-flags
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 62-dns-deep-dive
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 63-load-balancing-algorithms
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 64-cdn-and-edge
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 65-service-mesh
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 66-network-troubleshooting
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 67-auto-scaling
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── hpa.yaml
+│   ├── 68-traffic-surge-handling
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 69-capacity-planning
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 70-caching-strategies
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 71-performance-tuning
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 72-multi-host-orchestration
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 73-service-discovery
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 74-distributed-systems-patterns
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 75-multi-cloud-and-hybrid
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 76-incident-response
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── incident-response-playbook.md
+│   ├── 77-runbooks-and-playbooks
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 78-post-mortems
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   │       └── post-mortem-template.md
+│   ├── 79-change-management
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 80-cost-optimization
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── 81-capstone-unbreakable-system
+│   │   ├── README.md
+│   │   ├── cheatsheet.md
+│   │   └── examples
+│   ├── CHECKLIST.md
+│   ├── CLAUDE.md
+│   ├── CONTRIBUTING.md
+│   ├── README.md
+│   └── REVIEW.md
+├── rust-DSA
+│   ├── 01-arrays-and-hashing
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_two_sum.rs
+│   │       ├── p02_contains_duplicate.rs
+│   │       ├── p03_valid_anagram.rs
+│   │       ├── p04_group_anagrams.rs
+│   │       ├── p05_top_k_frequent.rs
+│   │       ├── p06_product_except_self.rs
+│   │       ├── p07_encode_decode_strings.rs
+│   │       └── p08_longest_consecutive.rs
+│   ├── 02-two-pointers
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_valid_palindrome.rs
+│   │       ├── p02_two_sum_sorted.rs
+│   │       ├── p03_three_sum.rs
+│   │       ├── p04_container_most_water.rs
+│   │       └── p05_trapping_rain_water.rs
+│   ├── 03-sliding-window
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_best_time_buy_sell.rs
+│   │       ├── p02_longest_substring_no_repeat.rs
+│   │       ├── p03_longest_replacement.rs
+│   │       ├── p04_min_window_substring.rs
+│   │       └── p05_sliding_window_max.rs
+│   ├── 04-stack
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_valid_parentheses.rs
+│   │       ├── p02_min_stack.rs
+│   │       ├── p03_eval_reverse_polish.rs
+│   │       ├── p04_daily_temperatures.rs
+│   │       ├── p05_car_fleet.rs
+│   │       └── p06_largest_rectangle.rs
+│   ├── 05-binary-search
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_binary_search.rs
+│   │       ├── p02_search_matrix.rs
+│   │       ├── p03_koko_eating_bananas.rs
+│   │       ├── p04_find_min_rotated.rs
+│   │       ├── p05_search_rotated.rs
+│   │       └── p06_time_map.rs
+│   ├── 06-linked-list
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── list_node.rs
+│   │       ├── p01_reverse_list.rs
+│   │       ├── p02_merge_two_sorted.rs
+│   │       ├── p03_linked_list_cycle.rs
+│   │       ├── p04_remove_nth_from_end.rs
+│   │       ├── p05_reorder_list.rs
+│   │       ├── p06_add_two_numbers.rs
+│   │       └── p07_copy_random_pointer.rs
+│   ├── 07-trees
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_invert_tree.rs
+│   │       ├── p02_max_depth.rs
+│   │       ├── p03_diameter_binary_tree.rs
+│   │       ├── p04_balanced_tree.rs
+│   │       ├── p05_same_tree.rs
+│   │       ├── p06_subtree_of_tree.rs
+│   │       ├── p07_lowest_common_ancestor.rs
+│   │       ├── p08_level_order_traversal.rs
+│   │       ├── p09_validate_bst.rs
+│   │       ├── p10_kth_smallest_bst.rs
+│   │       ├── p11_build_tree_preorder_inorder.rs
+│   │       ├── p12_serialize_deserialize.rs
+│   │       └── tree_node.rs
+│   ├── 08-trie
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_implement_trie.rs
+│   │       ├── p02_word_search_ii.rs
+│   │       └── trie.rs
+│   ├── 09-heap-priority-queue
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_kth_largest_element.rs
+│   │       ├── p02_last_stone_weight.rs
+│   │       ├── p03_k_closest_points.rs
+│   │       ├── p04_kth_largest_stream.rs
+│   │       ├── p05_task_scheduler.rs
+│   │       └── p06_twitter.rs
+│   ├── 10-backtracking
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_subsets.rs
+│   │       ├── p02_combinations.rs
+│   │       ├── p03_permutations.rs
+│   │       ├── p04_subsets_ii.rs
+│   │       ├── p05_combination_sum.rs
+│   │       ├── p06_word_search.rs
+│   │       ├── p07_palindrome_partitioning.rs
+│   │       ├── p08_letter_combinations.rs
+│   │       └── p09_n_queens.rs
+│   ├── 11-graphs
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_number_of_islands.rs
+│   │       ├── p02_clone_graph.rs
+│   │       ├── p03_max_area_island.rs
+│   │       ├── p04_pacific_atlantic.rs
+│   │       ├── p05_course_schedule.rs
+│   │       ├── p06_course_schedule_ii.rs
+│   │       ├── p07_graph_valid_tree.rs
+│   │       ├── p08_connected_components.rs
+│   │       └── p09_rotting_oranges.rs
+│   ├── 12-dynamic-programming
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_climbing_stairs.rs
+│   │       ├── p02_house_robber.rs
+│   │       ├── p03_house_robber_ii.rs
+│   │       ├── p04_coin_change.rs
+│   │       ├── p05_longest_increasing_subseq.rs
+│   │       ├── p06_longest_common_subseq.rs
+│   │       ├── p07_edit_distance.rs
+│   │       ├── p08_partition_equal_subset.rs
+│   │       ├── p09_unique_paths.rs
+│   │       ├── p10_word_break.rs
+│   │       ├── p11_longest_palindromic_sub.rs
+│   │       └── p12_decode_ways.rs
+│   ├── 13-greedy
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_max_subarray.rs
+│   │       ├── p02_jump_game.rs
+│   │       ├── p03_jump_game_ii.rs
+│   │       ├── p04_gas_station.rs
+│   │       ├── p05_hand_of_straights.rs
+│   │       ├── p06_merge_triplets.rs
+│   │       ├── p07_partition_labels.rs
+│   │       └── p08_valid_parenthesis_string.rs
+│   ├── 14-intervals
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_insert_interval.rs
+│   │       ├── p02_merge_intervals.rs
+│   │       ├── p03_non_overlapping.rs
+│   │       ├── p04_meeting_rooms.rs
+│   │       ├── p05_meeting_rooms_ii.rs
+│   │       └── p06_min_interval_queries.rs
+│   ├── 15-math-and-geometry
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_rotate_image.rs
+│   │       ├── p02_spiral_matrix.rs
+│   │       ├── p03_set_matrix_zeroes.rs
+│   │       ├── p04_happy_number.rs
+│   │       ├── p05_plus_one.rs
+│   │       ├── p06_pow_x_n.rs
+│   │       ├── p07_multiply_strings.rs
+│   │       └── p08_detect_squares.rs
+│   ├── 16-bit-manipulation
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_single_number.rs
+│   │       ├── p02_number_of_1_bits.rs
+│   │       ├── p03_counting_bits.rs
+│   │       ├── p04_reverse_bits.rs
+│   │       ├── p05_missing_number.rs
+│   │       └── p06_sum_two_integers.rs
+│   ├── 17-union-find
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_accounts_merge.rs
+│   │       ├── p02_redundant_connection.rs
+│   │       ├── p03_number_of_provinces.rs
+│   │       └── union_find.rs
+│   ├── 18-monotonic-stack
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_daily_temperatures.rs
+│   │       ├── p02_next_greater_element.rs
+│   │       ├── p03_stock_span.rs
+│   │       └── p04_histogram_max_area.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   └── Makefile
+├── rust-dev-mastery
+│   ├── 01-project-architecture
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_workspace_design.rs
+│   │       ├── p02_crate_organization.rs
+│   │       ├── p03_module_system_mastery.rs
+│   │       ├── p04_feature_flags.rs
+│   │       ├── p05_build_profiles.rs
+│   │       ├── p06_cargo_toml_deep_dive.rs
+│   │       ├── p07_dependency_management.rs
+│   │       ├── p08_project_templates.rs
+│   │       ├── p09_build_scripts.rs
+│   │       └── p10_release_engineering.rs
+│   ├── 02-error-handling
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_error_hierarchy.rs
+│   │       ├── p02_thiserror_patterns.rs
+│   │       ├── p03_anyhow_patterns.rs
+│   │       ├── p04_custom_error_types.rs
+│   │       ├── p05_error_context_chaining.rs
+│   │       ├── p06_client_facing_errors.rs
+│   │       ├── p07_error_recovery.rs
+│   │       ├── p08_panic_handling.rs
+│   │       ├── p09_error_testing.rs
+│   │       └── p10_error_documentation.rs
+│   ├── 03-logging-tracing
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_tracing_fundamentals.rs
+│   │       ├── p02_spans_events.rs
+│   │       ├── p03_structured_logging.rs
+│   │       ├── p04_subscriber_config.rs
+│   │       ├── p05_error_tracing.rs
+│   │       ├── p06_debug_techniques.rs
+│   │       ├── p07_log_filtering.rs
+│   │       ├── p08_metrics_integration.rs
+│   │       ├── p09_distributed_tracing.rs
+│   │       └── p10_production_observability.rs
+│   ├── 04-testing
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── benches
+│   │   │   └── example_benchmarks.rs
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_unit_test_patterns.rs
+│   │       ├── p02_integration_tests.rs
+│   │       ├── p03_property_based_testing.rs
+│   │       ├── p04_fuzzing.rs
+│   │       ├── p05_mocking_patterns.rs
+│   │       ├── p06_test_fixtures.rs
+│   │       ├── p07_benchmarking.rs
+│   │       ├── p08_snapshot_testing.rs
+│   │       ├── p09_test_coverage.rs
+│   │       └── p10_test_organization.rs
+│   ├── 05-async-rust
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_tokio_deep_dive.rs
+│   │       ├── p02_future_internals.rs
+│   │       ├── p03_async_patterns.rs
+│   │       ├── p04_async_error_handling.rs
+│   │       ├── p05_async_concurrency.rs
+│   │       ├── p06_streams.rs
+│   │       ├── p07_cancellation_safety.rs
+│   │       ├── p08_async_testing.rs
+│   │       ├── p09_async_performance.rs
+│   │       └── p10_async_architecture.rs
+│   ├── 06-performance-profiling
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_profiling_tools.rs
+│   │       ├── p02_criterion_benchmarks.rs
+│   │       ├── p03_memory_profiling.rs
+│   │       ├── p04_cpu_optimization.rs
+│   │       ├── p05_simd_intrinsics.rs
+│   │       ├── p06_cache_optimization.rs
+│   │       ├── p07_allocation_strategies.rs
+│   │       ├── p08_zero_cost_abstractions.rs
+│   │       ├── p09_lazy_evaluation.rs
+│   │       └── p10_production_perf.rs
+│   ├── 07-design-patterns
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_builder_pattern.rs
+│   │       ├── p02_typestate_pattern.rs
+│   │       ├── p03_newtype_pattern.rs
+│   │       ├── p04_raii_pattern.rs
+│   │       ├── p05_visitor_pattern.rs
+│   │       ├── p06_strategy_pattern.rs
+│   │       ├── p07_command_pattern.rs
+│   │       ├── p08_observer_pattern.rs
+│   │       ├── p09_state_machine.rs
+│   │       └── p10_dependency_injection.rs
+│   ├── 08-api-design
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_public_api_design.rs
+│   │       ├── p02_trait_based_apis.rs
+│   │       ├── p03_generics_vs_dyn.rs
+│   │       ├── p04_api_versioning.rs
+│   │       ├── p05_backward_compatibility.rs
+│   │       ├── p06_builder_for_apis.rs
+│   │       ├── p07_error_in_apis.rs
+│   │       ├── p08_documentation.rs
+│   │       ├── p09_crate_publishing.rs
+│   │       └── p10_api_review.rs
+│   ├── 09-unsafe-ffi
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── lib.rs
+│   │   │   ├── p01_unsafe_basics.rs
+│   │   │   ├── p02_raw_pointers.rs
+│   │   │   ├── p03_ffi_with_c.rs
+│   │   │   ├── p04_bindgen_usage.rs
+│   │   │   ├── p05_unsafe_traits.rs
+│   │   │   ├── p06_memory_safety.rs
+│   │   │   ├── p07_unsafe_abstractions.rs
+│   │   │   ├── p08_unsafe_patterns.rs
+│   │   │   ├── p09_unsafe_testing.rs
+│   │   │   └── p10_safety_documentation.rs
+│   │   └── tests
+│   ├── 10-macros
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── lib.rs
+│   │   │   ├── p01_declarative_macros.rs
+│   │   │   ├── p02_proc_macro_basics.rs
+│   │   │   ├── p03_derive_macros.rs
+│   │   │   ├── p04_attribute_macros.rs
+│   │   │   ├── p05_function_like_macros.rs
+│   │   │   ├── p06_syn_parsing.rs
+│   │   │   ├── p07_quote_generation.rs
+│   │   │   ├── p08_macro_hygiene.rs
+│   │   │   ├── p09_macro_testing.rs
+│   │   │   └── p10_build_scripts.rs
+│   │   └── tests
+│   ├── 11-serialization
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── lib.rs
+│   │   │   ├── p01_serde_deep_dive.rs
+│   │   │   ├── p02_custom_serde.rs
+│   │   │   ├── p03_json_mastery.rs
+│   │   │   ├── p04_binary_formats.rs
+│   │   │   ├── p05_schema_evolution.rs
+│   │   │   ├── p06_serde_performance.rs
+│   │   │   ├── p07_validation.rs
+│   │   │   ├── p08_format_design.rs
+│   │   │   ├── p09_database_serde.rs
+│   │   │   └── p10_serde_testing.rs
+│   │   └── tests
+│   ├── 12-networking-web
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_http_clients.rs
+│   │       ├── p02_axum_fundamentals.rs
+│   │       ├── p03_middleware.rs
+│   │       ├── p04_rest_api_design.rs
+│   │       ├── p05_request_validation.rs
+│   │       ├── p06_authentication.rs
+│   │       ├── p07_websocket.rs
+│   │       ├── p08_grpc_basics.rs
+│   │       ├── p09_rate_limiting.rs
+│   │       └── p10_protocol_design.rs
+│   ├── 12-testing-quality
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── lib.rs
+│   │   │   ├── p01_unit_testing.rs
+│   │   │   ├── p02_integration_testing.rs
+│   │   │   ├── p03_property_testing.rs
+│   │   │   ├── p04_fuzzing.rs
+│   │   │   ├── p05_mocking_patterns.rs
+│   │   │   ├── p06_test_fixtures.rs
+│   │   │   ├── p07_error_testing.rs
+│   │   │   ├── p08_benchmarking.rs
+│   │   │   ├── p09_test_organization.rs
+│   │   │   └── p10_ci_quality.rs
+│   │   └── tests
+│   ├── 13-cli-tools
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_clap_mastery.rs
+│   │       ├── p02_interactive_prompts.rs
+│   │       ├── p03_progress_indicators.rs
+│   │       ├── p04_config_management.rs
+│   │       ├── p05_cross_platform.rs
+│   │       ├── p06_signal_handling.rs
+│   │       ├── p07_daemon_services.rs
+│   │       ├── p08_shell_completion.rs
+│   │       ├── p09_cli_architecture.rs
+│   │       └── p10_cli_testing.rs
+│   ├── 14-database-storage
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_sqlx_fundamentals.rs
+│   │       ├── p02_connection_pooling.rs
+│   │       ├── p03_migrations.rs
+│   │       ├── p04_transaction_patterns.rs
+│   │       ├── p05_repository_pattern.rs
+│   │       ├── p06_embedded_databases.rs
+│   │       ├── p07_caching_strategies.rs
+│   │       ├── p08_database_testing.rs
+│   │       ├── p09_query_optimization.rs
+│   │       └── p10_storage_engines.rs
+│   ├── 15-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_cryptography_basics.rs
+│   │       ├── p02_password_hashing.rs
+│   │       ├── p03_secrets_management.rs
+│   │       ├── p04_input_validation.rs
+│   │       ├── p05_jwt_authentication.rs
+│   │       ├── p06_tls_configuration.rs
+│   │       ├── p07_authorization.rs
+│   │       ├── p08_supply_chain_security.rs
+│   │       ├── p09_secure_coding.rs
+│   │       └── p10_threat_modeling.rs
+│   ├── 16-devops-cicd
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_github_actions.rs
+│   │       ├── p02_release_workflows.rs
+│   │       ├── p03_cross_compilation.rs
+│   │       ├── p04_docker_patterns.rs
+│   │       ├── p05_monitoring_setup.rs
+│   │       ├── p06_deployment_strategies.rs
+│   │       ├── p07_artifact_management.rs
+│   │       ├── p08_environment_management.rs
+│   │       ├── p09_infrastructure_as_code.rs
+│   │       └── p10_production_operations.rs
+│   ├── 17-concurrency
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_channel_patterns.rs
+│   │       ├── p02_shared_state.rs
+│   │       ├── p03_lock_free_structures.rs
+│   │       ├── p04_actor_model.rs
+│   │       ├── p05_work_stealing.rs
+│   │       ├── p06_parallel_iterators.rs
+│   │       ├── p07_synchronization.rs
+│   │       ├── p08_concurrent_data_structures.rs
+│   │       ├── p09_concurrent_testing.rs
+│   │       └── p10_concurrent_architecture.rs
+│   ├── 18-memory-management
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_allocator_basics.rs
+│   │       ├── p02_arena_allocation.rs
+│   │       ├── p03_pool_allocation.rs
+│   │       ├── p04_memory_mapping.rs
+│   │       ├── p05_leak_detection.rs
+│   │       ├── p06_stack_vs_heap.rs
+│   │       ├── p07_memory_profiling.rs
+│   │       ├── p08_small_vec_optimization.rs
+│   │       ├── p09_zero_copy.rs
+│   │       └── p10_memory_safe_patterns.rs
+│   ├── 19-interop-wasm
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_py03_basics.rs
+│   │       ├── p02_wasm_fundamentals.rs
+│   │       ├── p03_wasm_optimization.rs
+│   │       ├── p04_c_embedding.rs
+│   │       ├── p05_plugin_systems.rs
+│   │       ├── p06_cross_language_testing.rs
+│   │       ├── p07_abi_stability.rs
+│   │       ├── p08_node_native_modules.rs
+│   │       ├── p09_uniffi_patterns.rs
+│   │       └── p10_embedding_patterns.rs
+│   ├── 20-code-quality
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_clippy_mastery.rs
+│   │       ├── p02_rustfmt_config.rs
+│   │       ├── p03_documentation_standards.rs
+│   │       ├── p04_code_review.rs
+│   │       ├── p05_refactoring_patterns.rs
+│   │       ├── p06_technical_debt.rs
+│   │       ├── p07_naming_conventions.rs
+│   │       ├── p08_comment_philosophy.rs
+│   │       ├── p09_module_organization.rs
+│   │       └── p10_code_metrics.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── README.md
+│   └── src
+│       └── lib.rs
+├── rust-interview-guide
+│   ├── 01-fresher-basics
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_variables_and_types.rs
+│   │       ├── p02_control_flow.rs
+│   │       ├── p03_functions_closures.rs
+│   │       ├── p04_structs_enums.rs
+│   │       ├── p05_pattern_matching.rs
+│   │       ├── p06_collections.rs
+│   │       ├── p07_error_handling.rs
+│   │       ├── p08_iterators.rs
+│   │       ├── p09_traits_generics.rs
+│   │       └── p10_modules_visibility.rs
+│   ├── 02-fresher-ownership
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_ownership_basics.rs
+│   │       ├── p02_borrowing.rs
+│   │       ├── p03_lifetimes.rs
+│   │       ├── p04_move_semantics.rs
+│   │       ├── p05_clone_copy.rs
+│   │       ├── p06_smart_pointers.rs
+│   │       ├── p07_string_ownership.rs
+│   │       ├── p08_struct_ownership.rs
+│   │       ├── p09_closure_ownership.rs
+│   │       └── p10_ownership_patterns.rs
+│   ├── 03-junior-concurrency
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_threads_basics.rs
+│   │       ├── p02_message_passing.rs
+│   │       ├── p03_shared_state.rs
+│   │       ├── p04_thread_safety.rs
+│   │       ├── p05_deadlock_prevention.rs
+│   │       ├── p06_producer_consumer.rs
+│   │       ├── p07_thread_pool.rs
+│   │       ├── p08_parallel_computation.rs
+│   │       ├── p09_thread_communication.rs
+│   │       └── p10_concurrent_data_structures.rs
+│   ├── 04-junior-async
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_async_basics.rs
+│   │       ├── p02_futures.rs
+│   │       ├── p03_tokio_runtime.rs
+│   │       ├── p04_async_error_handling.rs
+│   │       ├── p05_async_concurrency.rs
+│   │       ├── p06_async_channels.rs
+│   │       ├── p07_async_io.rs
+│   │       ├── p08_async_streams.rs
+│   │       ├── p09_async_patterns.rs
+│   │       └── p10_async_best_practices.rs
+│   ├── 05-mid-level-systems
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_file_io.rs
+│   │       ├── p02_serialization.rs
+│   │       ├── p03_error_handling.rs
+│   │       ├── p04_cli_tools.rs
+│   │       ├── p05_networking.rs
+│   │       ├── p06_logging.rs
+│   │       ├── p07_configuration.rs
+│   │       ├── p08_database.rs
+│   │       ├── p09_testing.rs
+│   │       └── p10_performance.rs
+│   ├── 06-mid-level-unsafe
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_unsafe_basics.rs
+│   │       ├── p02_raw_pointers.rs
+│   │       ├── p03_ffi.rs
+│   │       ├── p04_unsafe_traits.rs
+│   │       ├── p05_memory_safety.rs
+│   │       ├── p06_unsafe_abstractions.rs
+│   │       ├── p07_unsafe_patterns.rs
+│   │       ├── p08_unsafe_performance.rs
+│   │       ├── p09_unsafe_testing.rs
+│   │       └── p10_unsafe_best_practices.rs
+│   ├── 07-senior-design-patterns
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_builder.rs
+│   │       ├── p02_observer.rs
+│   │       ├── p03_strategy.rs
+│   │       ├── p04_state_machine.rs
+│   │       ├── p05_repository.rs
+│   │       ├── p06_factory.rs
+│   │       ├── p07_command.rs
+│   │       ├── p08_iterator.rs
+│   │       ├── p09_decorator.rs
+│   │       └── p10_adapter.rs
+│   ├── 08-senior-performance
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_profiling.rs
+│   │       ├── p02_memory_optimization.rs
+│   │       ├── p03_cpu_optimization.rs
+│   │       ├── p04_simd.rs
+│   │       ├── p05_zero_cost.rs
+│   │       ├── p06_caching.rs
+│   │       ├── p07_lazy_evaluation.rs
+│   │       ├── p08_parallel_optimization.rs
+│   │       ├── p09_io_optimization.rs
+│   │       └── p10_benchmarking.rs
+│   ├── 09-lead-architecture
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_system_design.rs
+│   │       ├── p02_api_design.rs
+│   │       ├── p03_library_design.rs
+│   │       ├── p04_trade_offs.rs
+│   │       ├── p05_scalability.rs
+│   │       ├── p06_reliability.rs
+│   │       ├── p07_security.rs
+│   │       ├── p08_maintainability.rs
+│   │       ├── p09_extensibility.rs
+│   │       └── p10_documentation.rs
+│   ├── 10-cto-strategy
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_technology_strategy.rs
+│   │       ├── p02_team_building.rs
+│   │       ├── p03_ecosystem.rs
+│   │       ├── p04_project_management.rs
+│   │       ├── p05_technical_leadership.rs
+│   │       ├── p06_decision_making.rs
+│   │       ├── p07_risk_management.rs
+│   │       ├── p08_innovation.rs
+│   │       ├── p09_communication.rs
+│   │       └── p10_vision.rs
+│   ├── 99-troubleshooting
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── quick-reference.md
+│   │   ├── real-world-errors.md
+│   │   └── src
+│   │       └── lib.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── README.md
+│   └── src
+│       └── lib.rs
+├── rust-security-lab
+│   ├── 01-crypto-primitives
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_hashing_basics.rs
+│   │       ├── p02_sha3_and_variants.rs
+│   │       ├── p03_hmac_authentication.rs
+│   │       ├── p04_length_extension_attack.rs
+│   │       ├── p05_constant_time_compare.rs
+│   │       ├── p06_base64_encoding.rs
+│   │       ├── p07_hex_encoding.rs
+│   │       ├── p08_checksums.rs
+│   │       ├── p09_merkle_tree.rs
+│   │       └── p10_hash_based_commitment.rs
+│   ├── 02-symmetric-encryption
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_aes_gcm_basics.rs
+│   │       ├── p02_chacha20_poly1305.rs
+│   │       ├── p03_nonce_management.rs
+│   │       ├── p04_key_rotation.rs
+│   │       ├── p05_authenticated_encryption.rs
+│   │       ├── p06_stream_vs_block.rs
+│   │       ├── p07_padding_oracle_attack.rs
+│   │       ├── p08_nonce_reuse_attack.rs
+│   │       ├── p09_additional_data.rs
+│   │       └── p10_hybrid_encryption.rs
+│   ├── 03-asymmetric-encryption
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_rsa_basics.rs
+│   │       ├── p02_rsa_key_sizes.rs
+│   │       ├── p03_x25519_key_exchange.rs
+│   │       ├── p04_ecdh_key_exchange.rs
+│   │       ├── p05_hybrid_encryption.rs
+│   │       ├── p06_key_encapsulation.rs
+│   │       ├── p07_chosen_ciphertext_attack.rs
+│   │       ├── p08_key_serialization.rs
+│   │       ├── p09_key_validation.rs
+│   │       └── p10_forward_secrecy.rs
+│   ├── 04-digital-signatures
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_ed25519_signing.rs
+│   │       ├── p02_ecdsa_signing.rs
+│   │       ├── p03_signature_verification.rs
+│   │       ├── p04_batch_verification.rs
+│   │       ├── p05_threshold_signatures.rs
+│   │       ├── p06_signature_malleability.rs
+│   │       ├── p07_deterministic_signatures.rs
+│   │       ├── p08_message_recovery.rs
+│   │       ├── p09_multi_signature.rs
+│   │       └── p10_signed_commitments.rs
+│   ├── 05-zero-knowledge-proofs
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_zk_fundamentals.rs
+│   │       ├── p02_schnorr_proof.rs
+│   │       ├── p03_commitment_schemes.rs
+│   │       ├── p04_sigma_protocols.rs
+│   │       ├── p05_range_proofs.rs
+│   │       ├── p06_proof_of_knowledge.rs
+│   │       ├── p07_non_interactive_proofs.rs
+│   │       ├── p08_zk_set_membership.rs
+│   │       ├── p09_zk_boolean_circuits.rs
+│   │       └── p10_bulletproofs_intro.rs
+│   ├── 06-key-management
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_key_generation.rs
+│   │       ├── p02_hkdf_derivation.rs
+│   │       ├── p03_pbkdf2_derivation.rs
+│   │       ├── p04_key_hierarchy.rs
+│   │       ├── p05_key_rotation.rs
+│   │       ├── p06_key_escrow.rs
+│   │       ├── p07_key_versioning.rs
+│   │       ├── p08_hardware_backed_keys.rs
+│   │       ├── p09_key_destruction.rs
+│   │       └── p10_key_lifecycle.rs
+│   ├── 07-password-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_argon2id_hashing.rs
+│   │       ├── p02_bcrypt_hashing.rs
+│   │       ├── p03_scrypt_hashing.rs
+│   │       ├── p04_salting.rs
+│   │       ├── p05_pepper.rs
+│   │       ├── p06_timing_attack.rs
+│   │       ├── p07_password_validation.rs
+│   │       ├── p08_brute_force_defense.rs
+│   │       ├── p09_password_reset.rs
+│   │       └── p10_password_migration.rs
+│   ├── 08-secure-local-storage
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_file_encryption.rs
+│   │       ├── p02_file_decryption.rs
+│   │       ├── p03_secure_deletion.rs
+│   │       ├── p04_temp_file_security.rs
+│   │       ├── p05_filesystem_permissions.rs
+│   │       ├── p06_encrypted_container.rs
+│   │       ├── p07_key_derivation_from_password.rs
+│   │       ├── p08_os_keychain_integration.rs
+│   │       ├── p09_data_at_rest.rs
+│   │       └── p10_secure_config_files.rs
+│   ├── 09-database-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_parameterized_queries.rs
+│   │       ├── p02_sql_injection_attack.rs
+│   │       ├── p03_field_level_encryption.rs
+│   │       ├── p04_encryption_at_rest.rs
+│   │       ├── p05_secure_backups.rs
+│   │       ├── p06_audit_logging.rs
+│   │       ├── p07_data_masking.rs
+│   │       ├── p08_secure_migrations.rs
+│   │       ├── p09_connection_security.rs
+│   │       └── p10_row_level_security.rs
+│   ├── 10-data-in-transit
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_tls_basics.rs
+│   │       ├── p02_certificate_validation.rs
+│   │       ├── p03_certificate_pinning.rs
+│   │       ├── p04_mtls.rs
+│   │       ├── p05_replay_attack.rs
+│   │       ├── p06_message_framing.rs
+│   │       ├── p07_dns_security.rs
+│   │       ├── p08_secure_websocket.rs
+│   │       ├── p09_channel_binding.rs
+│   │       └── p10_traffic_analysis.rs
+│   ├── 11-authentication
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_jwt_creation.rs
+│   │       ├── p02_jwt_verification.rs
+│   │       ├── p03_jwt_attacks.rs
+│   │       ├── p04_session_tokens.rs
+│   │       ├── p05_oauth2_flow.rs
+│   │       ├── p06_totp_mfa.rs
+│   │       ├── p07_passkey_concept.rs
+│   │       ├── p08_credential_stuffing.rs
+│   │       ├── p09_token_refresh.rs
+│   │       └── p10_secure_logout.rs
+│   ├── 12-authorization
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_rbac_basics.rs
+│   │       ├── p02_abac_basics.rs
+│   │       ├── p03_capability_tokens.rs
+│   │       ├── p04_permission_hierarchy.rs
+│   │       ├── p05_least_privilege.rs
+│   │       ├── p06_authorization_bypass.rs
+│   │       ├── p07_resource_scoping.rs
+│   │       ├── p08_policy_engine.rs
+│   │       ├── p09_audit_decisions.rs
+│   │       └── p10_graceful_denial.rs
+│   ├── 13-secret-management
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_env_var_secrets.rs
+│   │       ├── p02_secret_scanning.rs
+│   │       ├── p03_vault_integration.rs
+│   │       ├── p04_secret_rotation.rs
+│   │       ├── p05_sealed_secrets.rs
+│   │       ├── p06_secret_injection.rs
+│   │       ├── p07_memory_protection.rs
+│   │       ├── p08_secret_sharing.rs
+│   │       ├── p09_audit_secret_access.rs
+│   │       └── p10_secret_leak_response.rs
+│   ├── 14-api-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_rate_limiting.rs
+│   │       ├── p02_request_signing.rs
+│   │       ├── p03_hmac_webhooks.rs
+│   │       ├── p04_cors_security.rs
+│   │       ├── p05_csrf_protection.rs
+│   │       ├── p06_api_key_management.rs
+│   │       ├── p07_input_size_limits.rs
+│   │       ├── p08_json_security.rs
+│   │       ├── p09_graphql_security.rs
+│   │       └── p10_api_versioning.rs
+│   ├── 15-memory-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_zeroize_basics.rs
+│   │       ├── p02_secrecy_crate.rs
+│   │       ├── p03_constant_time_ops.rs
+│   │       ├── p04_mlock_memory.rs
+│   │       ├── p05_guard_pages.rs
+│   │       ├── p06_memory_forensics_defense.rs
+│   │       ├── p07_core_dump_protection.rs
+│   │       ├── p08_stack_vs_heap.rs
+│   │       ├── p09_secure_allocator.rs
+│   │       └── p10_side_channel_defense.rs
+│   ├── 16-serialization-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_deserialization_attacks.rs
+│   │       ├── p02_serde_security.rs
+│   │       ├── p03_json_depth_limit.rs
+│   │       ├── p04_schema_validation.rs
+│   │       ├── p05_format_confusion.rs
+│   │       ├── p06_untrusted_input.rs
+│   │       ├── p07_protobuf_security.rs
+│   │       ├── p08_xml_security.rs
+│   │       ├── p09_yaml_security.rs
+│   │       └── p10_safe_defaults.rs
+│   ├── 17-input-validation
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_type_driven_validation.rs
+│   │       ├── p02_sql_injection.rs
+│   │       ├── p03_command_injection.rs
+│   │       ├── p04_xss_prevention.rs
+│   │       ├── p05_ssrf_defense.rs
+│   │       ├── p06_path_traversal.rs
+│   │       ├── p07_unicode_attacks.rs
+│   │       ├── p08_regex_dos.rs
+│   │       ├── p09_integer_overflow.rs
+│   │       └── p10_input_sanitization.rs
+│   ├── 18-logging-and-audit
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_pii_redaction.rs
+│   │       ├── p02_structured_logging.rs
+│   │       ├── p03_log_injection.rs
+│   │       ├── p04_tamper_evident_logs.rs
+│   │       ├── p05_audit_trail.rs
+│   │       ├── p06_sensitive_data_masking.rs
+│   │       ├── p07_log_levels_security.rs
+│   │       ├── p08_correlation_ids.rs
+│   │       ├── p09_compliance_logging.rs
+│   │       └── p10_log_retention.rs
+│   ├── 19-error-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_information_leakage.rs
+│   │       ├── p02_secure_error_types.rs
+│   │       ├── p03_panic_safety.rs
+│   │       ├── p04_error_oracle.rs
+│   │       ├── p05_timing_oracle.rs
+│   │       ├── p06_error_enumeration.rs
+│   │       ├── p07_stack_trace_exposure.rs
+│   │       ├── p08_error_aggregation.rs
+│   │       ├── p09_secure_defaults.rs
+│   │       └── p10_error_logging.rs
+│   ├── 20-supply-chain-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_cargo_audit.rs
+│   │       ├── p02_cargo_deny.rs
+│   │       ├── p03_dependency_pinning.rs
+│   │       ├── p04_typosquatting.rs
+│   │       ├── p05_sbom_generation.rs
+│   │       ├── p06_reproducible_builds.rs
+│   │       ├── p07_build_provenance.rs
+│   │       ├── p08_cargo_geiger.rs
+│   │       ├── p09_minimum_versions.rs
+│   │       └── p10_sigstore.rs
+│   ├── 21-fuzzing-and-testing
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_fuzz_basics.rs
+│   │       ├── p02_proptest_basics.rs
+│   │       ├── p03_crypto_fuzzing.rs
+│   │       ├── p04_parser_fuzzing.rs
+│   │       ├── p05_differential_fuzzing.rs
+│   │       ├── p06_coverage_guided.rs
+│   │       ├── p07_security_test_harness.rs
+│   │       ├── p08_regression_tests.rs
+│   │       ├── p09_mock_security.rs
+│   │       └── p10_continuous_fuzzing.rs
+│   ├── 22-static-analysis
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_clippy_security.rs
+│   │       ├── p02_unsafe_audit.rs
+│   │       ├── p03_miri_basics.rs
+│   │       ├── p04_kani_verification.rs
+│   │       ├── p05_custom_lints.rs
+│   │       ├── p06_dependency_auditing.rs
+│   │       ├── p07_code_review_checklist.rs
+│   │       ├── p08_semgrep_rust.rs
+│   │       ├── p09_taint_analysis.rs
+│   │       └── p10_ci_security_gate.rs
+│   ├── 23-threat-modeling
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_stride_model.rs
+│   │       ├── p02_attack_trees.rs
+│   │       ├── p03_dread_scoring.rs
+│   │       ├── p04_data_flow_analysis.rs
+│   │       ├── p05_asset_identification.rs
+│   │       ├── p06_threat_enumeration.rs
+│   │       ├── p07_mitigation_strategies.rs
+│   │       ├── p08_security_requirements.rs
+│   │       ├── p09_risk_assessment.rs
+│   │       └── p10_security_design_review.rs
+│   ├── 24-secure-deployment
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_reproducible_builds.rs
+│   │       ├── p02_container_security.rs
+│   │       ├── p03_sbom_in_ci.rs
+│   │       ├── p04_release_signing.rs
+│   │       ├── p05_build_attestation.rs
+│   │       ├── p06_secret_injection_ci.rs
+│   │       ├── p07_image_scanning.rs
+│   │       ├── p08_supply_chain_verify.rs
+│   │       ├── p09_deployment_hardening.rs
+│   │       └── p10_incident_response.rs
+│   ├── 25-post-quantum-crypto
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_quantum_threat.rs
+│   │       ├── p02_lattice_based_crypto.rs
+│   │       ├── p03_kyber_ml_kem.rs
+│   │       ├── p04_sphincs_plus.rs
+│   │       ├── p05_hybrid_encryption.rs
+│   │       ├── p06_key_migration.rs
+│   │       ├── p07_crypto_agility.rs
+│   │       ├── p08_pqc_in_tls.rs
+│   │       ├── p09_hash_based_sigs.rs
+│   │       └── p10_pqc_risk_assessment.rs
+│   ├── 26-privacy-engineering
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_differential_privacy.rs
+│   │       ├── p02_k_anonymity.rs
+│   │       ├── p03_data_minimization.rs
+│   │       ├── p04_anonymization.rs
+│   │       ├── p05_gdpr_technical.rs
+│   │       ├── p06_privacy_by_design.rs
+│   │       ├── p07_data_retention.rs
+│   │       ├── p08_consent_management.rs
+│   │       ├── p09_privacy_preserving_computation.rs
+│   │       └── p10_privacy_impact.rs
+│   ├── 27-advanced-crypto-protocols
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_secret_sharing.rs
+│   │       ├── p02_multi_party_compute.rs
+│   │       ├── p03_homomorphic_concepts.rs
+│   │       ├── p04_oblivious_transfer.rs
+│   │       ├── p05_secure_aggregation.rs
+│   │       ├── p06_mental_poker.rs
+│   │       ├── p07_commitment_schemes_advanced.rs
+│   │       ├── p08_zero_knowledge_advanced.rs
+│   │       ├── p09_blind_signatures.rs
+│   │       └── p10_anonymous_credentials.rs
+│   ├── 28-hardware-security
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_tpm_basics.rs
+│   │       ├── p02_hsm_concepts.rs
+│   │       ├── p03_secure_enclave.rs
+│   │       ├── p04_attestation.rs
+│   │       ├── p05_hardware_tokens.rs
+│   │       ├── p06_secure_boot.rs
+│   │       ├── p07_trusted_execution.rs
+│   │       ├── p08_hardware_rng.rs
+│   │       ├── p09_tamper_detection.rs
+│   │       └── p10_hardware_integration.rs
+│   ├── 29-capstone-secure-messenger
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_key_generation.rs
+│   │       ├── p02_key_exchange.rs
+│   │       ├── p03_message_encryption.rs
+│   │       ├── p04_message_decryption.rs
+│   │       ├── p05_forward_secrecy.rs
+│   │       ├── p06_key_verification.rs
+│   │       ├── p07_group_messaging.rs
+│   │       ├── p08_message_padding.rs
+│   │       ├── p09_key_backup.rs
+│   │       └── p10_full_protocol.rs
+│   ├── 30-capstone-encrypted-vault
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_master_key_derivation.rs
+│   │       ├── p02_vault_encryption.rs
+│   │       ├── p03_vault_decryption.rs
+│   │       ├── p04_entry_management.rs
+│   │       ├── p05_secure_clipboard.rs
+│   │       ├── p06_auto_lock.rs
+│   │       ├── p07_key_rotation.rs
+│   │       ├── p08_breach_detection.rs
+│   │       ├── p09_secure_backup.rs
+│   │       └── p10_vault_integrity.rs
+│   ├── 31-capstone-secure-web-api
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_tls_setup.rs
+│   │       ├── p02_authentication_layer.rs
+│   │       ├── p03_authorization_layer.rs
+│   │       ├── p04_rate_limiting.rs
+│   │       ├── p05_input_validation.rs
+│   │       ├── p06_request_signing.rs
+│   │       ├── p07_audit_logging.rs
+│   │       ├── p08_error_handling.rs
+│   │       ├── p09_secret_management.rs
+│   │       └── p10_full_api.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── Makefile
+│   ├── README.md
+│   ├── generate-structure.sh
+│   ├── test_comment
+│   ├── test_exact
+│   ├── test_exact2
+│   ├── test_fn2
+│   ├── test_fn_ptr
+│   └── test_full
+└── structure.txt
+
+339 directories, 1214 files
