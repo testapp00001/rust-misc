@@ -1,0 +1,30 @@
+# Multi-stage build for Rust application
+# Stage 1: Build
+FROM rust:1.74-slim-bookworm AS builder
+
+WORKDIR /app
+
+# Create a dummy project to cache dependencies
+RUN cargo init --name myapp
+COPY Cargo.toml Cargo.lock ./
+RUN cargo build --release && \
+    rm -rf src target/release/deps/myapp* target/release/myapp*
+
+# Copy source and build
+COPY src ./src
+RUN cargo build --release
+
+# Stage 2: Minimal production image
+FROM debian:bookworm-slim
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY --from=builder /app/target/release/myapp ./myapp
+
+EXPOSE 8080
+
+CMD ["./myapp"]

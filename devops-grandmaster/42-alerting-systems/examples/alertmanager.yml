@@ -1,0 +1,64 @@
+global:
+  resolve_timeout: 5m
+  slack_api_url: 'https://hooks.slack.com/services/xxx/yyy/zzz'
+
+route:
+  group_by: ['alertname', 'severity']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+
+  # Default receiver
+  receiver: 'slack-notifications'
+
+  routes:
+    # Critical alerts → PagerDuty
+    - match:
+        severity: critical
+      receiver: 'pagerduty-critical'
+      continue: true
+
+    # Warning alerts → Slack
+    - match:
+        severity: warning
+      receiver: 'slack-notifications'
+
+    # Database alerts → DBA team
+    - match:
+        team: database
+      receiver: 'dba-team'
+
+receivers:
+  - name: 'slack-notifications'
+    slack_configs:
+      - channel: '#alerts'
+        title: '{{ .GroupLabels.alertname }}'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}\n{{ end }}'
+        send_resolved: true
+
+  - name: 'pagerduty-critical'
+    pagerduty_configs:
+      - service_key: 'your-pagerduty-service-key'
+        description: '{{ .GroupLabels.alertname }}: {{ .Annotations.description }}'
+
+  - name: 'dba-team'
+    email_configs:
+      - to: 'dba-team@example.com'
+        from: 'alertmanager@example.com'
+        smarthost: 'smtp.example.com:587'
+
+# Inhibition rules — suppress warning if critical exists
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']
+
+# Silence examples (usually managed via UI)
+# silence:
+#   - matchers:
+#     - alertname="HighCPUUsage"
+#     - instance="test-server"
+#     startsAt: "2024-01-01T00:00:00Z"
+#     endsAt: "2024-01-02T00:00:00Z"
