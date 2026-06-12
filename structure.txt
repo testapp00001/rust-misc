@@ -363,6 +363,519 @@
 │   ├── CONTRIBUTING.md
 │   ├── README.md
 │   └── REVIEW.md
+├── distributed-systems-theory
+│   ├── 01-two-generals
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_unreliable_channel.rs
+│   │       ├── p02_two_generals_sim.rs
+│   │       ├── p03_impossibility_proof.rs
+│   │       ├── p04_retry_and_timeout.rs
+│   │       ├── p05_idempotent_delivery.rs
+│   │       ├── p06_byzantine_generals_intro.rs
+│   │       └── p07_effectively_once.rs
+│   ├── 02-time-and-ordering
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_physical_clocks.rs
+│   │       ├── p02_clock_drift_sim.rs
+│   │       ├── p03_happened_before.rs
+│   │       ├── p04_lamport_timestamps.rs
+│   │       ├── p05_vector_clocks.rs
+│   │       ├── p06_version_vectors.rs
+│   │       ├── p07_causal_ordering.rs
+│   │       ├── p08_concurrent_detection.rs
+│   │       ├── p09_hybrid_logical_clocks.rs
+│   │       └── p10_hlc_key_value_store.rs
+│   ├── 03-cap-theorem
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_replicated_kv_store.rs
+│   │       ├── p02_cp_mode.rs
+│   │       ├── p03_ap_mode.rs
+│   │       ├── p04_partition_simulator.rs
+│   │       ├── p05_consistency_levels.rs
+│   │       ├── p06_linearizability_test.rs
+│   │       ├── p07_eventual_convergence.rs
+│   │       ├── p08_pacelc_analysis.rs
+│   │       ├── p09_read_your_writes.rs
+│   │       └── p10_monotonic_reads.rs
+│   ├── 04-consensus
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_consensus_definition.rs
+│   │       ├── p02_paxos_proposer.rs
+│   │       ├── p03_paxos_acceptor.rs
+│   │       ├── p04_paxos_full_round.rs
+│   │       ├── p05_raft_state_machine.rs
+│   │       ├── p06_raft_leader_election.rs
+│   │       ├── p07_raft_log_replication.rs
+│   │       ├── p08_raft_combined.rs
+│   │       ├── p09_raft_persistence.rs
+│   │       ├── p10_raft_snapshot.rs
+│   │       ├── p11_raft_kv_store.rs
+│   │       ├── p12_linearizability_checker.rs
+│   │       └── p13_leader_election_comparison.rs
+│   ├── 05-flp-impossibility
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_indistinguishability.rs
+│   │       ├── p02_deterministic_consensus.rs
+│   │       ├── p03_deadlock_demonstration.rs
+│   │       ├── p04_failure_detectors.rs
+│   │       ├── p05_partial_synchrony.rs
+│   │       ├── p06_randomized_consensus.rs
+│   │       └── p07_timeout_tradeoffs.rs
+│   ├── 06-distributed-transactions
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_two_phase_commit.rs
+│   │       ├── p02_2pc_coordinator_crash.rs
+│   │       ├── p03_three_phase_commit.rs
+│   │       ├── p04_3pc_partition.rs
+│   │       ├── p05_saga_choreography.rs
+│   │       ├── p06_saga_orchestration.rs
+│   │       ├── p07_saga_compensation.rs
+│   │       ├── p08_transactional_outbox.rs
+│   │       ├── p09_isolation_analysis.rs
+│   │       └── p10_flash_sale_saga.rs
+│   ├── 07-consistent-hashing
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_naive_hash_partition.rs
+│   │       ├── p02_consistent_hash_ring.rs
+│   │       ├── p03_virtual_nodes.rs
+│   │       ├── p04_jump_consistent_hash.rs
+│   │       ├── p05_rendezvous_hashing.rs
+│   │       ├── p06_load_balance_analysis.rs
+│   │       ├── p07_rebalancing_cost.rs
+│   │       ├── p08_hotspot_detection.rs
+│   │       ├── p09_distributed_kv_sharded.rs
+│   │       └── p10_hash_function_comparison.rs
+│   ├── 08-crdts
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_g_counter.rs
+│   │       ├── p02_pn_counter.rs
+│   │       ├── p03_g_set.rs
+│   │       ├── p04_or_set.rs
+│   │       ├── p05_lww_register.rs
+│   │       ├── p06_mv_register.rs
+│   │       ├── p07_or_map.rs
+│   │       ├── p08_merge_properties.rs
+│   │       ├── p09_replica_simulation.rs
+│   │       ├── p10_shopping_cart.rs
+│   │       ├── p11_distributed_counter_flash_sale.rs
+│   │       └── p12_crdt_benchmarks.rs
+│   ├── 09-byzantine-fault-tolerance
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_fault_types.rs
+│   │       ├── p02_pbft_roles.rs
+│   │       ├── p03_pbft_pre_prepare.rs
+│   │       ├── p04_pbft_prepare.rs
+│   │       ├── p05_pbft_commit.rs
+│   │       ├── p06_pbft_view_change.rs
+│   │       ├── p07_byzantine_node_sim.rs
+│   │       ├── p08_impossibility_3_nodes.rs
+│   │       ├── p09_raft_vs_pbft_benchmark.rs
+│   │       └── p10_mini_blockchain.rs
+│   ├── 10-clock-synchronization
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_ntp_simulation.rs
+│   │       ├── p02_clock_drift_model.rs
+│   │       ├── p03_truetime_interval.rs
+│   │       ├── p04_hlc_implementation.rs
+│   │       ├── p05_hlc_causality.rs
+│   │       ├── p06_commit_wait.rs
+│   │       ├── p07_spanner_external_consistency.rs
+│   │       └── p08_clock_comparison.rs
+│   ├── 11-integration-exercises
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_distributed_kv_with_raft.rs
+│   │       ├── p02_eventually_consistent_store.rs
+│   │       ├── p03_crdt_replicated_shopping_cart.rs
+│   │       ├── p04_saga_based_order_system.rs
+│   │       ├── p05_sharded_cache_with_consistent_hashing.rs
+│   │       ├── p06_pbft_key_value_store.rs
+│   │       └── p07_full_distributed_system.rs
+│   ├── 12-jepsen-style-tests
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── causal_consistency.rs
+│   │       ├── eventual_convergence.rs
+│   │       ├── lib.rs
+│   │       ├── linearizability.rs
+│   │       ├── network_chaos.rs
+│   │       ├── partition_tolerance.rs
+│   │       └── sequential_consistency.rs
+│   ├── 13-capstone-distributed-database
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── api
+│   │       │   ├── delete.rs
+│   │       │   ├── get.rs
+│   │       │   ├── mod.rs
+│   │       │   └── put.rs
+│   │       ├── clock
+│   │       │   ├── hlc.rs
+│   │       │   └── mod.rs
+│   │       ├── consensus
+│   │       │   ├── mod.rs
+│   │       │   ├── raft.rs
+│   │       │   └── state_machine.rs
+│   │       ├── crdt
+│   │       │   ├── counters.rs
+│   │       │   └── mod.rs
+│   │       ├── lib.rs
+│   │       ├── main.rs
+│   │       ├── networking
+│   │       │   ├── failure_detector.rs
+│   │       │   ├── mod.rs
+│   │       │   └── rpc.rs
+│   │       ├── replication
+│   │       │   ├── log_replication.rs
+│   │       │   └── mod.rs
+│   │       ├── sharding
+│   │       │   ├── consistent_hash.rs
+│   │       │   ├── mod.rs
+│   │       │   └── rebalancer.rs
+│   │       ├── storage
+│   │       │   ├── engine.rs
+│   │       │   ├── mod.rs
+│   │       │   └── wal.rs
+│   │       └── transactions
+│   │           ├── isolation.rs
+│   │           ├── mod.rs
+│   │           └── saga.rs
+│   ├── 14-production-message-queue
+│   │   ├── Cargo.toml
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── config
+│   │   │   └── default.toml
+│   │   ├── docker-compose.yml
+│   │   ├── src
+│   │   │   ├── broker
+│   │   │   │   ├── consumer.rs
+│   │   │   │   ├── message.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── partition.rs
+│   │   │   │   ├── producer.rs
+│   │   │   │   └── topic.rs
+│   │   │   ├── clock
+│   │   │   │   ├── hlc.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── config.rs
+│   │   │   ├── delivery
+│   │   │   │   ├── exactly_once.rs
+│   │   │   │   ├── idempotency.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── error.rs
+│   │   │   ├── health.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── logging.rs
+│   │   │   ├── main.rs
+│   │   │   ├── metrics.rs
+│   │   │   ├── network
+│   │   │   │   ├── connection_pool.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── rpc.rs
+│   │   │   │   └── server.rs
+│   │   │   ├── partitioning
+│   │   │   │   ├── hash_ring.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── rebalancer.rs
+│   │   │   ├── replication
+│   │   │   │   ├── leader_election.rs
+│   │   │   │   ├── log_replication.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── raft_node.rs
+│   │   │   └── storage
+│   │   │       ├── index.rs
+│   │   │       ├── mod.rs
+│   │   │       ├── segment.rs
+│   │   │       └── wal.rs
+│   │   └── tests
+│   │       └── integration.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── README.md
+│   ├── consistency-models.md
+│   └── theorems.md
+├── docs
+│   ├── distributed-systems-theory
+│   │   └── chat.md
+│   └── flash-sale
+│       └── guide.md
+├── flash-sale-mastery
+│   ├── 01-redis-fundamentals
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_connection_pool.rs
+│   │       ├── p02_string_operations.rs
+│   │       ├── p03_hash_operations.rs
+│   │       ├── p04_set_operations.rs
+│   │       ├── p05_sorted_set_operations.rs
+│   │       ├── p06_pipeline_operations.rs
+│   │       ├── p07_transaction_basic.rs
+│   │       ├── p08_key_expiration.rs
+│   │       ├── p09_error_handling.rs
+│   │       └── p10_connection_resilience.rs
+│   ├── 02-redis-lua-scripting
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_eval_basics.rs
+│   │       ├── p02_stock_decrement.rs
+│   │       ├── p03_account_claim_check.rs
+│   │       ├── p04_product_voucher_limit.rs
+│   │       ├── p05_combined_purchase.lua
+│   │       ├── p05_combined_purchase.rs
+│   │       ├── p06_sliding_window_rate_limit.rs
+│   │       ├── p07_idempotency_check.rs
+│   │       ├── p08_batch_operations.rs
+│   │       ├── p09_script_caching.rs
+│   │       └── p10_lua_error_patterns.rs
+│   ├── 03-atomic-counters
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_local_atomic_counter.rs
+│   │       ├── p02_redis_atomic_counter.rs
+│   │       ├── p03_cas_pattern.rs
+│   │       ├── p04_optimistic_locking.rs
+│   │       ├── p05_pessimistic_locking.rs
+│   │       ├── p06_reconciliation.rs
+│   │       ├── p07_counter_benchmark.rs
+│   │       ├── p08_failure_analysis.rs
+│   │       └── p09_multi_instance_test.rs
+│   ├── 04-traffic-shaping
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_token_bucket.rs
+│   │       ├── p02_sliding_window_log.rs
+│   │       ├── p03_sliding_window_counter.rs
+│   │       ├── p04_leaky_bucket.rs
+│   │       ├── p05_admission_control.rs
+│   │       ├── p06_virtual_waiting_room.rs
+│   │       ├── p07_backpressure_channel.rs
+│   │       ├── p08_graceful_degradation.rs
+│   │       ├── p09_multi_layer_rate_limit.rs
+│   │       └── p10_rate_limit_middleware.rs
+│   ├── 05-idempotency
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── benches
+│   │   │   └── p08_idempotency_benchmark.rs
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_idempotency_key_generation.rs
+│   │       ├── p02_redis_idempotency_store.rs
+│   │       ├── p03_db_idempotency_store.rs
+│   │       ├── p04_concurrent_dedup.rs
+│   │       ├── p05_idempotent_handler_middleware.rs
+│   │       ├── p06_exactly_once_consumer.rs
+│   │       ├── p07_race_condition_test.rs
+│   │       └── p08_idempotency_benchmark.rs
+│   ├── 06-event-sourcing
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_event_design.rs
+│   │       ├── p02_event_store.rs
+│   │       ├── p03_event_replay.rs
+│   │       ├── p04_redis_streams.rs
+│   │       ├── p05_consumer_groups.rs
+│   │       ├── p06_reconciliation_job.rs
+│   │       ├── p07_audit_query.rs
+│   │       └── p08_event_versioning.rs
+│   ├── 07-resilience
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_circuit_breaker.rs
+│   │       ├── p02_bulkhead.rs
+│   │       ├── p03_retry_with_backoff.rs
+│   │       ├── p04_timeout_management.rs
+│   │       ├── p05_fallback_strategies.rs
+│   │       ├── p06_graceful_shutdown.rs
+│   │       ├── p07_health_check.rs
+│   │       └── p08_failure_injection.rs
+│   ├── 08-load-testing
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_load_generator.rs
+│   │       ├── p02_ramp_up_scenario.rs
+│   │       ├── p03_spike_scenario.rs
+│   │       ├── p04_sustained_load.rs
+│   │       ├── p05_metrics_collector.rs
+│   │       ├── p06_latency_analysis.rs
+│   │       ├── p07_capacity_model.rs
+│   │       └── p08_bottleneck_identifier.rs
+│   ├── 09-observability
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_tracing_setup.rs
+│   │       ├── p02_span_propagation.rs
+│   │       ├── p03_custom_metrics.rs
+│   │       ├── p04_redis_metrics.rs
+│   │       ├── p05_business_metrics.rs
+│   │       ├── p06_alert_rules.rs
+│   │       ├── p07_dashboard_spec.rs
+│   │       └── p08_log_analysis.rs
+│   ├── 10-caching-strategy
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── p01_cache_warming.rs
+│   │       ├── p02_thundering_herd.rs
+│   │       ├── p03_singleflight.rs
+│   │       ├── p04_cache_aside.rs
+│   │       ├── p05_primary_vs_cache.rs
+│   │       ├── p06_invalidation.rs
+│   │       ├── p07_transition_strategy.rs
+│   │       └── p08_cache_benchmark.rs
+│   ├── 11-flash-sale-api
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── config.rs
+│   │       ├── lib.rs
+│   │       ├── main.rs
+│   │       ├── middleware
+│   │       │   ├── error_handler.rs
+│   │       │   ├── idempotency.rs
+│   │       │   ├── mod.rs
+│   │       │   ├── rate_limit.rs
+│   │       │   └── tracing.rs
+│   │       ├── models
+│   │       │   ├── events.rs
+│   │       │   ├── mod.rs
+│   │       │   ├── purchase.rs
+│   │       │   ├── stock.rs
+│   │       │   └── voucher.rs
+│   │       ├── resilience
+│   │       │   ├── circuit_breaker.rs
+│   │       │   ├── fallback.rs
+│   │       │   └── mod.rs
+│   │       ├── resolution
+│   │       ├── routes
+│   │       │   ├── health.rs
+│   │       │   ├── mod.rs
+│   │       │   ├── purchase.rs
+│   │       │   └── stock_query.rs
+│   │       └── services
+│   │           ├── mod.rs
+│   │           ├── notification_service.rs
+│   │           ├── order_service.rs
+│   │           ├── stock_service.rs
+│   │           └── voucher_service.rs
+│   ├── 12-order-worker
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── main.rs
+│   │       ├── p01_consumer.rs
+│   │       ├── p02_order_processor.rs
+│   │       ├── p03_payment_handler.rs
+│   │       ├── p04_notification_handler.rs
+│   │       └── p05_dead_letter.rs
+│   ├── 13-reconciliation
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── main.rs
+│   │       ├── p01_inventory_sync.rs
+│   │       ├── p02_event_replay.rs
+│   │       ├── p03_discrepancy_detector.rs
+│   │       ├── p04_report_generator.rs
+│   │       └── shared.rs
+│   ├── 14-integration-tests
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   └── lib.rs
+│   │   └── tests
+│   │       ├── common
+│   │       │   └── mod.rs
+│   │       ├── p01_single_purchase.rs
+│   │       ├── p02_concurrent_purchases.rs
+│   │       ├── p03_oversell_prevention.rs
+│   │       ├── p04_duplicate_request.rs
+│   │       ├── p05_sold_out_handling.rs
+│   │       ├── p06_per_account_limit.rs
+│   │       ├── p07_per_product_limit.rs
+│   │       ├── p08_redis_failure.rs
+│   │       ├── p09_db_failure.rs
+│   │       ├── p10_full_load_simulation.rs
+│   │       └── p11_reconciliation_test.rs
+│   ├── 15-capstone-deployment
+│   │   ├── Cargo.toml
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── docker-compose.yml
+│   │   ├── k8s
+│   │   │   ├── configmap.yaml
+│   │   │   ├── deployment.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   └── service.yaml
+│   │   ├── monitoring
+│   │   │   ├── alerts.yml
+│   │   │   ├── grafana-dashboard.json
+│   │   │   └── prometheus.yml
+│   │   ├── scripts
+│   │   │   ├── load-test.sh
+│   │   │   ├── pre-sale-warmup.sh
+│   │   │   └── reconciliation.sh
+│   │   └── src
+│   │       ├── lib.rs
+│   │       └── main.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── README.md
+│   └── architecture.md
 ├── rust-DSA
 │   ├── 01-arrays-and-hashing
 │   │   ├── Cargo.toml
@@ -1552,4 +2065,4 @@
 │   └── test_full
 └── structure.txt
 
-339 directories, 1214 files
+432 directories, 1634 files

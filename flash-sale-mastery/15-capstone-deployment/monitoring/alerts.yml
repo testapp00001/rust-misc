@@ -1,0 +1,61 @@
+groups:
+  - name: flash_sale_alerts
+    rules:
+      # Warn when stock drops below 10% of initial inventory
+      - alert: stock_below_threshold
+        expr: flash_sale_stock_remaining < (flash_sale_stock_initial * 0.1)
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Stock below 10% threshold"
+          description: "Product {{ $labels.product_id }} has {{ $value }} items remaining (less than 10% of initial stock)."
+
+      # Error rate exceeds 5% over a 2-minute window
+      - alert: error_rate_exceeded
+        expr: |
+          (
+            sum(rate(http_requests_total{status=~"5.."}[2m]))
+            /
+            sum(rate(http_requests_total[2m]))
+          ) > 0.05
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Error rate exceeds 5%"
+          description: "The HTTP 5xx error rate is {{ $value | humanizePercentage }} over the last 2 minutes."
+
+      # p99 latency exceeds 500ms
+      - alert: latency_exceeded
+        expr: |
+          histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) > 0.5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "p99 latency exceeds 500ms"
+          description: "The 99th percentile request latency is {{ $value }}s, exceeding the 500ms threshold."
+
+      # Redis is unreachable
+      - alert: redis_down
+        expr: up{job="redis"} == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Redis is down"
+          description: "Redis instance {{ $labels.instance }} has been unreachable for more than 30 seconds."
+
+      # Oversell detected — CRITICAL
+      - alert: oversell_detected
+        expr: flash_sale_oversell_count > 0
+        for: 0s
+        labels:
+          severity: critical
+        annotations:
+          summary: "OVERSELL DETECTED"
+          description: >
+            The oversell counter has detected {{ $value }} oversold items.
+            This is a CRITICAL issue — more items were sold than were in stock.
+            Immediate investigation and reconciliation required.

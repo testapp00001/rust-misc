@@ -1,0 +1,12 @@
+pub mod p01_g_counter;
+pub mod p02_pn_counter;
+pub mod p03_g_set;
+pub mod p04_or_set;
+pub mod p05_lww_register;
+pub mod p06_mv_register;
+pub mod p07_or_map;
+pub mod p08_merge_properties;
+pub mod p09_replica_simulation;
+pub mod p10_shopping_cart;
+pub mod p11_distributed_counter_flash_sale;
+pub mod p12_crdt_benchmarks;

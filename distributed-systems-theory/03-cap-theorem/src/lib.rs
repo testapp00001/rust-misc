@@ -1,0 +1,10 @@
+pub mod p01_replicated_kv_store;
+pub mod p02_cp_mode;
+pub mod p03_ap_mode;
+pub mod p04_partition_simulator;
+pub mod p05_consistency_levels;
+pub mod p06_linearizability_test;
+pub mod p07_eventual_convergence;
+pub mod p08_pacelc_analysis;
+pub mod p09_read_your_writes;
+pub mod p10_monotonic_reads;

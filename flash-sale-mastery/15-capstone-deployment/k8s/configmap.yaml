@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flash-sale-config
+data:
+  REDIS_URL: "redis://redis-master.flash-sale.svc.cluster.local:6379"
+  DATABASE_URL: "postgres://flash_sale:flash_sale_prod@postgres.flash-sale.svc.cluster.local/flash_sale"
+  RUST_LOG: "info"
+  LISTEN_ADDR: "0.0.0.0:3000"
+
+  # Sale configuration
+  SALE_ID: "flash-sale-2026-summer"
+  SALE_START_TIME: "2026-07-01T10:00:00Z"
+  SALE_END_TIME: "2026-07-01T10:15:00Z"
+  SALE_PRODUCT_COUNT: "5000"
+  SALE_MAX_PER_USER: "1"
+
+  # Rate limiting
+  RATE_LIMIT_RPS: "10000"
+  RATE_LIMIT_BURST: "500"
+
+  # Redis pool
+  REDIS_POOL_SIZE: "64"
+  REDIS_POOL_TIMEOUT_MS: "5000"

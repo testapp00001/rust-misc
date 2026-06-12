@@ -1,0 +1,34 @@
+[workspace]
+resolver = "2"
+members = [
+    "01-two-generals",
+    "02-time-and-ordering",
+    "03-cap-theorem",
+    "04-consensus",
+    "05-flp-impossibility",
+    "06-distributed-transactions",
+    "07-consistent-hashing",
+    "08-crdts",
+    "09-byzantine-fault-tolerance",
+    "10-clock-synchronization",
+    "11-integration-exercises",
+    "12-jepsen-style-tests",
+    "13-capstone-distributed-database",
+    "14-production-message-queue",
+]
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+proptest = "1"
+criterion = { version = "0.5", features = ["html_reports"] }
+rand = { version = "0.8", features = ["small_rng"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+async-trait = "0.1"
+thiserror = "1"
+uuid = { version = "1", features = ["v4"] }
+log = "0.4"
+env_logger = "0.10"
+anyhow = "1"

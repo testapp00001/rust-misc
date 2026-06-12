@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  mq-node-1:
+    build: .
+    ports:
+      - "9092:9092"
+    environment:
+      - MQ_NODE_ID=1
+      - MQ_BIND_ADDRESS=0.0.0.0
+      - MQ_PORT=9092
+    volumes:
+      - mq-data-1:/tmp/mq-data
+
+  mq-node-2:
+    build: .
+    ports:
+      - "9093:9092"
+    environment:
+      - MQ_NODE_ID=2
+      - MQ_BIND_ADDRESS=0.0.0.0
+      - MQ_PORT=9092
+    volumes:
+      - mq-data-2:/tmp/mq-data
+
+  mq-node-3:
+    build: .
+    ports:
+      - "9094:9092"
+    environment:
+      - MQ_NODE_ID=3
+      - MQ_BIND_ADDRESS=0.0.0.0
+      - MQ_PORT=9092
+    volumes:
+      - mq-data-3:/tmp/mq-data
+
+volumes:
+  mq-data-1:
+  mq-data-2:
+  mq-data-3:

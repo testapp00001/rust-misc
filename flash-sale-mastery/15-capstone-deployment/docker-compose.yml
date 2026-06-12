@@ -1,0 +1,58 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy noeviction
+
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: flash_sale
+      POSTGRES_USER: flash_sale
+      POSTGRES_PASSWORD: flash_sale_dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  flash-sale-api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      REDIS_URL: redis://redis:6379
+      DATABASE_URL: postgres://flash_sale:flash_sale_dev@postgres/flash_sale
+      RUST_LOG: info
+    depends_on:
+      - redis
+      - postgres
+
+  order-worker:
+    build: .
+    command: cargo run --bin order-worker
+    environment:
+      REDIS_URL: redis://redis:6379
+      DATABASE_URL: postgres://flash_sale:flash_sale_dev@postgres/flash_sale
+      RUST_LOG: info
+    depends_on:
+      - redis
+      - postgres
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./monitoring/grafana-dashboard.json:/var/lib/grafana/dashboards/flash-sale.json
+
+volumes:
+  postgres_data:

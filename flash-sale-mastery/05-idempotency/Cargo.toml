@@ -1,0 +1,34 @@
+[package]
+name = "idempotency"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { workspace = true }
+redis = { workspace = true }
+deadpool-redis = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+uuid = { workspace = true }
+axum = { workspace = true }
+tower = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+sqlx = { workspace = true }
+futures = { workspace = true }
+async-trait = "0.1"
+criterion = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }
+
+[[bench]]
+name = "p08_idempotency_benchmark"
+harness = false
+
+[features]
+default = []
+solution = []

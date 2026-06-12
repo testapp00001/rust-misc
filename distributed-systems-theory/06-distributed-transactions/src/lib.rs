@@ -1,0 +1,10 @@
+pub mod p01_two_phase_commit;
+pub mod p02_2pc_coordinator_crash;
+pub mod p03_three_phase_commit;
+pub mod p04_3pc_partition;
+pub mod p05_saga_choreography;
+pub mod p06_saga_orchestration;
+pub mod p07_saga_compensation;
+pub mod p08_transactional_outbox;
+pub mod p09_isolation_analysis;
+pub mod p10_flash_sale_saga;

@@ -1,0 +1,70 @@
+[workspace]
+resolver = "2"
+members = [
+    "01-redis-fundamentals",
+    "02-redis-lua-scripting",
+    "03-atomic-counters",
+    "04-traffic-shaping",
+    "05-idempotency",
+    "06-event-sourcing",
+    "07-resilience",
+    "08-load-testing",
+    "09-observability",
+    "10-caching-strategy",
+    "11-flash-sale-api",
+    "12-order-worker",
+    "13-reconciliation",
+    "14-integration-tests",
+    "15-capstone-deployment",
+]
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+
+# Web framework
+axum = "0.8"
+tower = { version = "0.5", features = ["full"] }
+tower-http = { version = "0.6", features = ["full"] }
+hyper = { version = "1", features = ["full"] }
+
+# Redis
+redis = { version = "0.27", features = ["tokio-comp", "connection-manager", "streams", "cluster"] }
+deadpool-redis = "0.18"
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio", "postgres", "sqlite", "chrono", "uuid"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Logging & Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+opentelemetry = "0.27"
+tracing-opentelemetry = "0.28"
+
+# Metrics
+prometheus = "0.13"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+rand = "0.8"
+dashmap = "6"
+arc-swap = "1"
+
+# Testing
+proptest = "1"
+criterion = { version = "0.5", features = ["html_reports"] }
+
+# Crypto / Security
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
