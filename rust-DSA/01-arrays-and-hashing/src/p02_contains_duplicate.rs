@@ -32,12 +32,28 @@
 use std::collections::HashSet;
 
 pub fn contains_duplicate(nums: Vec<i32>) -> bool {
-    todo!("Implement contains_duplicate")
+    let mut distinct_set: HashSet<i32> = HashSet::new();
+
+    for num in nums {
+        if !distinct_set.insert(num) {
+            return true;
+        }
+    }
+    false
 }
 
 pub fn contains_duplicate_sort(mut nums: Vec<i32>) -> bool {
-    todo!("Implement contains_duplicate_sort")
+    nums.sort_unstable();
+
+    println!("{:#?}", nums);
+    for i in nums.windows(2) {
+        if &i[0] == &i[1] {
+            return true;
+        }
+    }
+    false
 }
+
 
 #[cfg(test)]
 mod tests {

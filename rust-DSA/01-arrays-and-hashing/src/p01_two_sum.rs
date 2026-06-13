@@ -38,16 +38,44 @@ use std::collections::HashMap;
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut seen: HashMap<i32, usize> = HashMap::new();
 
-    for (i, &num) in nums.iter().enumerate() {
-        let complement = target - num;
-        if let Some(&j) = seen.get(&complement) {
-            return vec![j as i32, i as i32];
+    for (i, &v) in nums.iter().enumerate() {
+        let subtract = target - v;
+        if let Some(&j) = seen.get(&subtract) {
+           return vec![j as i32,i as i32];
         }
-        seen.insert(num, i);
+        seen.insert(v, i);
     }
-
-    vec![] // No solution found (problem guarantees one exists)
+    vec![]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+//     let mut seen: HashMap<i32, usize> = HashMap::new();
+
+//     for (i, &num) in nums.iter().enumerate() {
+//         let complement = target - num;
+//         if let Some(&j) = seen.get(&complement) {
+//             return vec![j as i32, i as i32];
+//         }
+//         seen.insert(num, i);
+//     }
+
+//     vec![] // No solution found (problem guarantees one exists)
+// }
 
 // ============================================================================
 // Tests

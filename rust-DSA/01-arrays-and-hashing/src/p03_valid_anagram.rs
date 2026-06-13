@@ -27,15 +27,31 @@
 // - `as_bytes()` converts a string slice to a byte slice.
 // ============================================================================
 
-
-    use std::collections::HashMap;
-
 pub fn is_anagram(s: &str, t: &str) -> bool {
-    todo!("Implement is_anagram")
+    if s.len() != t.len() {
+        return false;
+    }
+
+    let mut counts = [0; 26];
+
+    for (s_byte, t_byte) in s.as_bytes().iter().zip(t.as_bytes()) {
+        counts[(*s_byte - b'a') as usize] += 1;
+        counts[(*t_byte - b'a') as usize] -= 1;
+    }
+
+    counts.iter().all(|x| *x == 0)
 }
 
 pub fn is_anagram_unicode(s: &str, t: &str) -> bool {
-    todo!("Implement is_anagram_unicode")
+    if s.len() != t.len() {
+        return false;
+    }
+    let mut s_chars: Vec<char> = s.chars().collect();
+    let mut t_chars: Vec<char> = t.chars().collect();
+    s_chars.sort_unstable();
+    t_chars.sort_unstable();
+
+    s_chars == t_chars
 }
 
 #[cfg(test)]
@@ -73,7 +89,6 @@ mod tests {
         assert!(is_anagram_unicode("anagram", "nagaram"));
         assert!(!is_anagram_unicode("rat", "car"));
     }
-
 
     #[test]
     #[ignore]

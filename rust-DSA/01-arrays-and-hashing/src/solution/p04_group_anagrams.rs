@@ -58,12 +58,7 @@ mod tests {
     fn test_basic() {
         let input: Vec<String> = ["eat", "tea", "tan", "ate", "nat", "bat"]
             .iter().map(|s| s.to_string()).collect();
-        let mut result = group_anagrams(input);
-        // Sort for deterministic comparison
-        for group in &mut result {
-            group.sort();
-        }
-        result.sort_by(|a, b| a[0].cmp(&b[0]));
+        let result = sort_result(group_anagrams(input));
 
         assert_eq!(result.len(), 3);
         assert_eq!(result[0], vec!["ate", "eat", "tea"]);
@@ -89,20 +84,33 @@ mod tests {
     #[test]
     #[ignore]
     fn bench_performance() {
-        // ⏱️  Benchmark test
-        // Run: cargo test -p <package> bench_performance -- --ignored --nocapture
-        //
-        // To use: uncomment and customize the code below with your function
-        // and realistic test data.
-        //
-        // let iterations = 10_000;
-        // let input = /* generate your test input here */;
-        // let start = std::time::Instant::now();
-        // for _ in 0..iterations {
-        //     let _ = group_anagrams(/* input */);
-        // }
-        // let elapsed = start.elapsed();
-        // println!("\n  ⏱️  {} iterations: {:?}", iterations, elapsed);
-        // println!("     Average: {:?}/call", elapsed / iterations);
+        // Generate test input: 5,000 strings of varying lengths
+        let mut input = Vec::with_capacity(5000);
+        let mut seed: u32 = 12345;
+        let mut next_rand = || {
+            seed = seed.wrapping_mul(1103515245).wrapping_add(12345);
+            seed
+        };
+
+        for _ in 0..5000 {
+            let len = 5 + (next_rand() % 10) as usize;
+            let mut s = String::with_capacity(len);
+            for _ in 0..len {
+                let char_code = b'a' + (next_rand() % 26) as u8;
+                s.push(char_code as char);
+            }
+            input.push(s);
+        }
+
+        let iterations = 100;
+
+        let start = std::time::Instant::now();
+        for _ in 0..iterations {
+            let _ = group_anagrams(input.clone());
+        }
+        let elapsed = start.elapsed();
+
+        println!("\n  ⏱️  Benchmark Results ({} iterations, {} strings/iter):", iterations, input.len());
+        println!("     group_anagrams: {:?} total ({:?}/call)", elapsed, elapsed / iterations);
     }
 }
